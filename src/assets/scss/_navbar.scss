@@ -1,0 +1,42 @@
+.logo {
+  height: 75px;
+  width: 200px;
+}
+
+.profile-picture {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 0.125rem solid white;
+}
+
+.profile-picture-container-sm {
+  position: relative;
+  bottom: -110px;
+  left: calc(25% - 110px);
+}
+
+.profile-picture-container {
+  position: relative;
+  bottom: -110px;
+  left: calc(50% - 110px);
+}
+
+.navbar-container {
+  background-image: url('../img/image_cover.png');
+  background-position: center;
+  background-size: 2400px 1000px;
+  font-size: $font-size-navbar;
+  position: relative;
+  border-bottom: 0.125rem solid white;
+}
+
+.lang-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.hamburger-dropdown {
+  font-size: $font-size-navbar-bigger;
+}

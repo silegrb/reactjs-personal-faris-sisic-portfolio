@@ -1,3 +1,19 @@
-.app-container-height {
-  height: 100vh;
+.app-container {
+  min-height: 100vh;
+  background: $primary;
+  font-family: $primary-font;
+  color: $primary-font-color;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 2400px;
+}
+
+.root-container {
+  background: $primary;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
