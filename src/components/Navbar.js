@@ -30,7 +30,7 @@ const Navbar = () => {
         <Col
           xs={12}
           sm={9}
-          className="d-flex align-items-center justify-content-between justify-content-sm-end font-weight-bold pr-sm-5"
+          className="d-flex align-items-center justify-content-between justify-content-sm-end pr-sm-5"
         >
           {screenWidth > SCREEN_SIZES.XS
             ? (

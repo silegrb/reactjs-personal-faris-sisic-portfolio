@@ -1,6 +1,13 @@
-$primary: #101010;
+//Colors
+$primary-color: #000000;
+$aqua-color: #00DBFF;
+
+//Fonts
 $primary-font: 'Open Sans', sans-serif;
 $primary-font-color: #FFFFFF;
-$font-size-navbar: 12px;
-$font-size-navbar-bigger: 16px;
-$font-size-big: 24px
+$font-size-navbar: 14px;
+$font-size-navbar-big: 16px;
+$font-size-section-title: 24px;
+
+//Borders
+$yellow-border: 2px solid $aqua-color;

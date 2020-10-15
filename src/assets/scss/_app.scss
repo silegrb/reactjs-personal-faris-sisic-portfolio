@@ -1,9 +1,14 @@
 .app-container {
   min-height: 100vh;
-  background: $primary;
+  background: #000000;
   font-family: $primary-font;
   color: $primary-font-color;
   overflow-x: hidden;
+  background-image: url('../img/image_cover.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-size: 2400px 1000px;
 }
 
 .container {
@@ -11,9 +16,17 @@
 }
 
 .root-container {
-  background: $primary;
+  background: $primary-color;
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.word-break-all {
+  word-break : break-all;
+}
+
+.card-shadow {
+  box-shadow: 0 0 5px #434343;
 }

@@ -23,9 +23,6 @@
 }
 
 .navbar-container {
-  background-image: url('../img/image_cover.png');
-  background-position: center;
-  background-size: 2400px 1000px;
   font-size: $font-size-navbar;
   position: relative;
   border-bottom: 0.125rem solid white;
@@ -38,5 +35,5 @@
 }
 
 .hamburger-dropdown {
-  font-size: $font-size-navbar-bigger;
+  font-size: $font-size-navbar-big;
 }

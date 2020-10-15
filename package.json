@@ -1,14 +1,16 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "@react-hook/window-size": "^3.0.7",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.5.0",
+    "dayjs": "^1.9.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.1",
