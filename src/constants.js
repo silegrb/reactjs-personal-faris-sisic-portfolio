@@ -1,4 +1,5 @@
 import Content from './containers/Content';
+import { softhouseLogo } from './assets/img';
 
 export const ROUTES = [
   {
@@ -8,10 +9,11 @@ export const ROUTES = [
 ];
 
 export const SCREEN_SIZES = {
-  XS: 767,
-  SM: 991,
-  MD: 1199,
-  LG: 2399,
+  XS: 576,
+  SM: 767,
+  MD: 991,
+  LG: 1199,
+  XL: 2399,
 };
 
 // Months go from 0 do 11
@@ -29,23 +31,29 @@ export const PORTFOLIO = {
       address: 'Hasana Brkića 15, Sarajevo',
     },
   },
-  /* WORK_INFORMATION: [
-    {
-      position: 'Intern',
-      workplace: 'Softhouse Consulting',
-      startDate: '01/04/2020',
-      endDate: '30/06/2020',
-      location: 'Trg Solidarnosti 2, Sarajevo',
-      website: 'www.softhouse.se',
-    },
-    {
-      position: 'Software Developer',
-      workplace: 'Softhouse Consulting',
-      startDate: '01/07/2020',
-      location: 'Trg Solidarnosti 2, Sarajevo',
-      website: 'www.softhouse.se',
-    },
-  ],
+  WORK_EXPERIENCE: {
+    title: 'WORK EXPERIENCE',
+    content: [
+      {
+        position: 'Intern',
+        workplace: 'Softhouse Consulting',
+        startDate: new Date(2020, 3, 1),
+        endDate: new Date(2020, 5, 30),
+        location: 'Trg Solidarnosti 2, Sarajevo',
+        website: 'www.softhouse.se',
+        avatar: softhouseLogo,
+      },
+      {
+        position: 'Software Developer',
+        workplace: 'Softhouse Consulting',
+        startDate: '01/07/2020',
+        location: 'Trg Solidarnosti 2, Sarajevo',
+        website: 'www.softhouse.se',
+        avatar: softhouseLogo,
+      },
+    ],
+  },
+  /*
   EDUCATION: [
     {
       title: 'Primary School Diploma',

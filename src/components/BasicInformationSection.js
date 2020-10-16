@@ -20,17 +20,17 @@ const BasicInformationSection = () => {
   const screenWidth = useWindowWidth();
 
   return (
-    <Card className="basic-information-section card-shadow" id="basic-information">
+    <Card className="section card-shadow" id="basic-information">
       <div className="section-title d-flex align-items-center pl-1 pl-sm-4">{title}</div>
       <CardBody>
         <Container>
           <Row className="w-100">
             <Col
               xs={12}
-              md={5}
+              lg={5}
               className={
-              `d-flex justify-content-center align-items-center pb-4 pb-sm-0 ${
-                screenWidth > SCREEN_SIZES.XS ? 'border-right-aqua' : 'border-bottom-aqua'
+              `d-flex justify-content-center align-items-center pb-4 pb-lg-0 ${
+                screenWidth > SCREEN_SIZES.MD ? 'border-right-aqua' : 'border-bottom-aqua'
               }`
               }
             >
@@ -43,6 +43,7 @@ const BasicInformationSection = () => {
                     <Col xs={12} className="d-flex justify-content-center font-size-bigger">
                       {content.name.toUpperCase()}
                     </Col>
+                    {/* TODO Remove style, add className */}
                     <Col xs={12} style={{ letterSpacing: '12px', marginLeft: '6px' }} className="d-flex justify-content-center text-justify">
                       {content.surname.toUpperCase()}
                     </Col>
@@ -50,7 +51,7 @@ const BasicInformationSection = () => {
                 </Col>
               </Row>
             </Col>
-            <Col xs={12} md={7} className="pt-4 pt-sm-0">
+            <Col xs={12} lg={7} className="pt-4 pt-lg-0">
               <Row className="w-100">
                 <Col xs={12} className="d-flex align-items-center pb-3">
                   <CalendarOutlined className="aqua-icon pr-3" />

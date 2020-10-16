@@ -6,7 +6,7 @@ const Content = () => (
   <div className="portfolio-container">
     <Container>
       <Row>
-        <Col xs={12} md={8}>
+        <Col xs={12} lg={8}>
           <Portfolio />
         </Col>
       </Row>

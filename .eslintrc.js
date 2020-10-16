@@ -24,6 +24,7 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'global-require': 0,
     'no-useless-escape': 0,
+    'react/no-array-index-key': 0
   },
   globals: {
     localStorage: true,
