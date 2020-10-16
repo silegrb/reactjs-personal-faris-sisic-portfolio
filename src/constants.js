@@ -46,7 +46,7 @@ export const PORTFOLIO = {
       {
         position: 'Software Developer',
         workplace: 'Softhouse Consulting',
-        startDate: '01/07/2020',
+        startDate: new Date(2020, 6, 1),
         location: 'Trg Solidarnosti 2, Sarajevo',
         website: 'www.softhouse.se',
         avatar: softhouseLogo,
