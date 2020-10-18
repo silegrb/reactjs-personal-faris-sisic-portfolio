@@ -24,31 +24,31 @@ const Navbar = () => {
   // Since design is different on different screen  logic has to be separated
     <Container className="navbar-container">
       <Row className="d-flex align-items-center pt-5 cover-padding">
-        <Col xs={12} sm={3} className="d-flex justify-content-center justify-content-sm-start pl-sm-5">
+        <Col xs={12} lg={3} className="d-flex justify-content-center justify-content-lg-start pl-sm-5">
           <img src={logo} alt="" className="logo" />
         </Col>
         <Col
           xs={12}
-          sm={9}
-          className="d-flex align-items-center justify-content-between justify-content-sm-end pr-sm-5"
+          lg={9}
+          className="d-flex align-items-center justify-content-between justify-content-lg-end pr-sm-5"
         >
-          {screenWidth > SCREEN_SIZES.XS
+          {screenWidth > SCREEN_SIZES.MD
             ? (
               <>
                 <Link spy smooth to="basic-information">
-                  <span className="cursor-pointer pr-3">BASIC INFORMATION</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">BASIC INFORMATION</span>
                 </Link>
                 <Link spy smooth to="work-experience">
-                  <span className="cursor-pointer pr-3">WORK EXPERIENCE</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">WORK EXPERIENCE</span>
                 </Link>
                 <Link spy smooth to="education">
-                  <span className="cursor-pointer pr-3">EDUCATION</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">EDUCATION</span>
                 </Link>
                 <Link spy smooth to="skills">
-                  <span className="cursor-pointer pr-3">SKILLS</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">SKILLS</span>
                 </Link>
                 <Link spy smooth to="projects-and-awards" activeClass="section-active">
-                  <span className="cursor-pointer pr-3">PROJECTS & AWARDS</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">PROJECTS & AWARDS</span>
                 </Link>
               </>
             ) : (
@@ -75,7 +75,7 @@ const Navbar = () => {
           </FlipBox>
         </Col>
       </Row>
-      <Collapse isOpen={dropdownOpen && screenWidth <= SCREEN_SIZES.XS}>
+      <Collapse isOpen={dropdownOpen && screenWidth <= SCREEN_SIZES.MD}>
         <Row className="cursor-pointer hamburger-dropdown d-flex justify-content-center ml-4">
           <Col xs={12} className="pt-3">
             <Link spy smooth to="basic-information">BASIC INFORMATION</Link>
@@ -94,9 +94,34 @@ const Navbar = () => {
           </Col>
         </Row>
       </Collapse>
-      <div className={screenWidth > SCREEN_SIZES.XS ? 'profile-picture-container-sm' : 'profile-picture-container'}>
-        <img src={profilePicture} alt="" className="profile-picture" />
-      </div>
+      <Row className="w-100">
+        <Col xs={12} lg={7} className="d-flex justify-content-lg-start justify-content-center">
+          <img src={profilePicture} alt="" className={screenWidth > SCREEN_SIZES.LG ? 'profile-picture-lg' : 'profile-picture'} />
+        </Col>
+        <Col
+          xs={12}
+          lg={5}
+          className="d-lg-flex align-items-center pt-3 pr-0 pr-lg-5 pb-4 pb-lg-0"
+        >
+          <Row className="w-100 ">
+            <Col
+              xs={12}
+              className={`d-flex justify-content-center ${screenWidth > SCREEN_SIZES.LG ? 'software-developer-lg' : 'software-developer'}`}
+            >
+              {'<software-developer />'}
+            </Col>
+            <Col
+              xs={{ offset: 1, size: 10 }}
+              sm={{ offset: 4, size: 4 }}
+              md={{ offset: 3, size: 6 }}
+              lg={{ offset: 2, size: 8 }}
+              className={`d-flex justify-content-center text-center pt-3 ${screenWidth > SCREEN_SIZES.LG ? 'software-developer-subtitle-lg' : 'software-developer-subtitle'}`}
+            >
+              Welcome to the official website and online portfolio of Faris Šišić, Software Developer based in Bosnia and Herzegovina. Feel free to scroll down for more info.
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </Container>
   );
 };

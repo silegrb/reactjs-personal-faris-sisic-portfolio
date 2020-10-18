@@ -5,6 +5,7 @@ import Loader from './components/Loader';
 import { ROUTES } from './constants';
 import PageNotFound from './components/NotFound';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               </Route>
             </Switch>
           </Router>
+          <Footer />
         </Container>
       </div>
     </Suspense>

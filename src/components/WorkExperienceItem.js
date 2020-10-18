@@ -27,7 +27,7 @@ const WorkExperienceItem = ({
       lg={3}
       className={`d-flex align-items-center justify-content-start justify-content-lg-end pb-lg-0 ${website || location ? 'pb-2' : ''}`}
     >
-      {screenWidth <= SCREEN_SIZES.MD && <CalendarOutlined className="aqua-icon pr-3" />}
+      {screenWidth <= SCREEN_SIZES.MD && <CalendarOutlined className="light-gray-icon pr-3" />}
       {`${formatDate(startDate)} - ${endDate ? formatDate(endDate) : 'Present'}`}
     </Col>
   );
@@ -70,7 +70,7 @@ const WorkExperienceItem = ({
             lg={{ offset: 5, size: 7 }}
             className={`item-hover cursor-pointer d-flex justify-content-start align-items-center ${website ? 'pb-2' : ''}`}
           >
-            <EnvironmentOutlined className="aqua-icon pr-3" />
+            <EnvironmentOutlined className="light-gray-icon pr-3" />
             {location}
           </Col>
         )}
@@ -80,8 +80,8 @@ const WorkExperienceItem = ({
             lg={{ offset: 5, size: 7 }}
             className="item-hover cursor-pointer d-flex justify-content-start align-items-center"
           >
-            <ChromeOutlined className="aqua-icon pr-3" />
-            <a href={`https://${website}/`}>
+            <ChromeOutlined className="light-gray-icon pr-3" />
+            <a href={`https://${website}`}>
               {website}
             </a>
           </Col>

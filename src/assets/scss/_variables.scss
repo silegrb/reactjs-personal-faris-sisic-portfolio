@@ -1,14 +1,21 @@
 //Colors
 $primary-color: #000000;
-$aqua-color: #00DBFF;
+$light-gray-color: #7f7f7f;
+$orange-color: #ff6b1f;
 
 //Fonts
-$primary-font: 'Open Sans', sans-serif;
+$primary-font: 'NeoSansArabic-Medium', sans-serif;
 $primary-font-color: #FFFFFF;
-$font-size-navbar: 14px;
-$font-size-navbar-big: 16px;
-$font-size-section-subtitle: 19px;
-$font-size-section-title: 24px;
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-24: 24px;
+$font-size-36: 36px;
+$font-size-46: 46px;
+$font-size-100: 100px;
 
 //Borders
-$yellow-border: 2px solid $aqua-color;
+$light-gray-border-2px: 2px solid $light-gray-color;
+$orange-border-3px: 3px solid $orange-color;
+$transparent-border: 0 solid transparent;
+$white-border-2px: 2px solid white;

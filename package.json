@@ -1,6 +1,6 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
+    "lint-staged": "^10.4.2",
     "prettier": "^2.1.2"
   },
   "husky": {

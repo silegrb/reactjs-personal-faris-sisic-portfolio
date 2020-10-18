@@ -10,7 +10,7 @@ const WorkExperience = () => {
 
   return (
     <Card className="mt-5 section card-shadow" id="work-experience">
-      <div className="section-title d-flex align-items-center pl-1 pl-sm-4">{title}</div>
+      <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
       <CardBody className="px-0">
         <Container>
           <Row className="w-100">

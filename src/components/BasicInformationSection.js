@@ -21,7 +21,7 @@ const BasicInformationSection = () => {
 
   return (
     <Card className="section card-shadow" id="basic-information">
-      <div className="section-title d-flex align-items-center pl-1 pl-sm-4">{title}</div>
+      <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
       <CardBody>
         <Container>
           <Row className="w-100">
@@ -30,13 +30,13 @@ const BasicInformationSection = () => {
               lg={5}
               className={
               `d-flex justify-content-center align-items-center pb-4 pb-lg-0 ${
-                screenWidth > SCREEN_SIZES.MD ? 'border-right-aqua' : 'border-bottom-aqua'
+                screenWidth > SCREEN_SIZES.MD ? 'border-right-light-gray' : 'border-bottom-light-gray'
               }`
               }
             >
               <Row className="d-flex align-items-center">
                 <Col xs={7} className="d-flex justify-content-end align-items-center ">
-                  <LaptopOutlined className="aqua-icon-big" />
+                  <LaptopOutlined className="light-gray-icon-big" />
                 </Col>
                 <Col xs={5}>
                   <Row className="w-100 m-0">
@@ -54,27 +54,27 @@ const BasicInformationSection = () => {
             <Col xs={12} lg={7} className="pt-4 pt-lg-0">
               <Row className="w-100">
                 <Col xs={12} className="d-flex align-items-center pb-3">
-                  <CalendarOutlined className="aqua-icon pr-3" />
+                  <CalendarOutlined className="light-gray-icon pr-3" />
                   {formatDate(content.dateOfBirth)}
                 </Col>
                 <Col xs={12} className="d-flex align-items-center pb-3">
-                  <IdcardOutlined className="aqua-icon pr-3" />
+                  <IdcardOutlined className="light-gray-icon pr-3" />
                   {content.gender}
                 </Col>
                 <Col xs={12} className="d-flex align-items-center pb-3">
-                  <GlobalOutlined className="aqua-icon pr-3" />
+                  <GlobalOutlined className="light-gray-icon pr-3" />
                   {content.nationality}
                 </Col>
                 <Col xs={12} className="d-flex align-items-center pb-3">
-                  <PhoneOutlined className="aqua-icon pr-3" />
+                  <PhoneOutlined className="light-gray-icon pr-3" />
                   {content.mobilePhone}
                 </Col>
                 <Col xs={12} className="d-flex align-items-center pb-3">
-                  <MailOutlined className="aqua-icon pr-3" />
+                  <MailOutlined className="light-gray-icon pr-3" />
                   {content.emailAddress}
                 </Col>
                 <Col xs={12} className="d-flex align-items-center pb-3">
-                  <EnvironmentOutlined className="aqua-icon pr-3" />
+                  <EnvironmentOutlined className="light-gray-icon pr-3" />
                   {content.address}
                 </Col>
               </Row>

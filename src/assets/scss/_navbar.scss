@@ -1,32 +1,22 @@
 .logo {
-  height: 75px;
-  width: 200px;
+  height: 100px;
+  width: 275px;
+}
+
+.profile-picture-lg {
+  width: 900px;
+  height: 500px;
 }
 
 .profile-picture {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 0.125rem solid white;
-}
-
-.profile-picture-container-sm {
-  position: relative;
-  bottom: -110px;
-  left: calc(25% - 110px);
-}
-
-.profile-picture-container {
-  position: relative;
-  bottom: -110px;
-  left: calc(50% - 110px);
+  width: 80vw;
 }
 
 .navbar-container {
-  font-size: $font-size-navbar;
-  position: relative;
-  border-bottom: 0.125rem solid white;
+  font-size: $font-size-14;
 }
+
+
 
 .lang-icon {
   width: 40px;
@@ -35,5 +25,32 @@
 }
 
 .hamburger-dropdown {
-  font-size: $font-size-navbar-big;
+  font-size: $font-size-14;
+}
+
+.navbar-item-hover {
+  border-bottom: $transparent-border;
+  transition: border-bottom 0.5s;
+}
+
+.navbar-item-hover:hover {
+  border-bottom: $orange-border-3px;
+}
+
+.software-developer-lg {
+  font-size: $font-size-46;
+  color: $orange-color;
+}
+
+.software-developer {
+  font-size: $font-size-24;
+  color: $orange-color;
+}
+
+.software-developer-subtitle-lg {
+  font-size: $font-size-18;
+}
+
+.software-developer-subtitle {
+  font-size: $font-size-14;
 }

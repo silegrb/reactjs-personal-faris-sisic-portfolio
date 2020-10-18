@@ -29,6 +29,12 @@ export const PORTFOLIO = {
       mobilePhone: '+ 387 60 338 1032',
       emailAddress: 'sisicfarisofficial@gmail.com',
       address: 'Hasana Brkića 15, Sarajevo',
+      facebookLink: 'https://www.facebook.com/shile.pres',
+      youtubeLink: 'https://www.youtube.com/channel/UCLbDLtGSzMfB7__-kwvXTPA',
+      linkedInLink:
+        'https://www.linkedin.com/in/faris-%C5%A1i%C5%A1i%C4%87-06453b1a0/',
+      instagramLink: 'https://www.instagram.com/___silegrb__/',
+      githubLink: 'https://github.com/silegrb',
     },
   },
   WORK_EXPERIENCE: {
