@@ -20,7 +20,7 @@ const BasicInformationSection = () => {
   const screenWidth = useWindowWidth();
 
   return (
-    <Card className="section card-shadow" id="basic-information">
+    <Card className="section card-shadow ml-3" id="basic-information">
       <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
       <CardBody>
         <Container>
@@ -43,8 +43,7 @@ const BasicInformationSection = () => {
                     <Col xs={12} className="d-flex justify-content-center font-size-bigger">
                       {content.name.toUpperCase()}
                     </Col>
-                    {/* TODO Remove style, add className */}
-                    <Col xs={12} style={{ letterSpacing: '12px', marginLeft: '6px' }} className="d-flex justify-content-center text-justify">
+                    <Col xs={12} className="d-flex justify-content-center text-justify letter-spacing">
                       {content.surname.toUpperCase()}
                     </Col>
                   </Row>

@@ -9,7 +9,7 @@ const WorkExperience = () => {
   const [title, content] = [PORTFOLIO.WORK_EXPERIENCE.title, PORTFOLIO.WORK_EXPERIENCE.content];
 
   return (
-    <Card className="mt-5 section card-shadow" id="work-experience">
+    <Card className="ml-3 mt-5 section card-shadow" id="work-experience">
       <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
       <CardBody className="px-0">
         <Container>

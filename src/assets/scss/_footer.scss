@@ -1,16 +1,40 @@
 .footer {
-  position: fixed;
-  bottom: 0;
-  height: 70px;
   background-color: $primary-color;
 }
 
-.footer-icon-lg {
-  font-size: $font-size-36;
-  color: white;
+.footer-icon {
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  transition: 0.5s background-color;
+  &:hover{
+    background-color: $orange-color;
+  }
 }
 
-.footer-icon {
-  font-size: $font-size-36;
-  color: white;
+.lets-connect-container-lg {
+  font-family: 'Pacifico', cursive;
+  font-size: $font-size-46;
+}
+
+.lets-connect-container {
+  font-family: 'Pacifico', cursive;
+  font-size: $font-size-24;
+}
+
+.border-bottom-white {
+  border-bottom: $orange-border-3px;
+}
+
+.scroll-to-top-container {
+  top: -35px;
+  left: calc(50% - 35px);
+}
+
+.scroll-to-top-icon {
+  background-color: $primary-color;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 5px #434343;
 }

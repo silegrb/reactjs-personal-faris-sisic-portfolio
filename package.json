@@ -1,6 +1,6 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -22,6 +22,7 @@
     "react-animated-burgers": "^1.2.8",
     "react-card-flip": "^1.0.11",
     "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
     "react-loader-spinner": "^3.1.14",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -58,7 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npx lint-staged"
     }
   },
   "lint-staged": {
