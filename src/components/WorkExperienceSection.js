@@ -5,7 +5,7 @@ import {
 import { PORTFOLIO } from '../constants';
 import WorkExperienceItem from './WorkExperienceItem';
 
-const WorkExperience = () => {
+const WorkExperienceSection = () => {
   const [title, content] = [PORTFOLIO.WORK_EXPERIENCE.title, PORTFOLIO.WORK_EXPERIENCE.content];
 
   return (
@@ -14,16 +14,24 @@ const WorkExperience = () => {
       <CardBody className="px-0">
         <Container>
           <Row className="w-100">
-            {content.map((item, index) => (
+            {content.map(({
+              position,
+              workplace,
+              location,
+              website,
+              startDate,
+              endDate,
+              avatar,
+            }, index) => (
               <Col key={index} xs={12} className={index < content.length - 1 && 'pb-5'}>
                 <WorkExperienceItem
-                  position={item.position}
-                  workplace={item.workplace}
-                  location={item.location}
-                  website={item.website}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                  avatar={item.avatar}
+                  position={position}
+                  workplace={workplace}
+                  location={location}
+                  website={website}
+                  startDate={startDate}
+                  endDate={endDate}
+                  avatar={avatar}
                 />
               </Col>
             ))}
@@ -35,4 +43,4 @@ const WorkExperience = () => {
   );
 };
 
-export default WorkExperience;
+export default WorkExperienceSection;

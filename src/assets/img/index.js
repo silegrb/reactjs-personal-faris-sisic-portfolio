@@ -8,6 +8,13 @@ import instagramIcon from './icon_instagram.svg';
 import youtubeIcon from './icon_youtube.svg';
 import linkedinIcon from './icon_linkedin.svg';
 import githubIcon from './icon_github.svg';
+import grbavicaDvaLogo from './image_grbavica_II_logo.png';
+import drugaGimnazijaSarajevoLogo from './image_2_gimnazija_sarajevo_logo.jpg';
+import elektrotehnickiFakultetSarajevoLogo from './image_elektrotehnicki_fakultet_sarajevo_logo.png';
+import followMeAlteraLinguaLogo from './image_follow_me_altera_lingua_logo.jpg';
+import symphonySarajevoLogo from './image_symphony_sarajevo_logo.jpg';
+import BHEngineeringWeeksSarajevoLogo from './image_BH_engineering_weeks_sarajevo_logo.jpg';
+import hackathonJustCodeItSarajevoLogo from './image_hackathon_just_code_it_sarajevo_logo.jpg';
 
 export {
   logo,
@@ -20,4 +27,11 @@ export {
   youtubeIcon,
   linkedinIcon,
   githubIcon,
+  grbavicaDvaLogo,
+  drugaGimnazijaSarajevoLogo,
+  elektrotehnickiFakultetSarajevoLogo,
+  followMeAlteraLinguaLogo,
+  symphonySarajevoLogo,
+  BHEngineeringWeeksSarajevoLogo,
+  hackathonJustCodeItSarajevoLogo,
 };

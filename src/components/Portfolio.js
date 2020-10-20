@@ -1,11 +1,13 @@
 import React from 'react';
 import BasicInformationSection from './BasicInformationSection';
-import WorkExperience from './WorkExperience';
+import WorkExperienceSection from './WorkExperienceSection';
+import EducationSection from './EducationSection';
 
 const Portfolio = () => (
   <>
     <BasicInformationSection />
-    <WorkExperience />
+    <WorkExperienceSection />
+    <EducationSection />
   </>
 );
 
