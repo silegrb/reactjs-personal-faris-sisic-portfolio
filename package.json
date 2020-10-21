@@ -1,6 +1,6 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -24,6 +24,7 @@
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-loader-spinner": "^3.1.14",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-scroll": "^1.8.1",
