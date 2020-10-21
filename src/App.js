@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import Loader from './components/Loader';
 import { ROUTES } from './constants';
-import PageNotFound from './components/NotFound';
+import PageNotFound from './components/PageNotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 

@@ -1,10 +1,16 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Portfolio from '../components/Portfolio';
+import Header from '../components/Header';
 
 const Content = () => (
   <div className="portfolio-container">
     <Container>
+      <Row>
+        <Col xs={12}>
+          <Header />
+        </Col>
+      </Row>
       <Row>
         <Col xs={12} lg={8}>
           <Portfolio />

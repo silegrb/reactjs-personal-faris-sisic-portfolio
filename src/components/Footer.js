@@ -26,7 +26,7 @@ const Footer = () => {
         <Col
           xs={{ offset: 2, size: 8 }}
           lg={{ offset: 4, size: 4 }}
-          className="pt-3 pb-4 border-bottom-white d-flex justify-content-center align-items-center"
+          className="pt-3 pb-4 border-bottom-orange d-flex justify-content-center align-items-center"
         >
           <img alt="" src={facebookIcon} className="footer-icon mr-2" onClick={() => redirect(content.facebookLink)} />
           <img alt="" src={instagramIcon} className="footer-icon mr-2" onClick={() => redirect(content.instagramLink)} />

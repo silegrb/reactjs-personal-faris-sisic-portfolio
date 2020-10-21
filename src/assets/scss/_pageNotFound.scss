@@ -1,0 +1,45 @@
+.four-o-four-lg {
+  line-height: $font-size-240;
+  font-size: $font-size-300;
+}
+
+.four-o-four {
+  line-height: $font-size-120;
+  font-size: $font-size-150;
+}
+
+.page-not-found-lg {
+  font-size: $font-size-46;
+  color: $orange-color;
+}
+
+.page-not-found {
+  font-size: $font-size-24;
+  color: $orange-color;
+}
+
+.go-back-button-lg {
+  font-size: $font-size-36;
+  background-color: white;
+  color: $primary-color;
+  border-radius: 50px;
+}
+
+.go-back-button {
+  font-size: $font-size-18;
+  background-color: white;
+  color: $primary-color;
+  border-radius: 50px;
+}
+
+.border-bottom-white {
+  border-bottom: $white-border-2px;
+}
+
+.page-not-found-instructions-lg {
+  font-size: $font-size-18;
+}
+
+.page-not-found-instructions {
+  font-size: $font-size-14;
+}
