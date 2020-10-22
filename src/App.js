@@ -15,8 +15,8 @@ function App() {
           <Navbar />
           <Router>
             <Switch>
-              {ROUTES.map(({ component: Component, path }) => (
-                <Route exact path={path} component={Component} />
+              {ROUTES.map(({ component: Component, path }, index) => (
+                <Route key={index} exact path={path} component={Component} />
               ))}
               <Route>
                 <PageNotFound />

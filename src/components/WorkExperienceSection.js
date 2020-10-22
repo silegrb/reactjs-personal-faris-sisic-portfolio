@@ -25,7 +25,7 @@ const WorkExperienceSection = () => {
                 endDate,
                 avatar,
               }, index) => (
-                <Col key={index} xs={12} className={index < content.length - 1 && 'pb-5'}>
+                <Col key={index} xs={12} className={index < content.length - 1 ? 'pb-5' : ''}>
                   <WorkExperienceItem
                     position={position}
                     workplace={workplace}

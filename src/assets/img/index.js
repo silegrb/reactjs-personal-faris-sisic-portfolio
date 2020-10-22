@@ -15,6 +15,8 @@ import followMeAlteraLinguaLogo from './image_follow_me_altera_lingua_logo.jpg';
 import symphonySarajevoLogo from './image_symphony_sarajevo_logo.jpg';
 import BHEngineeringWeeksSarajevoLogo from './image_BH_engineering_weeks_sarajevo_logo.jpg';
 import hackathonJustCodeItSarajevoLogo from './image_hackathon_just_code_it_sarajevo_logo.jpg';
+import atlantBhLogo from './image_atlantbh_logo.jpg';
+import udemyLogo from './image_udemy_logo.jpg';
 
 export {
   logo,
@@ -34,4 +36,6 @@ export {
   symphonySarajevoLogo,
   BHEngineeringWeeksSarajevoLogo,
   hackathonJustCodeItSarajevoLogo,
+  atlantBhLogo,
+  udemyLogo,
 };

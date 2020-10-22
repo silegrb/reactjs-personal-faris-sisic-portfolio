@@ -1,5 +1,6 @@
 import Content from './containers/Content';
 import {
+  atlantBhLogo,
   BHEngineeringWeeksSarajevoLogo,
   drugaGimnazijaSarajevoLogo,
   elektrotehnickiFakultetSarajevoLogo,
@@ -8,6 +9,7 @@ import {
   hackathonJustCodeItSarajevoLogo,
   softhouseLogo,
   symphonySarajevoLogo,
+  udemyLogo,
 } from './assets/img';
 
 export const ROUTES = [
@@ -144,6 +146,23 @@ export const PORTFOLIO = {
         startDate: new Date(2019, 11, 21),
         endDate: new Date(2019, 11, 22),
         avatar: hackathonJustCodeItSarajevoLogo,
+      },
+      {
+        title: 'Completed course',
+        educationalInstitution:
+          'React - The Complete Guide (incl Hooks, React Router, Redux)',
+        startDate: new Date(2020, 3, 1),
+        endDate: new Date(2020, 3, 15),
+        website: 'www.udemy.com/course/react-the-complete-guide-incl-redux',
+        avatar: udemyLogo,
+      },
+      {
+        title: 'New knowledge',
+        educationalInstitution:
+          'Online Meetup: How to become a UX/UI Designer?',
+        date: new Date(2020, 9, 21),
+        website: 'www.atlantbh.com',
+        avatar: atlantBhLogo,
       },
     ],
   },

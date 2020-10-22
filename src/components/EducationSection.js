@@ -28,7 +28,7 @@ const EducationSection = () => {
                 endDateFormatter,
                 avatar,
               }, index) => (
-                <Col key={index} xs={12} className={index < content.length - 1 && 'pb-5'}>
+                <Col key={index} xs={12} className={index < content.length - 1 ? 'pb-5' : ''}>
                   <EducationItem
                     title={title}
                     educationalInstitution={educationalInstitution}

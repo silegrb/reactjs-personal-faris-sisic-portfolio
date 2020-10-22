@@ -103,8 +103,8 @@ EducationItem.propTypes = {
   startDateFormatter: PropTypes.string,
   endDate: PropTypes.object,
   endDateFormatter: PropTypes.string,
-  location: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
+  location: PropTypes.string,
+  website: PropTypes.string,
   avatar: PropTypes.string,
 };
 
