@@ -12,7 +12,7 @@ import {
   LaptopOutlined,
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
-import { Bounce } from 'react-reveal';
+import { Fade } from 'react-reveal';
 import { PORTFOLIO, SCREEN_SIZES } from '../constants';
 import { formatDate } from '../utils/date';
 
@@ -21,7 +21,7 @@ const BasicInformationSection = () => {
   const screenWidth = useWindowWidth();
 
   return (
-    <Bounce left>
+    <Fade bottom>
       <Card className="section card-shadow ml-3" id="basic-information">
         <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
         <CardBody>
@@ -85,7 +85,7 @@ const BasicInformationSection = () => {
         </CardBody>
         <div className="section-footer" />
       </Card>
-    </Bounce>
+    </Fade>
   );
 };
 
