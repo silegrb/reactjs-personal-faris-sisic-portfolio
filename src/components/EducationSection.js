@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Card, CardBody, Container, Row, Col,
 } from 'reactstrap';
-import { Fade } from 'react-reveal';
+import { Bounce } from 'react-reveal';
 import { PORTFOLIO } from '../constants';
 import EducationItem from './EducationItem';
 
@@ -10,7 +10,7 @@ const EducationSection = () => {
   const [title, content] = [PORTFOLIO.EDUCATION.title, PORTFOLIO.EDUCATION.content];
 
   return (
-    <Fade bottom>
+    <Bounce left>
       <Card className="ml-3 mt-5 section card-shadow" id="education">
         <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
         <CardBody className="px-0">
@@ -48,7 +48,7 @@ const EducationSection = () => {
         </CardBody>
         <div className="section-footer" />
       </Card>
-    </Fade>
+    </Bounce>
   );
 };
 
