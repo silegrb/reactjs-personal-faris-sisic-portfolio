@@ -5,8 +5,8 @@ import {
 import Spinner from 'react-loader-spinner';
 
 const Loader = () => (
-  <Container className="d-flex justify-content-center">
-    <Spinner type="Oval" color="#00BFFF" height={80} width={80} />
+  <Container className="d-flex flex-grow-1 align-items-center justify-content-center">
+    <Spinner type="Oval" color="#ff6b1f" height={80} width={80} />
   </Container>
 );
 
