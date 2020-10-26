@@ -33,6 +33,12 @@ export const PORTFOLIO_SECTION_PROPERTIES = {
   duration: 650,
 };
 
+export const LINK_PROPERTIES = {
+  offset: -75,
+  spy: true,
+  smooth: true,
+};
+
 // Months go from 0 do 11
 export const PORTFOLIO = {
   BASIC_INFORMATION: {

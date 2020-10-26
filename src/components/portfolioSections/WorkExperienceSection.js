@@ -7,7 +7,7 @@ import {
   PORTFOLIO,
   PORTFOLIO_SECTION_PROPERTIES,
 } from '../../constants';
-import WorkExperienceItem from '../WorkExperienceItem';
+import WorkExperienceItem from '../portfolioSectionItems/WorkExperienceItem';
 
 const WorkExperienceSection = () => {
   const [title, content] = [PORTFOLIO.WORK_EXPERIENCE.title, PORTFOLIO.WORK_EXPERIENCE.content];

@@ -7,8 +7,8 @@ import {
   CalendarOutlined,
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
-import { formatDate } from '../utils/date';
-import { SCREEN_SIZES } from '../constants';
+import { formatDate } from '../../utils/date';
+import { SCREEN_SIZES } from '../../constants';
 
 const WorkExperienceItem = ({
   position,

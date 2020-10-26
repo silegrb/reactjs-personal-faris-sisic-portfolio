@@ -1,23 +1,39 @@
-.logo {
-  height: 112px;
-  width: 250px;
-}
-
-.profile-picture-lg {
-  width: 900px;
-  height: 500px;
-}
-
-.profile-picture {
-  width: 90vw;
-  height: 50vw;
+.navbar-container-lg {
+  font-size: $font-size-14;
+  position: fixed;
+  z-index: 9999;
 }
 
 .navbar-container {
   font-size: $font-size-14;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: $primary-color;
 }
 
+.navbar-container-scrolled {
+  background-color: $primary-color;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 5px #434343;
+}
 
+.logo-lg {
+  height: 112px;
+  width: 250px;
+  transition: height 0.5s, width 0.5s;
+}
+
+.logo {
+  width: 90px;
+  height: 40px;
+}
+
+.logo-scrolled {
+  width: 90px;
+  height: 40px;
+  transition: height 0.5s, width 0.5s;
+}
 
 .lang-icon {
   width: 50px;
@@ -36,22 +52,4 @@
 
 .navbar-item-hover:hover {
   border-bottom: $orange-border-3px;
-}
-
-.software-developer-lg {
-  font-size: $font-size-46;
-  color: $orange-color;
-}
-
-.software-developer {
-  font-size: $font-size-24;
-  color: $orange-color;
-}
-
-.software-developer-subtitle-lg {
-  font-size: $font-size-18;
-}
-
-.software-developer-subtitle {
-  font-size: $font-size-14;
 }

@@ -6,15 +6,42 @@ import { useWindowWidth } from '@react-hook/window-size';
 import FlipBox from 'react-card-flip';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { Link } from 'react-scroll';
+import { Hexagon } from 'react-feather';
 import {
   bhLangIcon, enLangIcon, logo,
 } from '../assets/img';
-import { SCREEN_SIZES } from '../constants';
+import { LINK_PROPERTIES, SCREEN_SIZES } from '../constants';
 
 const Navbar = () => {
   const [mainLanguageSelected, setMainLanguageSelected] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const screenWidth = useWindowWidth();
+
+  const flipBoxLanguages = (
+    <FlipBox isFlipped={mainLanguageSelected} flipDirection="vertical">
+      <img
+        src={bhLangIcon}
+        alt=""
+        className="lang-icon cursor-pointer"
+        onClick={() => setMainLanguageSelected(!mainLanguageSelected)}
+      />
+      <img
+        src={enLangIcon}
+        alt=""
+        className="lang-icon cursor-pointer"
+        onClick={() => setMainLanguageSelected(!mainLanguageSelected)}
+      />
+    </FlipBox>
+  );
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 50) {
+      setScrolled(true);
+    } else if (window.pageYOffset <= 50) {
+      setScrolled(false);
+    }
+  });
 
   useEffect(() => {
     if (screenWidth > SCREEN_SIZES.XS) { setDropdownOpen(false); }
@@ -22,75 +49,81 @@ const Navbar = () => {
 
   return (
   // Since design is different on different screen  logic has to be separated
-    <Container className="navbar-container">
-      <Row className="d-flex align-items-center pt-5 cover-padding">
-        <Col xs={12} lg={3} className="d-flex justify-content-center justify-content-lg-start pl-sm-5">
-          <img src={logo} alt="" className="logo" />
+    <Container
+      className={
+      screenWidth > SCREEN_SIZES.LG
+        ? `navbar-container-lg ${scrolled ? 'navbar-container-scrolled pt-3 pb-3' : 'pt-lg-5'}`
+        : `navbar-container ${scrolled ? 'navbar-container-scrolled' : ''}`
+    }
+    >
+      <Row className="d-flex align-items-center cover-padding">
+        <Col xs={6} lg={3} className="d-flex justify-content-start pl-sm-5">
+          <img
+            src={logo}
+            alt=""
+            className={
+              screenWidth > SCREEN_SIZES.LG ? `logo-lg ${scrolled ? 'logo-scrolled' : ''}` : 'logo'
+            }
+          />
         </Col>
         <Col
-          xs={12}
+          xs={6}
           lg={9}
-          className="d-flex align-items-center justify-content-between justify-content-lg-end pr-sm-5"
+          className="d-flex align-items-center justify-content-end pr-sm-5"
         >
           {screenWidth > SCREEN_SIZES.MD
             ? (
               <>
-                <Link spy smooth to="basic-information">
+                <Link {...LINK_PROPERTIES} to="basic-information">
                   <span className="cursor-pointer mr-3 navbar-item-hover pb-2">BASIC INFORMATION</span>
                 </Link>
-                <Link spy smooth to="work-experience">
+                <Link {...LINK_PROPERTIES} to="work-experience">
                   <span className="cursor-pointer mr-3 navbar-item-hover pb-2">WORK EXPERIENCE</span>
                 </Link>
-                <Link spy smooth to="education">
+                <Link {...LINK_PROPERTIES} to="education">
                   <span className="cursor-pointer mr-3 navbar-item-hover pb-2">EDUCATION</span>
                 </Link>
-                <Link spy smooth to="skills">
+                <Link {...LINK_PROPERTIES} to="skills">
                   <span className="cursor-pointer mr-3 navbar-item-hover pb-2">SKILLS</span>
                 </Link>
-                <Link spy smooth to="projects-and-awards" activeClass="section-active">
+                <Link {...LINK_PROPERTIES} to="projects-and-awards" activeClass="section-active">
                   <span className="cursor-pointer mr-3 navbar-item-hover pb-2">PROJECTS & AWARDS</span>
                 </Link>
+                {flipBoxLanguages}
               </>
             ) : (
-              <HamburgerSqueeze
-                barColor="#FFFFFF"
-                isActive={dropdownOpen}
-                toggleButton={() => setDropdownOpen(!dropdownOpen)}
-                className="ml-4"
-              />
+              <>
+                {flipBoxLanguages}
+                <HamburgerSqueeze
+                  barColor="#FFFFFF"
+                  isActive={dropdownOpen}
+                  toggleButton={() => setDropdownOpen(!dropdownOpen)}
+                />
+              </>
             ) }
-          <FlipBox isFlipped={mainLanguageSelected} flipDirection="vertical">
-            <img
-              src={bhLangIcon}
-              alt=""
-              className="lang-icon cursor-pointer mr-4 mr-sm-0"
-              onClick={() => setMainLanguageSelected(!mainLanguageSelected)}
-            />
-            <img
-              src={enLangIcon}
-              alt=""
-              className="lang-icon cursor-pointer mr-4 mr-sm-0"
-              onClick={() => setMainLanguageSelected(!mainLanguageSelected)}
-            />
-          </FlipBox>
         </Col>
       </Row>
       <Collapse isOpen={dropdownOpen && screenWidth <= SCREEN_SIZES.MD}>
-        <Row className="cursor-pointer hamburger-dropdown d-flex justify-content-center ml-4">
-          <Col xs={12} className="pt-3">
-            <Link spy smooth to="basic-information">BASIC INFORMATION</Link>
+        <Row className="cursor-pointer hamburger-dropdown d-flex justify-content-center pb-2">
+          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
+            <Hexagon className="pr-2" color="#ff6b1f" />
+            <Link {...LINK_PROPERTIES} to="basic-information">BASIC INFORMATION</Link>
           </Col>
-          <Col xs={12} className="pt-3">
-            <Link spy smooth to="work-experience">WORK EXPERIENCE</Link>
+          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
+            <Hexagon className="pr-2" color="#ff6b1f" />
+            <Link {...LINK_PROPERTIES} to="work-experience">WORK EXPERIENCE</Link>
           </Col>
-          <Col xs={12} className="pt-3">
-            <Link spy smooth to="education">EDUCATION</Link>
+          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
+            <Hexagon className="pr-2" color="#ff6b1f" />
+            <Link {...LINK_PROPERTIES} to="education">EDUCATION</Link>
           </Col>
-          <Col xs={12} className="pt-3">
-            <Link spy smooth to="skills">SKILLS</Link>
+          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
+            <Hexagon className="pr-2" color="#ff6b1f" />
+            <Link {...LINK_PROPERTIES} to="skills">SKILLS</Link>
           </Col>
-          <Col xs={12} className="pt-3">
-            <Link spy smooth to="projects-and-awards">PROJECTS & AWARDS</Link>
+          <Col xs={10} className="p-0 py-2">
+            <Hexagon className="pr-2" color="#ff6b1f" />
+            <Link {...LINK_PROPERTIES} to="projects-and-awards">PROJECTS & AWARDS</Link>
           </Col>
         </Row>
       </Collapse>

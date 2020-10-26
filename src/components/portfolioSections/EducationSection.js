@@ -7,7 +7,7 @@ import {
   PORTFOLIO,
   PORTFOLIO_SECTION_PROPERTIES,
 } from '../../constants';
-import EducationItem from '../EducationItem';
+import EducationItem from '../portfolioSectionItems/EducationItem';
 
 const EducationSection = () => {
   const [title, content] = [PORTFOLIO.EDUCATION.title, PORTFOLIO.EDUCATION.content];
