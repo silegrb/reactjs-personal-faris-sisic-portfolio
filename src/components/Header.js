@@ -2,14 +2,17 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Fade } from 'react-reveal';
-import { SCREEN_SIZES } from '../constants';
+import {
+  PORTFOLIO_SECTION_PROPERTIES,
+  SCREEN_SIZES,
+} from '../constants';
 import { profilePicture } from '../assets/img';
 
 const Header = () => {
   const screenWidth = useWindowWidth();
 
   return (
-    <Fade bottom>
+    <Fade {...PORTFOLIO_SECTION_PROPERTIES}>
       <Container className="d-flex justify-content-center">
         <Row className="w-100">
           <Col xs={12} lg={7} className="d-flex justify-content-lg-start justify-content-center">

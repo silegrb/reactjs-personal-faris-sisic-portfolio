@@ -27,6 +27,12 @@ export const SCREEN_SIZES = {
   XL: 2399,
 };
 
+export const PORTFOLIO_SECTION_PROPERTIES = {
+  bottom: true,
+  fraction: 0,
+  duration: 650,
+};
+
 // Months go from 0 do 11
 export const PORTFOLIO = {
   BASIC_INFORMATION: {

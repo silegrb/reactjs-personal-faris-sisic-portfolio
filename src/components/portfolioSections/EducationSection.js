@@ -3,14 +3,17 @@ import {
   Card, CardBody, Container, Row, Col,
 } from 'reactstrap';
 import { Fade } from 'react-reveal';
-import { PORTFOLIO } from '../constants';
-import EducationItem from './EducationItem';
+import {
+  PORTFOLIO,
+  PORTFOLIO_SECTION_PROPERTIES,
+} from '../../constants';
+import EducationItem from '../EducationItem';
 
 const EducationSection = () => {
   const [title, content] = [PORTFOLIO.EDUCATION.title, PORTFOLIO.EDUCATION.content];
 
   return (
-    <Fade bottom>
+    <Fade {...PORTFOLIO_SECTION_PROPERTIES}>
       <Card className="ml-3 mt-5 section card-shadow" id="education">
         <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
         <CardBody className="px-0">

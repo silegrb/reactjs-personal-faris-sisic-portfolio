@@ -13,15 +13,19 @@ import {
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Fade } from 'react-reveal';
-import { PORTFOLIO, SCREEN_SIZES } from '../constants';
-import { formatDate } from '../utils/date';
+import {
+  PORTFOLIO,
+  PORTFOLIO_SECTION_PROPERTIES,
+  SCREEN_SIZES,
+} from '../../constants';
+import { formatDate } from '../../utils/date';
 
 const BasicInformationSection = () => {
   const [title, content] = [PORTFOLIO.BASIC_INFORMATION.title, PORTFOLIO.BASIC_INFORMATION.content];
   const screenWidth = useWindowWidth();
 
   return (
-    <Fade bottom>
+    <Fade {...PORTFOLIO_SECTION_PROPERTIES}>
       <Card className="section card-shadow ml-3" id="basic-information">
         <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
         <CardBody>
