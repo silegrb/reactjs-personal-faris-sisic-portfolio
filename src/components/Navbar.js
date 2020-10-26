@@ -55,6 +55,8 @@ const Navbar = () => {
       await i18n.changeLanguage(mainLanguageSelected ? 'en' : 'bh');
       localStorage.setItem('language', mainLanguageSelected ? 'en' : 'bh');
     })();
+
+    // eslint-disable-next-line
   }, [mainLanguageSelected]);
 
   return (
