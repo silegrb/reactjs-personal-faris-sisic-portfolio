@@ -7,6 +7,7 @@ import {
   CalendarOutlined,
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
+import { useTranslation } from 'react-i18next';
 import { formatDate } from '../../utils/date';
 import { SCREEN_SIZES } from '../../constants';
 
@@ -22,6 +23,8 @@ const EducationItem = ({
   website,
   avatar,
 }) => {
+  const { t } = useTranslation();
+
   const screenWidth = useWindowWidth();
 
   const dateColumn = (
@@ -41,7 +44,11 @@ const EducationItem = ({
     </Col>
   );
   const avatarColumn = <Col xs={2} md={1} className="p-0"><img alt="" src={avatar} className="items-avatar" /></Col>;
-  const positionColumn = <Col xs={10} md={7} className="d-flex justify-content-start align-items-center items-title">{title}</Col>;
+  const positionColumn = (
+    <Col xs={10} md={7} className="d-flex justify-content-start align-items-center items-title">
+      {t(title)}
+    </Col>
+  );
 
   return (
     <Container>
@@ -65,7 +72,7 @@ const EducationItem = ({
           lg={{ offset: 5, size: 7 }}
           className={`pt-3 pt-lg-0 d-flex justify-content-start align-items-center items-subtitle ${location || website ? 'pb-2' : ''}`}
         >
-          {educationalInstitution}
+          {t(educationalInstitution)}
         </Col>
         {screenWidth <= SCREEN_SIZES.MD && dateColumn}
         {location && (

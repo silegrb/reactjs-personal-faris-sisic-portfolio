@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
 import { ArrowUpCircle } from 'react-feather';
 import { animateScroll } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 import { PORTFOLIO, SCREEN_SIZES } from '../constants';
 import packageJson from '../../package.json';
 import { redirect } from '../utils/redirect';
@@ -11,6 +12,8 @@ import {
 } from '../assets/img';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   const screenWidth = useWindowWidth();
   const { content } = PORTFOLIO.BASIC_INFORMATION;
 
@@ -21,7 +24,7 @@ const Footer = () => {
           xs={{ offset: 3, size: 6 }}
           className={`d-flex justify-content-center ${screenWidth > SCREEN_SIZES.LG ? 'lets-connect-container-lg' : 'lets-connect-container'}`}
         >
-          Let's connect
+          {t('components.letsConnect')}
         </Col>
         <Col
           xs={{ offset: 2, size: 8 }}
@@ -35,7 +38,7 @@ const Footer = () => {
           <img alt="" src={githubIcon} className="footer-icon" onClick={() => redirect(content.githubLink)} />
         </Col>
         <Col xs={12} className="d-flex justify-content-center pt-2">
-          {`Version ${packageJson.version}`}
+          {`${t('components.version')} ${packageJson.version}`}
         </Col>
         <Col xs={{ offset: 2, size: 8 }} className="d-flex justify-content-center pt-2 text-center">
           &copy;

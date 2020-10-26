@@ -7,13 +7,16 @@ import FlipBox from 'react-card-flip';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { Link } from 'react-scroll';
 import { Hexagon } from 'react-feather';
+import { useTranslation } from 'react-i18next';
 import {
   bhLangIcon, enLangIcon, logo,
 } from '../assets/img';
 import { LINK_PROPERTIES, SCREEN_SIZES } from '../constants';
 
 const Navbar = () => {
-  const [mainLanguageSelected, setMainLanguageSelected] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const [mainLanguageSelected, setMainLanguageSelected] = useState(localStorage.getItem('language') === 'en');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const screenWidth = useWindowWidth();
@@ -47,6 +50,13 @@ const Navbar = () => {
     if (screenWidth > SCREEN_SIZES.XS) { setDropdownOpen(false); }
   }, [screenWidth]);
 
+  useEffect(() => {
+    (async () => {
+      await i18n.changeLanguage(mainLanguageSelected ? 'en' : 'bh');
+      localStorage.setItem('language', mainLanguageSelected ? 'en' : 'bh');
+    })();
+  }, [mainLanguageSelected]);
+
   return (
   // Since design is different on different screen  logic has to be separated
     <Container
@@ -75,19 +85,29 @@ const Navbar = () => {
             ? (
               <>
                 <Link {...LINK_PROPERTIES} to="basic-information">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">BASIC INFORMATION</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
+                    {t('components.basicInformation').toUpperCase()}
+                  </span>
                 </Link>
                 <Link {...LINK_PROPERTIES} to="work-experience">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">WORK EXPERIENCE</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
+                    {t('components.workExperience').toUpperCase()}
+                  </span>
                 </Link>
                 <Link {...LINK_PROPERTIES} to="education">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">EDUCATION</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
+                    {t('components.education').toUpperCase()}
+                  </span>
                 </Link>
                 <Link {...LINK_PROPERTIES} to="skills">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">SKILLS</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
+                    {t('components.skills').toUpperCase()}
+                  </span>
                 </Link>
                 <Link {...LINK_PROPERTIES} to="projects-and-awards" activeClass="section-active">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">PROJECTS & AWARDS</span>
+                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
+                    {t('components.projectsAndAwards').toUpperCase()}
+                  </span>
                 </Link>
                 {flipBoxLanguages}
               </>
@@ -107,23 +127,33 @@ const Navbar = () => {
         <Row className="cursor-pointer hamburger-dropdown d-flex justify-content-center pb-2">
           <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
             <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="basic-information">BASIC INFORMATION</Link>
+            <Link {...LINK_PROPERTIES} to="basic-information">
+              {t('components.basicInformation').toUpperCase()}
+            </Link>
           </Col>
           <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
             <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="work-experience">WORK EXPERIENCE</Link>
+            <Link {...LINK_PROPERTIES} to="work-experience">
+              {t('components.workExperience').toUpperCase()}
+            </Link>
           </Col>
           <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
             <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="education">EDUCATION</Link>
+            <Link {...LINK_PROPERTIES} to="education">
+              {t('components.education').toUpperCase()}
+            </Link>
           </Col>
           <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
             <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="skills">SKILLS</Link>
+            <Link {...LINK_PROPERTIES} to="skills">
+              {t('components.skills').toUpperCase()}
+            </Link>
           </Col>
           <Col xs={10} className="p-0 py-2">
             <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="projects-and-awards">PROJECTS & AWARDS</Link>
+            <Link {...LINK_PROPERTIES} to="projects-and-awards">
+              {t('components.projectsAndAwards').toUpperCase()}
+            </Link>
           </Col>
         </Row>
       </Collapse>

@@ -13,6 +13,7 @@ import {
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Fade } from 'react-reveal';
+import { useTranslation } from 'react-i18next';
 import {
   PORTFOLIO,
   PORTFOLIO_SECTION_PROPERTIES,
@@ -21,13 +22,17 @@ import {
 import { formatDate } from '../../utils/date';
 
 const BasicInformationSection = () => {
+  const { t } = useTranslation();
+
   const [title, content] = [PORTFOLIO.BASIC_INFORMATION.title, PORTFOLIO.BASIC_INFORMATION.content];
   const screenWidth = useWindowWidth();
 
   return (
     <Fade {...PORTFOLIO_SECTION_PROPERTIES}>
       <Card className="section card-shadow ml-3" id="basic-information">
-        <div className="section-title d-flex align-items-center pl-2 pl-sm-4">{title}</div>
+        <div className="section-title d-flex align-items-center pl-2 pl-sm-4">
+          {t(title).toUpperCase()}
+        </div>
         <CardBody>
           <Container>
             <Row className="w-100">
@@ -64,11 +69,11 @@ const BasicInformationSection = () => {
                   </Col>
                   <Col xs={12} className="d-flex align-items-center pb-3">
                     <IdcardOutlined className="light-gray-icon pr-3" />
-                    {content.gender}
+                    {t(content.gender)}
                   </Col>
                   <Col xs={12} className="d-flex align-items-center pb-3">
                     <GlobalOutlined className="light-gray-icon pr-3" />
-                    {content.nationality}
+                    {t(content.nationality)}
                   </Col>
                   <Col xs={12} className="d-flex align-items-center pb-3">
                     <PhoneOutlined className="light-gray-icon pr-3" />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Fade } from 'react-reveal';
+import { useTranslation } from 'react-i18next';
 import {
   PORTFOLIO_SECTION_PROPERTIES,
   SCREEN_SIZES,
@@ -9,6 +10,8 @@ import {
 import { profilePicture } from '../assets/img';
 
 const Header = () => {
+  const { t } = useTranslation();
+
   const screenWidth = useWindowWidth();
 
   return (
@@ -28,7 +31,7 @@ const Header = () => {
                 xs={12}
                 className={`d-flex justify-content-center ${screenWidth > SCREEN_SIZES.LG ? 'software-developer-lg' : 'software-developer'}`}
               >
-                {'<software-developer />'}
+                {`<${t('components.software-developer')} />`}
               </Col>
               <Col
                 xs={{ offset: 1, size: 10 }}
@@ -37,7 +40,7 @@ const Header = () => {
                 lg={{ offset: 2, size: 8 }}
                 className={`d-flex justify-content-center text-center pt-3 ${screenWidth > SCREEN_SIZES.LG ? 'software-developer-subtitle-lg' : 'software-developer-subtitle'}`}
               >
-                Welcome to the official website and online portfolio of Faris Šišić, Software Developer based in Bosnia and Herzegovina. Feel free to scroll down for more info.
+                {`${t('components.welcomeMessage')}.`}
               </Col>
             </Row>
           </Col>

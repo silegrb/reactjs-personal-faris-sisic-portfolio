@@ -6,6 +6,7 @@ import { ROUTES } from './constants';
 import PageNotFound from './components/PageNotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import './i18n';
 
 function App() {
   const [loading, setLoading] = useState(true);

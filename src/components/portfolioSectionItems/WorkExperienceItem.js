@@ -7,6 +7,7 @@ import {
   CalendarOutlined,
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
+import { useTranslation } from 'react-i18next';
 import { formatDate } from '../../utils/date';
 import { SCREEN_SIZES } from '../../constants';
 
@@ -19,6 +20,8 @@ const WorkExperienceItem = ({
   website,
   avatar,
 }) => {
+  const { t } = useTranslation();
+
   const screenWidth = useWindowWidth();
 
   const dateColumn = (
@@ -37,7 +40,11 @@ const WorkExperienceItem = ({
     </Col>
   );
   const avatarColumn = <Col xs={2} md={1} className="p-0"><img alt="" src={avatar} className="items-avatar" /></Col>;
-  const positionColumn = <Col xs={10} md={7} className="d-flex justify-content-start align-items-center items-title">{position}</Col>;
+  const positionColumn = (
+    <Col xs={10} md={7} className="d-flex justify-content-start align-items-center items-title">
+      {t(position)}
+    </Col>
+  );
 
   return (
     <Container>

@@ -25,7 +25,8 @@ module.exports = {
     'global-require': 0,
     'no-useless-escape': 0,
     'react/no-array-index-key': 0,
-    'react/no-unescaped-entities': 0
+    'react/no-unescaped-entities': 0,
+    'react-hooks/exhaustive-deps': 0
   },
   globals: {
     localStorage: true,

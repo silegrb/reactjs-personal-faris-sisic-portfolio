@@ -42,13 +42,13 @@ export const LINK_PROPERTIES = {
 // Months go from 0 do 11
 export const PORTFOLIO = {
   BASIC_INFORMATION: {
-    title: 'BASIC INFORMATION',
+    title: 'components.basicInformation',
     content: {
       name: 'Faris',
       surname: 'Šišić',
       dateOfBirth: new Date(1998, 7, 24),
-      gender: 'Male',
-      nationality: 'Bosnian-Herzegovinian',
+      gender: 'components.male',
+      nationality: 'components.bosniaAndHerzegovina',
       mobilePhone: '+ 387 60 338 1032',
       emailAddress: 'sisicfarisofficial@gmail.com',
       address: 'Hasana Brkića 15, Sarajevo',
@@ -61,10 +61,10 @@ export const PORTFOLIO = {
     },
   },
   WORK_EXPERIENCE: {
-    title: 'WORK EXPERIENCE',
+    title: 'components.workExperience',
     content: [
       {
-        position: 'Intern',
+        position: 'components.intern',
         workplace: 'Softhouse Consulting',
         startDate: new Date(2020, 3, 1),
         endDate: new Date(2020, 5, 30),
@@ -73,7 +73,7 @@ export const PORTFOLIO = {
         avatar: softhouseLogo,
       },
       {
-        position: 'Software Developer',
+        position: 'components.softwareDeveloper',
         workplace: 'Softhouse Consulting',
         startDate: new Date(2020, 6, 1),
         location: 'Trg Solidarnosti 2, Sarajevo',
@@ -83,11 +83,11 @@ export const PORTFOLIO = {
     ],
   },
   EDUCATION: {
-    title: 'EDUCATION',
+    title: 'components.education',
     content: [
       {
-        title: 'Primary School Diploma',
-        educationalInstitution: 'Primary School "Grbavica II"',
+        title: 'components.primarySchoolDiploma',
+        educationalInstitution: 'components.primarySchoolGrbavicaII',
         startDate: new Date(2004, 8),
         startDateFormatter: 'MMM, YYYY',
         endDate: new Date(2013, 5),
@@ -97,8 +97,8 @@ export const PORTFOLIO = {
         avatar: grbavicaDvaLogo,
       },
       {
-        title: 'High School Diploma',
-        educationalInstitution: 'Second gymnasium Sarajevo',
+        title: 'components.highSchoolDiploma',
+        educationalInstitution: 'components.secondGymnasiumSarajevo',
         startDate: new Date(2013, 8),
         startDateFormatter: 'MMM, YYYY',
         endDate: new Date(2017, 5),
@@ -108,8 +108,9 @@ export const PORTFOLIO = {
         avatar: drugaGimnazijaSarajevoLogo,
       },
       {
-        title: 'Bachelor of Electrical Engineering',
-        educationalInstitution: 'Faculty of Electrical Engineering',
+        title: 'components.bachelorOfElectricalEngineering',
+        educationalInstitution:
+          'components.facultyOfElectricalEngineeringSarajevo',
         startDate: new Date(2017, 9, 1),
         endDate: new Date(2020, 6, 23),
         location: 'Zmaja od Bosne bb, Sarajevo',
@@ -117,8 +118,8 @@ export const PORTFOLIO = {
         avatar: elektrotehnickiFakultetSarajevoLogo,
       },
       {
-        title: 'Altera Lingua "Follow Me" Certificate C1',
-        educationalInstitution: 'English language course "Follow Me"',
+        title: 'components.alteraLinguaFollowMeCertificateC1',
+        educationalInstitution: 'components.englishLanguageCourseFollowMe',
         startDate: new Date(2003, 8),
         startDateFormatter: 'MMM, YYYY',
         endDate: new Date(2017, 4),
@@ -128,8 +129,8 @@ export const PORTFOLIO = {
         avatar: followMeAlteraLinguaLogo,
       },
       {
-        title: 'Altera Lingua "Follow Me" Zeugnis A2',
-        educationalInstitution: 'German language course "Follow Me"',
+        title: 'components.alteraLinguaFollowMeCertificateA2',
+        educationalInstitution: 'components.germanLanguageCourseFollowMe',
         startDate: new Date(2008, 8),
         startDateFormatter: 'MMM, YYYY',
         endDate: new Date(2011, 4),
@@ -139,39 +140,39 @@ export const PORTFOLIO = {
         avatar: followMeAlteraLinguaLogo,
       },
       {
-        title: 'New knowledge',
+        title: 'components.newKnowledge',
         educationalInstitution:
-          'Symphony MEETUP "Hybernate" - Migrations, Deployments and Optimization',
+          'components.symphonyMeetupHybernateMigrationsDeploymentsAndOptimizations',
         date: new Date(2019, 3, 19),
         avatar: symphonySarajevoLogo,
       },
       {
-        title: 'New knowledge',
-        educationalInstitution: 'BH Engineering Weeks 2019',
+        title: 'components.newKnowledge',
+        educationalInstitution: 'components.bhEngineeringWeeks2019',
         date: new Date(2019, 11, 12),
         website: 'www.bhing.ba',
         avatar: BHEngineeringWeeksSarajevoLogo,
       },
       {
-        title: 'Innovation challenge winners',
-        educationalInstitution: 'Hackathon "Just Code It" in Sarajevo',
+        title: 'components.innovationChallengeWinners',
+        educationalInstitution: 'components.hackathonJustCodeItInSarajevo',
         startDate: new Date(2019, 11, 21),
         endDate: new Date(2019, 11, 22),
         avatar: hackathonJustCodeItSarajevoLogo,
       },
       {
-        title: 'Completed course',
+        title: 'components.completedCourse',
         educationalInstitution:
-          'React - The Complete Guide (incl Hooks, React Router, Redux)',
+          'components.reactTheCompleteGuideInclHooksReactRouterRedux',
         startDate: new Date(2020, 3, 1),
         endDate: new Date(2020, 3, 15),
         website: 'www.udemy.com/course/react-the-complete-guide-incl-redux',
         avatar: udemyLogo,
       },
       {
-        title: 'New knowledge',
+        title: 'components.newKnowledge',
         educationalInstitution:
-          'Online Meetup: How to become a UX/UI Designer?',
+          'components.onlineMeetupHowToBecomeAUXUIDesigner',
         date: new Date(2020, 9, 21),
         website: 'www.atlantbh.com',
         avatar: atlantBhLogo,

@@ -1,0 +1,41 @@
+{
+  "button": {
+    "goBackHome": "Idite nazad na početnu"
+  },
+  "components": {
+    "basicInformation": "Osnovne informacije",
+    "workExperience": "Radno iskustvo",
+    "education": "Edukacija",
+    "skills": "Vještine",
+    "projectsAndAwards": "Projekti & Nagrade",
+    "letsConnect": "Konektujmo se",
+    "version": "Verzija",
+    "welcomeMessage": "Dobrodošli na oficijalnu stranicu i online portfolio Farisa Šišića, softver developera iz Bosne i Hercegovine. Slobodno povucite prema dole za više informacija",
+    "software-developer": "softver-developer",
+    "pageNotFound": "stranica-nije-pronađena",
+    "pageNotFoundMessage": "Oprostite, ali stranica koju tražite ne postoji ili je obrisana. Vjerovatno ste ukucali pogrešan URL ili nešto",
+    "male": "Muško",
+    "bosniaAndHerzegovina": "Bosna i Hercegovina",
+    "intern": "Praktikant",
+    "softwareDeveloper": "Softver developer",
+    "primarySchoolDiploma": "Diploma osnovne škole",
+    "primarySchoolGrbavicaII": "Osnovna škola \"Grbavica II\"",
+    "highSchoolDiploma": "Diploma srednje škole",
+    "secondGymnasiumSarajevo": "Druga gimnazija Sarajevo",
+    "bachelorOfElectricalEngineering": "Bachelor Elektrotehnike",
+    "facultyOfElectricalEngineeringSarajevo": "Elektrotehnički fakultet Sarajevo",
+    "alteraLinguaFollowMeCertificateC1": "Altera Lingua \"Follow Me\" Certifikat C1",
+    "englishLanguageCourseFollowMe": "Kurs engleskog jezika \"Follow Me\"",
+    "alteraLinguaFollowMeCertificateA2": "Altera Lingua \"Follow Me\" Certifikat A2",
+    "germanLanguageCourseFollowMe": "Kurs njemačkog jezika \"Follow Me\"",
+    "newKnowledge": "Novo znanje",
+    "symphonyMeetupHybernateMigrationsDeploymentsAndOptimizations": "Symphony SKUP \"Hybernate\" - Migracije, Razvijanja i Optimizacije",
+    "bhEngineeringWeeks2019": "BH Sedmice Inženjerstva 2019",
+    "innovationChallengeWinners": "Pobjednici izazova za otkriće",
+    "hackathonJustCodeItInSarajevo": "Hackathon \"Just Code It\" u Sarajevu",
+    "completedCourse": "Završen kurs",
+    "reactTheCompleteGuideInclHooksReactRouterRedux": "React - Kompletan Vodič (uključujući Hooks, React Router, Redux)",
+    "onlineMeetupHowToBecomeAUXUIDesigner": "Online Skup: Kako postati UX/UI Dizajner?"
+
+  }
+}

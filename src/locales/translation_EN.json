@@ -1,0 +1,40 @@
+{
+  "button": {
+    "goBackHome": "Go back home"
+  },
+  "components": {
+    "basicInformation": "Basic information",
+    "workExperience": "Work experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projectsAndAwards": "Projects & Awards",
+    "letsConnect": "Let's connect",
+    "version": "Version",
+    "welcomeMessage": "Welcome to the official website and online portfolio of Faris Šišić, Software Developer based in Bosnia and Herzegovina. Feel free to scroll down for more info",
+    "software-developer": "software-developer",
+    "pageNotFound": "page-not-found",
+    "pageNotFoundMessage": "Sorry, but page you are looking for does not exist or has been removed. You probably entered the wrong URL or something",
+    "male": "Male",
+    "bosniaAndHerzegovina": "Bosnia and Herzegovina",
+    "intern": "Intern",
+    "softwareDeveloper": "Software edveloper",
+    "primarySchoolDiploma": "Primary school diploma",
+    "primarySchoolGrbavicaII": "Primary school \"Grbavica II\"",
+    "highSchoolDiploma": "High School Diploma",
+    "secondGymnasiumSarajevo": "Second Gymnasium Sarajevo",
+    "bachelorOfElectricalEngineering": "Bachelor of Electrical Engineering",
+    "facultyOfElectricalEngineeringSarajevo": "Faculty of Electrical Engineering Sarajevo",
+    "alteraLinguaFollowMeCertificateC1": "Altera Lingua \"Follow Me\" Certificate C1",
+    "englishLanguageCourseFollowMe": "English language course \"Follow Me\"",
+    "alteraLinguaFollowMeCertificateA2": "Altera Lingua \"Follow Me\" Certificate A2",
+    "germanLanguageCourseFollowMe": "German language course \"Follow Me\"",
+    "newKnowledge": "New knowledge",
+    "symphonyMeetupHybernateMigrationsDeploymentsAndOptimizations": "Symphony MEETUP \"Hybernate\" - Migrations, Deployments and Optimization",
+    "bhEngineeringWeeks2019": "BH Engineering Weeks 2019",
+    "innovationChallengeWinners": "Innovation challenge winners",
+    "hackathonJustCodeItInSarajevo": "Hackathon \"Just Code It\" in Sarajevo",
+    "completedCourse": "Completed course",
+    "reactTheCompleteGuideInclHooksReactRouterRedux": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+    "onlineMeetupHowToBecomeAUXUIDesigner": "Online Meetup: How to become a UX/UI Designer?"
+  }
+}
