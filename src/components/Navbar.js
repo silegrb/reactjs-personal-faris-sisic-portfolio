@@ -5,8 +5,10 @@ import {
 import { useWindowWidth } from '@react-hook/window-size';
 import FlipBox from 'react-card-flip';
 import { HamburgerSqueeze } from 'react-animated-burgers';
-import { Link } from 'react-scroll';
-import { Hexagon } from 'react-feather';
+import { animateScroll, Link } from 'react-scroll';
+import {
+  ChevronUp, Hexagon,
+} from 'react-feather';
 import { useTranslation } from 'react-i18next';
 import {
   bhLangIcon, enLangIcon, logo,
@@ -19,6 +21,7 @@ const Navbar = () => {
   const [mainLanguageSelected, setMainLanguageSelected] = useState(localStorage.getItem('language') === 'en');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const screenWidth = useWindowWidth();
 
   const flipBoxLanguages = (
@@ -41,8 +44,14 @@ const Navbar = () => {
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 50) {
       setScrolled(true);
-    } else if (window.pageYOffset <= 50) {
+    } else {
       setScrolled(false);
+    }
+
+    if (window.pageYOffset > 500) {
+      setShowScrollToTop(true);
+    } else {
+      setShowScrollToTop(false);
     }
   });
 
@@ -159,6 +168,12 @@ const Navbar = () => {
           </Col>
         </Row>
       </Collapse>
+      <ChevronUp
+        color="#ffffff"
+        size={screenWidth > SCREEN_SIZES.LG ? 70 : 60}
+        className={showScrollToTop ? 'scroll-to-top-icon cursor-pointer' : 'scroll-to-top-icon-not-displayed'}
+        onClick={() => animateScroll.scrollToTop()}
+      />
     </Container>
   );
 };

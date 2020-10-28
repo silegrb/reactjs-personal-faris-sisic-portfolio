@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
-import { ArrowUpCircle } from 'react-feather';
-import { animateScroll } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import { PORTFOLIO, SCREEN_SIZES } from '../constants';
 import packageJson from '../../package.json';
@@ -45,9 +43,6 @@ const Footer = () => {
           {` 2020 ${content.name} ${content.surname}, All Rights Reserved`}
         </Col>
       </Row>
-      <div className="position-absolute scroll-to-top-container">
-        <ArrowUpCircle color="#ff6b1f" size={70} className="cursor-pointer scroll-to-top-icon" onClick={() => animateScroll.scrollToTop()} />
-      </div>
     </Container>
   );
 };
