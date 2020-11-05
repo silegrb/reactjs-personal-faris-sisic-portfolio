@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['airbnb'],
   parser: 'babel-eslint',
+  plugins: ['react-hooks'],
   rules: {
     'react/jsx-filename-extension': 'off',
     curly: [2, 'all'],

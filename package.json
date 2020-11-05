@@ -1,6 +1,6 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -23,7 +23,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-animated-burgers": "^1.2.8",
-    "react-card-flip": "^1.0.11",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-i18next": "^11.7.3",

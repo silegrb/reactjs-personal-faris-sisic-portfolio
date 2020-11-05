@@ -2,6 +2,9 @@ import Content from './containers/Content';
 import {
   atlantBhLogo,
   BHEngineeringWeeksSarajevoLogo,
+  enLangIcon,
+  bhLangIcon,
+  deLangIcon,
   drugaGimnazijaSarajevoLogo,
   elektrotehnickiFakultetSarajevoLogo,
   followMeAlteraLinguaLogo,
@@ -321,3 +324,41 @@ SKILLS: {
 },
 */
 };
+
+export const LINKS = [
+  {
+    title: 'components.basicInformation',
+    id: 'basic-information',
+  },
+  {
+    title: 'components.workExperience',
+    id: 'work-experience',
+  },
+  {
+    title: 'components.education',
+    id: 'education',
+  },
+  {
+    title: 'components.skills',
+    id: 'skills',
+  },
+  {
+    title: 'components.projectsAndAwards',
+    id: 'projects-and-awards',
+  },
+];
+
+export const LANGUAGES = [
+  {
+    code: 'en',
+    flag: enLangIcon,
+  },
+  {
+    code: 'bh',
+    flag: bhLangIcon,
+  },
+  {
+    code: 'de',
+    flag: deLangIcon,
+  },
+];

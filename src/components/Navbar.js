@@ -3,43 +3,23 @@ import {
   Container, Row, Col, Collapse,
 } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
-import FlipBox from 'react-card-flip';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { animateScroll, Link } from 'react-scroll';
 import {
   ChevronUp, Hexagon,
 } from 'react-feather';
 import { useTranslation } from 'react-i18next';
-import {
-  bhLangIcon, enLangIcon, logo,
-} from '../assets/img';
-import { LINK_PROPERTIES, SCREEN_SIZES } from '../constants';
+import { logo } from '../assets/img';
+import { LINK_PROPERTIES, LINKS, SCREEN_SIZES } from '../constants';
+import LanguageDropdown from './LanguageDropdown';
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const [mainLanguageSelected, setMainLanguageSelected] = useState(localStorage.getItem('language') === 'en');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const screenWidth = useWindowWidth();
-
-  const flipBoxLanguages = (
-    <FlipBox isFlipped={mainLanguageSelected} flipDirection="vertical">
-      <img
-        src={bhLangIcon}
-        alt=""
-        className="lang-icon cursor-pointer"
-        onClick={() => setMainLanguageSelected(!mainLanguageSelected)}
-      />
-      <img
-        src={enLangIcon}
-        alt=""
-        className="lang-icon cursor-pointer"
-        onClick={() => setMainLanguageSelected(!mainLanguageSelected)}
-      />
-    </FlipBox>
-  );
 
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 50) {
@@ -58,15 +38,6 @@ const Navbar = () => {
   useEffect(() => {
     if (screenWidth > SCREEN_SIZES.XS) { setDropdownOpen(false); }
   }, [screenWidth]);
-
-  useEffect(() => {
-    (async () => {
-      await i18n.changeLanguage(mainLanguageSelected ? 'en' : 'bh');
-      localStorage.setItem('language', mainLanguageSelected ? 'en' : 'bh');
-    })();
-
-    // eslint-disable-next-line
-  }, [mainLanguageSelected]);
 
   return (
   // Since design is different on different screen  logic has to be separated
@@ -95,36 +66,18 @@ const Navbar = () => {
           {screenWidth > SCREEN_SIZES.MD
             ? (
               <>
-                <Link {...LINK_PROPERTIES} to="basic-information">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
-                    {t('components.basicInformation').toUpperCase()}
-                  </span>
-                </Link>
-                <Link {...LINK_PROPERTIES} to="work-experience">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
-                    {t('components.workExperience').toUpperCase()}
-                  </span>
-                </Link>
-                <Link {...LINK_PROPERTIES} to="education">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
-                    {t('components.education').toUpperCase()}
-                  </span>
-                </Link>
-                <Link {...LINK_PROPERTIES} to="skills">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
-                    {t('components.skills').toUpperCase()}
-                  </span>
-                </Link>
-                <Link {...LINK_PROPERTIES} to="projects-and-awards" activeClass="section-active">
-                  <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
-                    {t('components.projectsAndAwards').toUpperCase()}
-                  </span>
-                </Link>
-                {flipBoxLanguages}
+                {LINKS.map(({ id, title }) => (
+                  <Link {...LINK_PROPERTIES} to={id} key={id} onClick={() => setDropdownOpen(false)}>
+                    <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
+                      {t(title).toUpperCase()}
+                    </span>
+                  </Link>
+                ))}
+                <LanguageDropdown hideDropdown={() => setDropdownOpen(false)} />
               </>
             ) : (
               <>
-                {flipBoxLanguages}
+                <LanguageDropdown hideDropdown={() => setDropdownOpen(false)} />
                 <HamburgerSqueeze
                   barColor="#FFFFFF"
                   isActive={dropdownOpen}
@@ -136,36 +89,18 @@ const Navbar = () => {
       </Row>
       <Collapse isOpen={dropdownOpen && screenWidth <= SCREEN_SIZES.MD}>
         <Row className="cursor-pointer hamburger-dropdown d-flex justify-content-center pb-2">
-          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
-            <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="basic-information">
-              {t('components.basicInformation').toUpperCase()}
-            </Link>
-          </Col>
-          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
-            <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="work-experience">
-              {t('components.workExperience').toUpperCase()}
-            </Link>
-          </Col>
-          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
-            <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="education">
-              {t('components.education').toUpperCase()}
-            </Link>
-          </Col>
-          <Col xs={10} className="p-0 py-2 border-bottom-light-gray">
-            <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="skills">
-              {t('components.skills').toUpperCase()}
-            </Link>
-          </Col>
-          <Col xs={10} className="p-0 py-2">
-            <Hexagon className="pr-2" color="#ff6b1f" />
-            <Link {...LINK_PROPERTIES} to="projects-and-awards">
-              {t('components.projectsAndAwards').toUpperCase()}
-            </Link>
-          </Col>
+          {LINKS.map(({ id, title }, index) => (
+            <Col
+              xs={10}
+              className={`p-0 py-2 ${index < LINKS.length - 1 ? 'border-bottom-light-gray' : ''}`}
+              key={id}
+            >
+              <Hexagon className="pr-2" color="#ff6b1f" />
+              <Link {...LINK_PROPERTIES} to={id} onClick={() => setDropdownOpen(false)}>
+                {t(title).toUpperCase()}
+              </Link>
+            </Col>
+          ))}
         </Row>
       </Collapse>
       <ChevronUp

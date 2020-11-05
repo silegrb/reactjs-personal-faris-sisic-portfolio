@@ -1,7 +1,8 @@
 import logo from './image_logo.png';
 import profilePicture from './image_profile_picture.png';
-import bhLangIcon from './icon_bh_lang.gif';
-import enLangIcon from './icon_en_lang.gif';
+import bhLangIcon from './icon_bh_lang.png';
+import enLangIcon from './icon_en_lang.png';
+import deLangIcon from './icon_de_lang.png';
 import softhouseLogo from './image_softhouse_logo.png';
 import facebookIcon from './icon_facebook.svg';
 import instagramIcon from './icon_instagram.svg';
@@ -23,6 +24,7 @@ export {
   profilePicture,
   bhLangIcon,
   enLangIcon,
+  deLangIcon,
   softhouseLogo,
   facebookIcon,
   instagramIcon,
