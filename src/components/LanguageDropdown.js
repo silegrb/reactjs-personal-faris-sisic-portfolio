@@ -32,10 +32,10 @@ const LanguageDropdown = ({ hideDropdown }) => {
         />
       </DropdownToggle>
       <DropdownMenu right className="languages-menu mt-0 p-0 mt-1">
-        {LANGUAGES.map(({ code, flag }) => (
+        {LANGUAGES.map(({ code, flag }, index) => (
           <DropdownItem
             key={code}
-            className="px-3 py-1"
+            className={`px-3 py-1 ${!index ? 'pt-2' : ''} ${index === LANGUAGES.length - 1 ? 'pb-2' : ''}`}
             onClick={() => {
               i18n.changeLanguage(code);
               localStorage.setItem('language', code);

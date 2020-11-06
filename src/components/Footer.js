@@ -40,6 +40,7 @@ const Footer = () => {
         </Col>
         <Col xs={{ offset: 2, size: 8 }} className="d-flex justify-content-center pt-2 text-center">
           &copy;
+          {/* TODO Translation */}
           {` 2020 ${content.name} ${content.surname}, All Rights Reserved`}
         </Col>
       </Row>

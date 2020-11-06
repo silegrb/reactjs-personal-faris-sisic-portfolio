@@ -16,6 +16,12 @@
   background-color: $primary-color;
   transition: background-color 0.3s;
   box-shadow: 0 0 5px #434343;
+  z-index: 9999;
+}
+
+.navbar-container-dropdown-open {
+  background-color: $light-gray-color;
+  z-index: 9999;
 }
 
 .logo-lg {
@@ -82,4 +88,15 @@
   background-color: $primary-color;
   border: $light-gray-border-2px;
   min-width: 0;
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: display 0s, opacity 0.3s linear;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
 }

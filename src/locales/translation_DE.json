@@ -1,1 +1,40 @@
-{}
+{
+  "button": {
+    "goBackHome": "Wechsel zur Startseite"
+  },
+  "components": {
+    "basicInformation": "Allgemeine Infos",
+    "workExperience": "Arbeitserfahrung",
+    "education": "Ausbildung",
+    "skills": "Fähigkeiten",
+    "projectsAndAwards": "Projekte & Auszeichnungen",
+    "letsConnect": "Lassen Sie uns verbinden",
+    "version": "Version",
+    "welcomeMessage": "Willkommen zu der offiziellen Webseite und zu dem Lebenslauf von Faris Šišić, Software Entwickler aus Bosnien und Herzegowina. Wischen nach unter für mehr Informationen",
+    "software-developer": "software-entwickler",
+    "pageNotFound": "page-not-found",
+    "pageNotFoundMessage": " Es tut mir leid, die Seite, die Sie suchen ist nicht mehr verfügbar oder existiert nicht. Sie haben wahrscheinlich die falsche URL eingegeben oder ähnliches",
+    "male": "Male",
+    "bosniaAndHerzegovina": "Bosnien und Herzegowina",
+    "intern": "Intern",
+    "softwareDeveloper": "Software Entwickler",
+    "primarySchoolDiploma": "Grundschule Diplom",
+    "primarySchoolGrbavicaII": "Grundschule \"Grbavica II\"",
+    "highSchoolDiploma": "Gymnasium Diplom",
+    "secondGymnasiumSarajevo": "Zweite Gymnasium Sarajevo",
+    "bachelorOfElectricalEngineering": "Bachelor Elektrotechnik",
+    "facultyOfElectricalEngineeringSarajevo": "Fakultät für Elektrotecnik",
+    "alteraLinguaFollowMeCertificateC1": "Altera Lingua \"Follow Me\" Zeugnis C1",
+    "englishLanguageCourseFollowMe": "Englisch Sprachkurs \"Follow Me\"",
+    "alteraLinguaFollowMeCertificateA2": "Altera Lingua \"Follow Me\" Zeugnis A2",
+    "germanLanguageCourseFollowMe": "Deutsch Sprachkurs \"Follow Me\"",
+    "newKnowledge": "Neue Kenntnisse",
+    "symphonyMeetupHybernateMigrationsDeploymentsAndOptimizations": "Symphony MEETUP \"Hybernate\" - Migrations, Deployments and Optimization",
+    "bhEngineeringWeeks2019": "BH Engineering Weeks 2019",
+    "innovationChallengeWinners": "Innovation challenge winners",
+    "hackathonJustCodeItInSarajevo": "Hackathon \"Just Code It\" in Sarajevo",
+    "completedCourse": "Abgeschlossene Kurse ",
+    "reactTheCompleteGuideInclHooksReactRouterRedux": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+    "onlineMeetupHowToBecomeAUXUIDesigner": "Online Meetup: How to become a UX/UI Designer?"
+  }
+}
