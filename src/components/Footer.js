@@ -4,7 +4,7 @@ import { useWindowWidth } from '@react-hook/window-size';
 import { useTranslation } from 'react-i18next';
 import { PORTFOLIO, SCREEN_SIZES } from '../constants';
 import packageJson from '../../package.json';
-import { redirect } from '../utils/redirect';
+import { openInNewTab } from '../utils/openInNewTab';
 import {
   facebookIcon, githubIcon, instagramIcon, linkedinIcon, youtubeIcon,
 } from '../assets/img';
@@ -29,11 +29,11 @@ const Footer = () => {
           lg={{ offset: 4, size: 4 }}
           className="pt-3 pb-4 border-bottom-orange d-flex justify-content-center align-items-center"
         >
-          <img alt="" src={facebookIcon} className="footer-icon mr-2" onClick={() => redirect(content.facebookLink)} />
-          <img alt="" src={instagramIcon} className="footer-icon mr-2" onClick={() => redirect(content.instagramLink)} />
-          <img alt="" src={youtubeIcon} className="footer-icon mr-2" onClick={() => redirect(content.youtubeLink)} />
-          <img alt="" src={linkedinIcon} className="footer-icon mr-2" onClick={() => redirect(content.linkedInLink)} />
-          <img alt="" src={githubIcon} className="footer-icon" onClick={() => redirect(content.githubLink)} />
+          <img alt="" src={facebookIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.facebookLink)} />
+          <img alt="" src={instagramIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.instagramLink)} />
+          <img alt="" src={youtubeIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.youtubeLink)} />
+          <img alt="" src={linkedinIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.linkedInLink)} />
+          <img alt="" src={githubIcon} className="footer-icon" onClick={() => openInNewTab(content.githubLink)} />
         </Col>
         <Col xs={12} className="d-flex justify-content-center pt-2">
           {`${t('components.version')} ${packageJson.version}`}
