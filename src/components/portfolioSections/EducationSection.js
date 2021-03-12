@@ -23,7 +23,7 @@ const EducationSection = () => {
         </div>
         <CardBody className="px-0">
           <Container>
-            <Row className="w-100">
+            <Row className="d-flex justify-content-center">
               {content.map(({
                 title,
                 educationalInstitution,

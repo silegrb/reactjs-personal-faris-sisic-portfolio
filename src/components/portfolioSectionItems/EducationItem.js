@@ -8,8 +8,9 @@ import {
 } from '@ant-design/icons';
 import { useWindowWidth } from '@react-hook/window-size';
 import { useTranslation } from 'react-i18next';
+import { Fade } from 'react-reveal';
 import { formatDate } from '../../utils/date';
-import { SCREEN_SIZES } from '../../constants';
+import { PORTFOLIO_SECTION_PROPERTIES, SCREEN_SIZES } from '../../constants';
 
 const EducationItem = ({
   title,
@@ -51,54 +52,56 @@ const EducationItem = ({
   );
 
   return (
-    <Container>
-      <Row className="w-100">
-        {screenWidth >= SCREEN_SIZES.MD ? (
-          <>
-            {dateColumn}
-            {lineColumn}
-            {avatarColumn}
-            {positionColumn}
-          </>
-        ) : (
-          <>
-            {avatarColumn}
-            {positionColumn}
-            {screenWidth > SCREEN_SIZES.LG && dateColumn}
-          </>
-        )}
-        <Col
-          xs={12}
-          lg={{ offset: 5, size: 7 }}
-          className={`pt-3 pt-lg-0 d-flex justify-content-start align-items-center items-subtitle ${location || website ? 'pb-2' : ''}`}
-        >
-          {t(educationalInstitution)}
-        </Col>
-        {screenWidth <= SCREEN_SIZES.MD && dateColumn}
-        {location && (
-        <Col
-          xs={12}
-          lg={{ offset: 5, size: 7 }}
-          className={`item-hover cursor-pointer d-flex justify-content-start align-items-center ${website ? 'pb-2' : ''}`}
-        >
-          <EnvironmentOutlined className="light-gray-icon pr-3" />
-          {location}
-        </Col>
-        )}
-        {website && (
-        <Col
-          xs={12}
-          lg={{ offset: 5, size: 7 }}
-          className="item-hover cursor-pointer d-flex justify-content-start align-items-center"
-        >
-          <ChromeOutlined className="light-gray-icon pr-3" />
-          <a href={`https://${website}`}>
-            {website}
-          </a>
-        </Col>
-        )}
-      </Row>
-    </Container>
+    <Fade {...PORTFOLIO_SECTION_PROPERTIES}>
+      <Container>
+        <Row className="w-100">
+          {screenWidth >= SCREEN_SIZES.MD ? (
+            <>
+              {dateColumn}
+              {lineColumn}
+              {avatarColumn}
+              {positionColumn}
+            </>
+          ) : (
+            <>
+              {avatarColumn}
+              {positionColumn}
+              {screenWidth >= SCREEN_SIZES.LG && dateColumn}
+            </>
+          )}
+          <Col
+            xs={12}
+            lg={{ offset: 5, size: 7 }}
+            className={`pt-3 pt-lg-0 d-flex justify-content-start align-items-center items-subtitle ${location || website ? 'pb-2' : ''}`}
+          >
+            {t(educationalInstitution)}
+          </Col>
+          {screenWidth <= SCREEN_SIZES.MD && dateColumn}
+          {location && (
+            <Col
+              xs={12}
+              lg={{ offset: 5, size: 7 }}
+              className={`item-hover cursor-pointer d-flex justify-content-start align-items-center ${website ? 'pb-2' : ''}`}
+            >
+              <EnvironmentOutlined className="light-gray-icon pr-3" />
+              {location}
+            </Col>
+          )}
+          {website && (
+            <Col
+              xs={12}
+              lg={{ offset: 5, size: 7 }}
+              className="item-hover cursor-pointer d-flex justify-content-start align-items-center"
+            >
+              <ChromeOutlined className="light-gray-icon pr-3" />
+              <a href={`https://${website}`}>
+                {website}
+              </a>
+            </Col>
+          )}
+        </Row>
+      </Container>
+    </Fade>
   );
 };
 

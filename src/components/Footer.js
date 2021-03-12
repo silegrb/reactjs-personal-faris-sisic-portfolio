@@ -20,7 +20,7 @@ const Footer = () => {
       <Row className="w-100 pt-5 pb-4">
         <Col
           xs={{ offset: 3, size: 6 }}
-          className={`d-flex justify-content-center ${screenWidth > SCREEN_SIZES.LG ? 'lets-connect-container-lg' : 'lets-connect-container'}`}
+          className={`d-flex justify-content-center ${screenWidth >= SCREEN_SIZES.LG ? 'lets-connect-container-lg' : 'lets-connect-container'}`}
         >
           {t('components.letsConnect')}
         </Col>

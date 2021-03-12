@@ -1,6 +1,6 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.8.0",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.5.0",
     "dayjs": "^1.9.3",
@@ -24,6 +25,7 @@
     "react": "^16.13.1",
     "react-animated-burgers": "^1.2.8",
     "react-dom": "^16.13.1",
+    "react-donut-component": "^2.2.6",
     "react-feather": "^2.0.8",
     "react-i18next": "^11.7.3",
     "react-loader-spinner": "^3.1.14",

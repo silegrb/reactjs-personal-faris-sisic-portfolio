@@ -44,7 +44,7 @@ const Navbar = () => {
       <Backdrop show={dropdownOpen} onClick={() => setDropdownOpen(false)} />
       <Container
         className={
-      screenWidth > SCREEN_SIZES.LG
+      screenWidth >= SCREEN_SIZES.LG
         ? `navbar-container-lg ${scrolled ? 'navbar-container-scrolled pt-3 pb-3' : 'pt-lg-5'}`
         : `navbar-container ${scrolled ? 'navbar-container-scrolled' : ''} ${dropdownOpen ? 'navbar-container-dropdown-open' : ''}`
     }
@@ -55,7 +55,7 @@ const Navbar = () => {
               src={logo}
               alt=""
               className={
-              screenWidth > SCREEN_SIZES.LG ? `logo-lg ${scrolled ? 'logo-scrolled' : ''}` : 'logo'
+              screenWidth >= SCREEN_SIZES.LG ? `logo-lg ${scrolled ? 'logo-scrolled' : ''}` : 'logo'
             }
             />
           </Col>
@@ -108,7 +108,7 @@ const Navbar = () => {
         </Collapse>
         <ChevronUp
           color="#ffffff"
-          size={screenWidth > SCREEN_SIZES.LG ? 70 : 60}
+          size={screenWidth >= SCREEN_SIZES.LG ? 70 : 60}
           className={showScrollToTop && !dropdownOpen ? 'scroll-to-top-icon cursor-pointer' : 'scroll-to-top-icon-not-displayed'}
           onClick={() => animateScroll.scrollToTop()}
         />

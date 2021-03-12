@@ -20,13 +20,13 @@ const PageNotFound = () => {
         <Row className="w-100">
           <Col
             xs={12}
-            className={`d-flex justify-content-center align-items-center ${screenWidth > SCREEN_SIZES.LG ? 'four-o-four-lg' : 'four-o-four'}`}
+            className={`d-flex justify-content-center align-items-center ${screenWidth >= SCREEN_SIZES.LG ? 'four-o-four-lg' : 'four-o-four'}`}
           >
             404
           </Col>
           <Col
             xs={12}
-            className={`d-flex justify-content-center ${screenWidth > SCREEN_SIZES.LG ? 'page-not-found-lg' : 'page-not-found'}`}
+            className={`d-flex justify-content-center ${screenWidth >= SCREEN_SIZES.LG ? 'page-not-found-lg' : 'page-not-found'}`}
           >
             {`<${t('components.pageNotFound')} />`}
           </Col>
@@ -36,7 +36,7 @@ const PageNotFound = () => {
             md={{ offset: 3, size: 6 }}
             lg={{ offset: 4, size: 4 }}
             className={`d-flex justify-content-center text-center pt-2 
-          ${screenWidth > SCREEN_SIZES.LG ? 'page-not-found-instructions-lg' : 'page-not-found-instructions'}`}
+          ${screenWidth >= SCREEN_SIZES.LG ? 'page-not-found-instructions-lg' : 'page-not-found-instructions'}`}
           >
             {`${t('components.pageNotFoundMessage')}.`}
           </Col>
@@ -53,7 +53,7 @@ const PageNotFound = () => {
           >
             <Button
               onClick={() => history.push('/')}
-              className={`font-weight-light px-4 py-2 ${screenWidth > SCREEN_SIZES.LG ? 'go-back-button-lg' : 'go-back-button'}`}
+              className={`font-weight-light px-4 py-2 ${screenWidth >= SCREEN_SIZES.LG ? 'go-back-button-lg' : 'go-back-button'}`}
             >
               {t('button.goBackHome').toUpperCase()}
             </Button>

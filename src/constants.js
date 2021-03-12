@@ -54,12 +54,12 @@ export const PORTFOLIO = {
       nationality: 'components.bosniaAndHerzegovina',
       mobilePhone: '+ 387 60 338 1032',
       emailAddress: 'sisicfarisofficial@gmail.com',
-      address: 'Hasana Brkića 15, Sarajevo',
+      address: 'Sarajevo, Bosnia and Herzegovina',
       facebookLink: 'https://www.facebook.com/shile.pres',
       youtubeLink: 'https://www.youtube.com/channel/UCLbDLtGSzMfB7__-kwvXTPA',
       linkedInLink:
         'https://www.linkedin.com/in/faris-%C5%A1i%C5%A1i%C4%87-06453b1a0/',
-      instagramLink: 'https://www.instagram.com/___silegrb__/',
+      instagramLink: 'https://www.instagram.com/sisic.faris_/',
       githubLink: 'https://github.com/silegrb',
     },
   },
@@ -182,147 +182,228 @@ export const PORTFOLIO = {
       },
     ],
   },
-  /*
-SKILLS: {
-  LANGUAGE: [
-    {
-      language: 'English',
-      listening: 5,
-      reading: 5,
-      spokenInteraction: 5,
-      spokenProduction: 5,
-      writing: 5,
+  SKILLS: {
+    title: 'Skills',
+    content: {
+      LANGUAGE_SKILLS: {
+        title: 'Language skills',
+        content: [
+          {
+            language: 'Bosnian and Herzegovinian',
+            icon: bhLangIcon,
+            overallGrade: 6,
+            grades: [
+              {
+                title: 'Listening',
+                grade: 6,
+              },
+              {
+                title: 'Reading',
+                grade: 6,
+              },
+              {
+                title: 'Spoken interaction',
+                grade: 6,
+              },
+              {
+                title: 'Spoken production',
+                grade: 6,
+              },
+              {
+                title: 'Writing',
+                grade: 6,
+              },
+            ],
+          },
+          {
+            language: 'English',
+            icon: enLangIcon,
+            overallGrade: 5,
+            grades: [
+              {
+                title: 'Listening',
+                grade: 5,
+              },
+              {
+                title: 'Reading',
+                grade: 5,
+              },
+              {
+                title: 'Spoken interaction',
+                grade: 5,
+              },
+              {
+                title: 'Spoken production',
+                grade: 5,
+              },
+              {
+                title: 'Writing',
+                grade: 5,
+              },
+            ],
+          },
+          {
+            language: 'German',
+            icon: deLangIcon,
+            overallGrade: 2,
+            grades: [
+              {
+                title: 'Listening',
+                grade: 2,
+              },
+              {
+                title: 'Reading',
+                grade: 2,
+              },
+              {
+                title: 'Spoken interaction',
+                grade: 2,
+              },
+              {
+                title: 'Spoken production',
+                grade: 2,
+              },
+              {
+                title: 'Writing',
+                grade: 2,
+              },
+            ],
+          },
+        ],
+      },
+      DIGITAL_SKILLS: {
+        title: 'Digital skills',
+        content: [
+          {
+            title: 'Microsoft Office',
+          },
+          {
+            title: 'C',
+          },
+          {
+            title: 'C++',
+          },
+          {
+            title: 'C#',
+          },
+          {
+            title: 'Java',
+          },
+          {
+            title: 'Javascript',
+          },
+          {
+            title: 'HTML5',
+          },
+          {
+            title: 'CSS3',
+          },
+          {
+            title: 'MERN Stack',
+          },
+          {
+            title: 'ReactJS',
+          },
+          {
+            title: 'ReactRedux',
+          },
+          {
+            title: 'ExpressJS',
+          },
+          {
+            title: 'MongoDB',
+          },
+          {
+            title: 'NodeJS',
+          },
+          {
+            title: 'SQL',
+          },
+          {
+            title: 'GIT',
+          },
+          {
+            title: 'Bitbucket',
+          },
+          {
+            title: 'Github',
+          },
+          {
+            title: 'Firebase',
+          },
+          {
+            title: 'Blender',
+          },
+          {
+            title: 'Unity',
+          },
+          {
+            title: 'MATLABSimulink',
+          },
+          {
+            title: 'JetBrains WebStorm',
+          },
+          {
+            title: 'JetBrains IDEA',
+          },
+          {
+            title: 'Visual Studio & Visual Studio Code',
+          },
+          {
+            title: 'Trello',
+          },
+          {
+            title: 'JIRA',
+          },
+          {
+            title: 'Azure DevOps',
+          },
+          {
+            title: 'Swagger',
+          },
+          {
+            title: 'JavaFX',
+          },
+          {
+            title: 'Postman',
+          },
+        ],
+      },
+      ORGANISATIONAL_SKILLS: {
+        title: 'Organisational skills',
+        content: [
+          {
+            title:
+              'good team-leading skills - team leader on college projects, team leader on hackathon "Just Code It" event in Sarajevo, basketball and volleyball captain',
+          },
+          {
+            title:
+              'good organisational and managerial skills - team leader on college projects, management for party events',
+          },
+        ],
+      },
+      /*
+      COMMUNICATIONAL_SKILLS: [
+        {
+          title: 'excellent social and communication skills gained through sports, sports related events, humanitarian events, frequent school projects and presentations and mathematics and programming instructions',
+        },
+      ],
+      DRIVING_SKILLS: [
+        {
+          title: 'B1',
+        },
+        {
+          title: 'B',
+        },
+      ],
+       */
     },
-    {
-      language: 'German',
-      listening: 2,
-      reading: 2,
-      spokenInteraction: 2,
-      spokenProduction: 2,
-      writing: 2,
-    },
-  ],
-  DIGITAL_SKILLS: [
-    {
-      title: 'Microsoft Office',
-    },
-    {
-      title: 'C',
-    },
-    {
-      title: 'C++',
-    },
-    {
-      title: 'C#',
-    },
-    {
-      title: 'Java',
-    },
-    {
-      title: 'Javascript',
-    },
-    {
-      title: 'HTML5',
-    },
-    {
-      title: 'CSS3',
-    },
-    {
-      title: 'MERN Stack',
-    },
-    {
-      title: 'ReactJS',
-    },
-    {
-      title: 'ReactRedux',
-    },
-    {
-      title: 'ExpressJS',
-    },
-    {
-      title: 'MongoDB',
-    },
-    {
-      title: 'NodeJS',
-    },
-    {
-      title: 'SQL',
-    },
-    {
-      title: 'GIT',
-    },
-    {
-      title: 'Bitbucket',
-    },
-    {
-      title: 'Github',
-    },
-    {
-      title: 'Firebase',
-    },
-    {
-      title: 'Blender',
-    },
-    {
-      title: 'Unity',
-    },
-    {
-      title: 'MATLABSimulink',
-    },
-    {
-      title: 'JetBrains WebStorm',
-    },
-    {
-      title: 'JetBrains IDEA',
-    },
-    {
-      title: 'Visual Studio & Visual Studio Code',
-    },
-    {
-      title: 'Trello',
-    },
-    {
-      title: 'JIRA',
-    },
-    {
-      title: 'Azure DevOps',
-    },
-    {
-      title: 'Swagger',
-    },
-    {
-      title: 'JavaFX',
-    },
-    {
-      title: 'Postman',
-    },
-  ],
-  ORGANISATIONAL_SKILLS: [
-    {
-      title: 'good team-leading skills - team leader on college projects, team leader on hackathon "Just Code It" event in Sarajevo, basketball and volleyball captain',
-    },
-    {
-      title: 'good organisational and managerial skills - team leader on college projects, management for party events',
-    },
-  ],
-  COMMUNICATIONAL_SKILLS: [
-    {
-      title: 'excellent social and communication skills gained through sports, sports related events, humanitarian events, frequent school projects and presentations and mathematics and programming instructions',
-    },
-  ],
-  DRIVING_SKILLS: [
-    {
-      title: 'B1',
-    },
-    {
-      title: 'B',
-    },
-  ],
+    /*
   OTHER_SKILLS: [
     // TODO Add other skills
   ],
-},
-*/
+   */
+  },
 };
 
 export const LINKS = [
@@ -362,3 +443,5 @@ export const LANGUAGES = [
     flag: deLangIcon,
   },
 ];
+
+export const MAXIMUM_LANGUAGE_GRADE = 6;

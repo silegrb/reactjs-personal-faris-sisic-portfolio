@@ -19,7 +19,7 @@ const Header = () => {
       <Container className="d-flex justify-content-center">
         <Row className="w-100">
           <Col xs={12} lg={7} className="d-flex justify-content-lg-start justify-content-center">
-            <img src={profilePicture} alt="" className={screenWidth > SCREEN_SIZES.LG ? 'profile-picture-lg' : 'profile-picture'} />
+            <img src={profilePicture} alt="" className={screenWidth >= SCREEN_SIZES.LG ? 'profile-picture-lg' : 'profile-picture'} />
           </Col>
           <Col
             xs={12}
@@ -29,7 +29,7 @@ const Header = () => {
             <Row className="w-100 ">
               <Col
                 xs={12}
-                className={`d-flex justify-content-center ${screenWidth > SCREEN_SIZES.LG ? 'software-developer-lg' : 'software-developer'}`}
+                className={`d-flex justify-content-center ${screenWidth >= SCREEN_SIZES.LG ? 'software-developer-lg' : 'software-developer'}`}
               >
                 {`<${t('components.software-developer')} />`}
               </Col>
@@ -38,7 +38,7 @@ const Header = () => {
                 sm={{ offset: 4, size: 4 }}
                 md={{ offset: 3, size: 6 }}
                 lg={{ offset: 2, size: 8 }}
-                className={`d-flex justify-content-center text-center pt-3 ${screenWidth > SCREEN_SIZES.LG ? 'software-developer-subtitle-lg' : 'software-developer-subtitle'}`}
+                className={`d-flex justify-content-center text-center pt-3 ${screenWidth >= SCREEN_SIZES.LG ? 'software-developer-subtitle-lg' : 'software-developer-subtitle'}`}
               >
                 {`${t('components.welcomeMessage')}.`}
               </Col>
