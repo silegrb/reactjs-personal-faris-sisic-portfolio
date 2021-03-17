@@ -1,12 +1,14 @@
 import React from 'react';
-import {
-  Container,
-} from 'reactstrap';
-import Spinner from 'react-loader-spinner';
+import { Container } from 'reactstrap';
+import { logo } from '../assets/img';
 
 const Loader = () => (
   <Container className="d-flex flex-grow-1 align-items-center justify-content-center">
-    <Spinner type="Oval" color="#ff6b1f" height={80} width={80} />
+    <img
+      src={logo}
+      alt=""
+      className="logo-loading"
+    />
   </Container>
 );
 

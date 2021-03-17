@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
-  Container, Row, Col, Collapse,
+  Container, Row, Col,
 } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
 import { HamburgerSqueeze } from 'react-animated-burgers';
-import { animateScroll, Link } from 'react-scroll';
-import { ChevronUp } from 'react-feather';
-import { useTranslation } from 'react-i18next';
+import { animateScroll } from 'react-scroll';
+import { ArrowUp } from 'react-feather';
+import cs from 'classnames';
 import { logo } from '../assets/img';
-import { LINK_PROPERTIES, LINKS, SCREEN_SIZES } from '../constants';
+import { SCREEN_SIZES } from '../constants';
 import LanguageDropdown from './LanguageDropdown';
-import Backdrop from './Backdrop';
 
-const Navbar = () => {
-  const { t } = useTranslation();
-
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+const Navbar = ({ sidebarOpen, handleSidebar }) => {
   const [scrolled, setScrolled] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const screenWidth = useWindowWidth();
 
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 50) {
+    if (window.pageYOffset > 150) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -34,87 +31,61 @@ const Navbar = () => {
     }
   });
 
-  useEffect(() => {
-    if (screenWidth > SCREEN_SIZES.XS) { setDropdownOpen(false); }
-  }, [screenWidth]);
-
   return (
-  // Since design is different on different screen  logic has to be separated
-    <>
-      <Backdrop show={dropdownOpen} onClick={() => setDropdownOpen(false)} />
-      <Container
-        className={
-      screenWidth >= SCREEN_SIZES.LG
-        ? `navbar-container-lg ${scrolled ? 'navbar-container-scrolled pt-3 pb-3' : 'pt-lg-5'}`
-        : `navbar-container ${scrolled ? 'navbar-container-scrolled' : ''} ${dropdownOpen ? 'navbar-container-dropdown-open' : ''}`
-    }
-      >
-        <Row className="d-flex align-items-center cover-padding">
-          <Col xs={6} lg={3} className="d-flex justify-content-start pl-sm-5">
-            <img
-              src={logo}
-              alt=""
-              className={
+    <Container
+      className={cs({
+        'navbar-container-lg': screenWidth >= SCREEN_SIZES.LG,
+        'navbar-container': screenWidth < SCREEN_SIZES.LG,
+        'navbar-container-scrolled pt-3 pb-3': screenWidth >= SCREEN_SIZES.LG && scrolled,
+        'pt-lg-5': screenWidth >= SCREEN_SIZES.LG && !scrolled,
+        'navbar-container-scrolled': screenWidth < SCREEN_SIZES.LG && scrolled,
+        'navbar-container-dropdown-open': screenWidth < SCREEN_SIZES.LG,
+        'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
+        'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,
+      })}
+    >
+      <Row className="d-flex align-items-center cover-padding">
+        <Col xs={6} lg={3} className="d-flex justify-content-start pl-sm-5">
+          <img
+            src={logo}
+            alt=""
+            className={
               screenWidth >= SCREEN_SIZES.LG ? `logo-lg ${scrolled ? 'logo-scrolled' : ''}` : 'logo'
             }
-            />
-          </Col>
-          <Col
-            xs={6}
-            lg={9}
-            className="d-flex align-items-center justify-content-end pr-sm-5"
-          >
-            {screenWidth > SCREEN_SIZES.MD
-              ? (
-                <>
-                  {LINKS.map(({ id, title }) => (
-                    <Link {...LINK_PROPERTIES} to={id} key={id} onClick={() => setDropdownOpen(false)}>
-                      <span className="cursor-pointer mr-3 navbar-item-hover pb-2">
-                        {t(title).toUpperCase()}
-                      </span>
-                    </Link>
-                  ))}
-                  <LanguageDropdown hideDropdown={() => setDropdownOpen(false)} />
-                </>
-              ) : (
-                <>
-                  <LanguageDropdown hideDropdown={() => setDropdownOpen(false)} />
-                  <HamburgerSqueeze
-                    barColor="#FFFFFF"
-                    isActive={dropdownOpen}
-                    toggleButton={() => setDropdownOpen(!dropdownOpen)}
-                  />
-                </>
-              ) }
-          </Col>
-        </Row>
-        <Collapse isOpen={dropdownOpen && screenWidth <= SCREEN_SIZES.MD}>
-          <Row className="cursor-pointer hamburger-dropdown d-flex justify-content-center pb-2">
-            {LINKS.map(({ id, title }, index) => (
-              <Col xs={11} key={id}>
-                <Link {...LINK_PROPERTIES} to={id} onClick={() => setDropdownOpen(false)}>
-                  <Row className="w-100">
-                    <Col
-                      xs={12}
-                      className={`p-0 py-2 ${index !== LINKS.length - 1 ? 'border-bottom-white' : ''}`}
-                    >
-                      {t(title).toUpperCase()}
-                    </Col>
-                  </Row>
-                </Link>
-              </Col>
-            ))}
-          </Row>
-        </Collapse>
-        <ChevronUp
-          color="#ffffff"
-          size={screenWidth >= SCREEN_SIZES.LG ? 70 : 60}
-          className={showScrollToTop && !dropdownOpen ? 'scroll-to-top-icon cursor-pointer' : 'scroll-to-top-icon-not-displayed'}
-          onClick={() => animateScroll.scrollToTop()}
-        />
-      </Container>
-    </>
+          />
+        </Col>
+        <Col
+          xs={6}
+          lg={9}
+          className="d-flex align-items-center justify-content-end pr-sm-5"
+        >
+          <LanguageDropdown />
+          <HamburgerSqueeze
+            barColor="#FFFFFF"
+            isActive={sidebarOpen}
+            toggleButton={handleSidebar}
+          />
+        </Col>
+      </Row>
+      <ArrowUp
+        strokeWidth={1}
+        color="lightgray"
+        size={screenWidth >= SCREEN_SIZES.LG ? 70 : 60}
+        className={cs({
+          'scroll-to-top-icon cursor-pointer': showScrollToTop && ((screenWidth < SCREEN_SIZES.SM && !sidebarOpen) || screenWidth >= SCREEN_SIZES.SM),
+          'scroll-to-top-icon-not-displayed': !showScrollToTop,
+          'scroll-to-top-icon-padding': sidebarOpen && screenWidth >= SCREEN_SIZES.SM,
+          'scroll-to-top-icon-padding-sm': screenWidth < SCREEN_SIZES.SM,
+        })}
+        onClick={() => animateScroll.scrollToTop()}
+      />
+    </Container>
   );
+};
+
+Navbar.propTypes = {
+  sidebarOpen: PropTypes.bool.isRequired,
+  handleSidebar: PropTypes.func.isRequired,
 };
 
 export default Navbar;

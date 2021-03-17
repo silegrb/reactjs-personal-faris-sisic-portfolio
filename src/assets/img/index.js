@@ -4,11 +4,11 @@ import bhLangIcon from './icon_bh_lang.png';
 import enLangIcon from './icon_en_lang.png';
 import deLangIcon from './icon_de_lang.png';
 import softhouseLogo from './image_softhouse_logo.png';
-import facebookIcon from './icon_facebook.svg';
-import instagramIcon from './icon_instagram.svg';
-import youtubeIcon from './icon_youtube.svg';
-import linkedinIcon from './icon_linkedin.svg';
-import githubIcon from './icon_github.svg';
+import facebookIcon from './icon_facebook.png';
+import instagramIcon from './icon_instagram.png';
+import youtubeIcon from './icon_youtube.png';
+import linkedinIcon from './icon_linkedin.png';
+import githubIcon from './icon_github.png';
 import grbavicaDvaLogo from './image_grbavica_II_logo.png';
 import drugaGimnazijaSarajevoLogo from './image_2_gimnazija_sarajevo_logo.jpg';
 import elektrotehnickiFakultetSarajevoLogo from './image_elektrotehnicki_fakultet_sarajevo_logo.png';
@@ -18,6 +18,9 @@ import BHEngineeringWeeksSarajevoLogo from './image_BH_engineering_weeks_sarajev
 import hackathonJustCodeItSarajevoLogo from './image_hackathon_just_code_it_sarajevo_logo.jpg';
 import atlantBhLogo from './image_atlantbh_logo.jpg';
 import udemyLogo from './image_udemy_logo.jpg';
+import sidebarImage from './image_sidebar.png';
+import laptopAndCoffeeImage from './image_laptop_and_coffee.jpg';
+import booksForStudyingImage from './image_books_for_studying.png';
 
 export {
   logo,
@@ -40,4 +43,7 @@ export {
   hackathonJustCodeItSarajevoLogo,
   atlantBhLogo,
   udemyLogo,
+  sidebarImage,
+  laptopAndCoffeeImage,
+  booksForStudyingImage,
 };

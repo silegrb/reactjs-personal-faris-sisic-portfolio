@@ -1,15 +1,10 @@
 .app-container {
   background: #000000;
-  font-family: $primary-font;
   color: $primary-font-color;
-  background-image: url('../img/image_cover.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position-x: center;
-  background-size: 2400px 1000px;
   -ms-overflow-style: none;
   scrollbar-width: none;
   min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -39,4 +34,56 @@
 .section {
   background-color: rgba(255,255,255,0.02);
   border: 1px solid $light-gray-color;
+  z-index: $layer-1;
+}
+
+.background-video {
+  height: 100vh !important;
+  position: absolute;
+  z-index: $layer-0;
+  width: 100% !important;
+}
+
+.width-75 {
+  width: 75vw !important;
+  transition: width 0.3s;
+}
+
+.width-25 {
+  width: 25vw !important;
+  transition: width 0.3s;
+}
+
+.width-100 {
+  width: 100vw !important;
+  transition: width 0.3s;
+}
+
+.width-0 {
+  width: 0 !important;
+  transition: width 0.3s;
+}
+
+.z-index-1 {
+  z-index: $layer-1;
+}
+
+::-moz-selection {
+  background-color: rgba(17,17,17,0.9);
+}
+
+::selection {
+  background-color: rgba(51,51,51,0.7);
+}
+
+video {
+  object-fit: cover;
+}
+
+button:focus {
+  outline: none;
+}
+
+html,body{
+  overflow-x: hidden;
 }

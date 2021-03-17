@@ -1,51 +1,98 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import { useWindowWidth } from '@react-hook/window-size';
-import { useTranslation } from 'react-i18next';
-import { PORTFOLIO, SCREEN_SIZES } from '../constants';
-import packageJson from '../../package.json';
+import cs from 'classnames';
+import { Link } from 'react-scroll';
+import { connect } from 'react-redux';
+import { LINK_PROPERTIES, PORTFOLIO, SCREEN_SIZES } from '../constants';
 import { openInNewTab } from '../utils/openInNewTab';
 import {
   facebookIcon, githubIcon, instagramIcon, linkedinIcon, youtubeIcon,
 } from '../assets/img';
+import { setScrolledToTop } from '../redux/actions/homeActions';
 
-const Footer = () => {
-  const { t } = useTranslation();
-
+const Footer = ({ sidebarOpen, setScrolledToTop }) => {
   const screenWidth = useWindowWidth();
   const { content } = PORTFOLIO.BASIC_INFORMATION;
+  const history = useHistory();
+  const location = useLocation();
 
   return (
-    <Container className="card-shadow footer d-flex flex-grow-1 align-items-end position-relative justify-content-center">
+    <Container className={cs('footer d-flex flex-grow-1 align-items-end justify-content-center', {
+      'width-100': screenWidth <= SCREEN_SIZES.SM || !sidebarOpen,
+      'width-75': sidebarOpen && screenWidth > SCREEN_SIZES.SM,
+    })}
+    >
       <Row className="w-100 pt-5 pb-4">
         <Col
-          xs={{ offset: 3, size: 6 }}
-          className={`d-flex justify-content-center ${screenWidth >= SCREEN_SIZES.LG ? 'lets-connect-container-lg' : 'lets-connect-container'}`}
+          xs={12}
+          className="d-flex justify-content-center lets-connect-container"
         >
-          {t('components.letsConnect')}
+          LET'S CONNECT
         </Col>
         <Col
-          xs={{ offset: 2, size: 8 }}
-          lg={{ offset: 4, size: 4 }}
-          className="pt-3 pb-4 border-bottom-orange d-flex justify-content-center align-items-center"
+          xs={12}
+          className="pb-4 d-flex justify-content-center align-items-center"
         >
-          <img alt="" src={facebookIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.facebookLink)} />
-          <img alt="" src={instagramIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.instagramLink)} />
-          <img alt="" src={youtubeIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.youtubeLink)} />
-          <img alt="" src={linkedinIcon} className="footer-icon mr-2" onClick={() => openInNewTab(content.linkedInLink)} />
-          <img alt="" src={githubIcon} className="footer-icon" onClick={() => openInNewTab(content.githubLink)} />
+          <div className="footer-icon-container d-flex justify-content-center align-items-center">
+            <img alt="" src={facebookIcon} className="footer-icon" onClick={() => openInNewTab(content.facebookLink)} />
+          </div>
+          <div className="footer-icon-container d-flex justify-content-center align-items-center">
+            <img alt="" src={instagramIcon} className="footer-icon" onClick={() => openInNewTab(content.instagramLink)} />
+          </div>
+          <div className="footer-icon-container d-flex justify-content-center align-items-center">
+            <img alt="" src={youtubeIcon} className="footer-icon" onClick={() => openInNewTab(content.youtubeLink)} />
+          </div>
+          <div className="footer-icon-container d-flex justify-content-center align-items-center">
+            <img alt="" src={linkedinIcon} className="footer-icon" onClick={() => openInNewTab(content.linkedInLink)} />
+          </div>
+          <div className="footer-icon-container d-flex justify-content-center align-items-center">
+            <img alt="" src={githubIcon} className="footer-icon" onClick={() => openInNewTab(content.githubLink)} />
+          </div>
         </Col>
-        <Col xs={12} className="d-flex justify-content-center pt-2">
-          {`${t('components.version')} ${packageJson.version}`}
+        <Col
+          className="p-0"
+          xs={12}
+          sm={{ offset: 3, size: 6 }}
+        >
+          <Row className="w-100 p-0 m-0 footer-links-container">
+            <Col
+              xs={3}
+              className="cursor-pointer"
+            >
+              <Link
+                {...LINK_PROPERTIES}
+                spy
+                smooth
+                className="w-100"
+                onClick={() => {
+                  if (location.pathname !== '/') { history.push('/'); }
+                  setScrolledToTop();
+                }}
+              >
+                HOME
+              </Link>
+            </Col>
+            <Col xs={6} className="text-center cursor-pointer">INSTRUCTIONS</Col>
+            <Col xs={3} className="text-right cursor-pointer">CONTACT</Col>
+          </Row>
         </Col>
-        <Col xs={{ offset: 2, size: 8 }} className="d-flex justify-content-center pt-2 text-center">
+        <Col
+          xs={{ offset: 1, size: 10 }}
+          className="d-flex justify-content-center pt-2 text-center all-rights-reserved-container"
+        >
           &copy;
-          {/* TODO Translation */}
-          {` 2020 ${content.name} ${content.surname}, All Rights Reserved`}
+          {`2021 ${content.surname} ${content.name}, All Rights Reserved`}
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default Footer;
+Footer.propTypes = {
+  sidebarOpen: PropTypes.bool.isRequired,
+};
+
+export default connect(null, { setScrolledToTop })(Footer);

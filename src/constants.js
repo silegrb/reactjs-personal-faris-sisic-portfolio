@@ -1,4 +1,3 @@
-import Content from './containers/Content';
 import {
   atlantBhLogo,
   BHEngineeringWeeksSarajevoLogo,
@@ -14,11 +13,12 @@ import {
   symphonySarajevoLogo,
   udemyLogo,
 } from './assets/img';
+import Home from './containers/Home';
 
 export const ROUTES = [
   {
     path: '/',
-    component: Content,
+    component: Home,
   },
 ];
 
@@ -37,7 +37,7 @@ export const PORTFOLIO_SECTION_PROPERTIES = {
 };
 
 export const LINK_PROPERTIES = {
-  offset: -75,
+  offset: -25,
   spy: true,
   smooth: true,
 };

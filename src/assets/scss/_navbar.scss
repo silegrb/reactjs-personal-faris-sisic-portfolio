@@ -9,34 +9,30 @@
   position: fixed;
   top: 0;
   z-index: 9999;
-  background-color: $primary-color;
 }
 
 .navbar-container-scrolled {
-  background-color: $primary-color;
-  transition: background-color 0.3s;
-  box-shadow: 0 0 5px #434343;
-  z-index: 9999;
-}
-
-.navbar-container-dropdown-open {
-  background-color: $light-gray-color;
   z-index: 9999;
 }
 
 .logo-lg {
   height: 112px;
-  width: 250px;
   transition: height 0.5s, width 0.5s;
+  animation: rotation 2s linear;
+}
+
+.logo-loading {
+  height: 100px;
+  transition: height 0.5s, width 0.5s;
+  animation: loading 0.75s linear infinite;
 }
 
 .logo {
-  width: 90px;
   height: 40px;
+  animation: rotation 2s linear;
 }
 
 .logo-scrolled {
-  width: 90px;
   height: 40px;
   transition: height 0.5s, width 0.5s;
 }
@@ -63,25 +59,27 @@
 .scroll-to-top-icon {
   position: fixed;
   bottom: 15px;
-  right: 15px;
-  background-color: $primary-color;
-  border-radius: 50%;
-  border: solid white 3.5px;
-  box-shadow: 0 0 5px #434343;
-  transition: all 0.5s;
+  right: 3rem;
+  transition: all 0.3s;
 }
 
 .scroll-to-top-icon-not-displayed {
   position: fixed;
   bottom: 15px;
-  right: 15px;
+  right: 3rem;
   width: 0;
   height: 0;
-  background-color: $primary-color;
-  border-radius: 50%;
-  border: solid white 0;
-  box-shadow: 0 0 5px #434343;
-  transition: all 0.5s;
+  transition: all 0.3s;
+}
+
+.scroll-to-top-icon-padding {
+  right: calc(3rem + 25vw);
+}
+
+.scroll-to-top-icon-padding-sm {
+  right: 30px;
+  position: fixed;
+  bottom: 15px;
 }
 
 .languages-menu {

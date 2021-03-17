@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import {
   Dropdown, DropdownItem, DropdownMenu, DropdownToggle,
 } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../constants';
 
-const LanguageDropdown = ({ hideDropdown }) => {
+const LanguageDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { i18n } = useTranslation();
-
-  useEffect(() => {
-    if (isOpen) { hideDropdown(); }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen]);
 
   return (
     <Dropdown
@@ -51,10 +45,6 @@ const LanguageDropdown = ({ hideDropdown }) => {
       </DropdownMenu>
     </Dropdown>
   );
-};
-
-LanguageDropdown.propTypes = {
-  hideDropdown: PropTypes.func.isRequired,
 };
 
 export default LanguageDropdown;
