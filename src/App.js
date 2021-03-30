@@ -23,6 +23,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [opacity, setOpacity] = useState(1);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const screenWidth = useWindowWidth();
 
   const handleSidebar = () => {
@@ -86,12 +87,13 @@ const App = () => {
               >
                 <ReactPlayer
                   playsinline
-                  playing
+                  playing={playing}
                   className='background-video'
                   style={{ opacity }}
                   url='video/snowboarding_no_border.mp4'
                   loop
                   muted
+                  onPause={() => setPlaying(true)}
                 />
               </div>
               <Navbar sidebarOpen={sidebarOpen} handleSidebar={handleSidebar} />
