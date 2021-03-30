@@ -33,11 +33,6 @@ $orange-border-3px: 3px solid $orange-color;
 $transparent-border: 0 solid transparent;
 $white-border-2px: 2px solid white;
 
-//Layers
-$layer-0: 0;
-$layer-1: 1;
-$layer-2: 2;
-
 //Keyframes
 @keyframes rotation {
   0% {
@@ -90,5 +85,17 @@ $layer-2: 2;
   }
   100% {
     transform: translateX(-25px);
+  }
+}
+
+@keyframes bloom {
+  0% {
+    filter: grayscale(.8);
+  }
+  40% {
+    filter: grayscale(.5);
+  }
+  100% {
+    filter: grayscale(0);
   }
 }

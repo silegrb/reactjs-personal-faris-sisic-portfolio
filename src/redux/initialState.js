@@ -1,7 +1,8 @@
 const initialState = {
   home: {
-    scrolledToBasicInfo: false,
     scrolledToTop: false,
+    scrolledToBasicInfo: false,
+    scrolledToEducation: false,
   },
 };
 

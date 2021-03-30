@@ -12,9 +12,11 @@ import { useWindowWidth } from '@react-hook/window-size';
 import { Link } from 'react-scroll';
 import { connect } from 'react-redux';
 import { LINK_PROPERTIES, SCREEN_SIZES } from '../constants';
-import { setScrolledToBasicInfo } from '../redux/actions/homeActions';
+import { setScrolledToBasicInfo, setScrolledToEducation } from '../redux/actions/homeActions';
 
-const Sidebar = ({ isOpen, handleSidebar, setScrolledToBasicInfo }) => {
+const Sidebar = ({
+  isOpen, handleSidebar, setScrolledToBasicInfo, setScrolledToEducation,
+}) => {
   const [homeDropdownOpen, setHomeDropdownOpen] = useState(false);
   const [instructionsDropdownOpen, setInstructionsDropdownOpen] = useState(false);
   const screenWidth = useWindowWidth();
@@ -56,14 +58,36 @@ const Sidebar = ({ isOpen, handleSidebar, setScrolledToBasicInfo }) => {
               onClick={() => {
                 if (location.pathname !== '/') { history.push('/'); }
                 setScrolledToBasicInfo();
-                if (screenWidth < SCREEN_SIZES.SM) { handleSidebar(); }
+                // Timeout used to execute it last
+                setTimeout(() => {
+                  if (screenWidth < SCREEN_SIZES.SM) { handleSidebar(); }
+                });
               }}
             >
               BASIC INFO
             </Link>
           </Col>
-          <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">
-            EDUCATION
+          <Col
+            xs={12}
+            className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5"
+          >
+            <Link
+              {...LINK_PROPERTIES}
+              to="education"
+              spy
+              smooth
+              className="w-100"
+              onClick={() => {
+                if (location.pathname !== '/') { history.push('/'); }
+                setScrolledToEducation();
+                // Timeout used to execute it last
+                setTimeout(() => {
+                  if (screenWidth < SCREEN_SIZES.SM) { handleSidebar(); }
+                });
+              }}
+            >
+              EDUCATION
+            </Link>
           </Col>
           <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">SKILLS</Col>
           <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">WORK EXPERIENCE</Col>
@@ -94,6 +118,7 @@ Sidebar.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   handleSidebar: PropTypes.func.isRequired,
   setScrolledToBasicInfo: PropTypes.func.isRequired,
+  setScrolledToEducation: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setScrolledToBasicInfo })(Sidebar);
+export default connect(null, { setScrolledToBasicInfo, setScrolledToEducation })(Sidebar);

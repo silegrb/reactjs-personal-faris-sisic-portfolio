@@ -1,5 +1,4 @@
 import logo from './image_logo.png';
-import profilePicture from './image_profile_picture.png';
 import bhLangIcon from './icon_bh_lang.png';
 import enLangIcon from './icon_en_lang.png';
 import deLangIcon from './icon_de_lang.png';
@@ -9,22 +8,20 @@ import instagramIcon from './icon_instagram.png';
 import youtubeIcon from './icon_youtube.png';
 import linkedinIcon from './icon_linkedin.png';
 import githubIcon from './icon_github.png';
-import grbavicaDvaLogo from './image_grbavica_II_logo.png';
-import drugaGimnazijaSarajevoLogo from './image_2_gimnazija_sarajevo_logo.jpg';
-import elektrotehnickiFakultetSarajevoLogo from './image_elektrotehnicki_fakultet_sarajevo_logo.png';
-import followMeAlteraLinguaLogo from './image_follow_me_altera_lingua_logo.jpg';
-import symphonySarajevoLogo from './image_symphony_sarajevo_logo.jpg';
 import BHEngineeringWeeksSarajevoLogo from './image_BH_engineering_weeks_sarajevo_logo.jpg';
-import hackathonJustCodeItSarajevoLogo from './image_hackathon_just_code_it_sarajevo_logo.jpg';
-import atlantBhLogo from './image_atlantbh_logo.jpg';
 import udemyLogo from './image_udemy_logo.jpg';
-import sidebarImage from './image_sidebar.png';
-import laptopAndCoffeeImage from './image_laptop_and_coffee.jpg';
 import booksForStudyingImage from './image_books_for_studying.png';
+import educationItemEfsaImage from './image_education_item_efsa.png';
+import educationItemEtfImage from './image_education_item_etf.png';
+import educationItem2GimnazijaImage from './image_education_item_2gimnazija.png';
+import educationItemOSGrbavica2Image from './image_education_item_OS_Grbavica2.png';
+import educationItemFollowMeImage from './image_education_item_follow_me.png';
+import educationItemAtlantBHImage from './image_education_atlantbh.jpg';
+import educationItemJustCodeItImage from './image_education_just_code_it.jpg';
+import educationItemSymphony from './image_education_symphony.jpg';
 
 export {
   logo,
-  profilePicture,
   bhLangIcon,
   enLangIcon,
   deLangIcon,
@@ -34,16 +31,15 @@ export {
   youtubeIcon,
   linkedinIcon,
   githubIcon,
-  grbavicaDvaLogo,
-  drugaGimnazijaSarajevoLogo,
-  elektrotehnickiFakultetSarajevoLogo,
-  followMeAlteraLinguaLogo,
-  symphonySarajevoLogo,
   BHEngineeringWeeksSarajevoLogo,
-  hackathonJustCodeItSarajevoLogo,
-  atlantBhLogo,
   udemyLogo,
-  sidebarImage,
-  laptopAndCoffeeImage,
   booksForStudyingImage,
+  educationItemEfsaImage,
+  educationItemEtfImage,
+  educationItem2GimnazijaImage,
+  educationItemOSGrbavica2Image,
+  educationItemFollowMeImage,
+  educationItemAtlantBHImage,
+  educationItemJustCodeItImage,
+  educationItemSymphony,
 };

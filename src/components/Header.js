@@ -15,8 +15,7 @@ const Header = () => {
   const screenWidth = useWindowWidth();
 
   return (
-    <Fade {...PORTFOLIO_SECTION_PROPERTIES}>
-    </Fade>
+    <Fade {...PORTFOLIO_SECTION_PROPERTIES} />
   );
 };
 

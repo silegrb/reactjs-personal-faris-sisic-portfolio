@@ -6,7 +6,12 @@ import ReactPlayer from 'react-player';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Provider } from 'react-redux';
 import Loader from './components/Loader';
-import { ROUTES, SCREEN_SIZES } from './constants';
+import {
+  EVENT_LISTENERS,
+  LOADING_WAIT_TIME,
+  ROUTES,
+  SCREEN_SIZES,
+} from './constants';
 import PageNotFound from './components/PageNotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -25,17 +30,19 @@ const App = () => {
   };
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, LOADING_WAIT_TIME);
   }, []);
 
-  window.addEventListener('scroll', () => {
-    setOpacity(1 - window.pageYOffset / (window.innerHeight * 0.73));
+  window.addEventListener(EVENT_LISTENERS.SCROLL, () => {
+    setOpacity(1 - window.pageYOffset / (window.innerHeight * 0.65));
   });
 
   return (
     <Provider store={configureStore()}>
       <div className='root-container'>
-        <Container className='app-container p-0 d-flex flex-column flex-grow-1'>
+        <Container className='app-container p-0 m-0 d-flex flex-column flex-grow-1'>
           {loading ? (
             <Loader />
           ) : (
@@ -80,10 +87,9 @@ const App = () => {
                 <ReactPlayer
                   playsinline
                   playing
-                  playbackRate={0.37}
                   className='background-video'
                   style={{ opacity }}
-                  url='video/testing_vid.mp4'
+                  url='video/snowboarding_no_border.mp4'
                   loop
                   muted
                 />

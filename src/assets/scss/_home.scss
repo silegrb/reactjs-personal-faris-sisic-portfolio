@@ -1,5 +1,5 @@
 .home-container {
-  z-index: $layer-1;
+  z-index: 1;
 }
 
 .home-intro {
@@ -36,90 +36,6 @@
   }
 }
 
-.basic-info-container {
-  font-family: 'Open Sans Condensed', sans-serif;
-  width: 100%;
-  background-color: #FFFFFF;
-  height: 700px;
-  position: relative;
-  color: #000000;
-}
-
-.basic-info-container:hover .background-text-basic {
-  transform: translateX(25px);
-}
-
-.basic-info-container:hover .background-text-info {
-  transform: translateX(-25px);
-}
-
-.background-text-basic {
-  letter-spacing: 200px;
-  color: lightgray;
-  position: absolute;
-  left: -25px;
-  top: 0;
-  font-size: 430px;
-  line-height: 400px;
-  font-weight: bolder;
-  white-space: pre;
-  transition: all 0.3s;
-}
-
-.background-text-info {
-  letter-spacing: 200px;
-  color: lightgray;
-  position: absolute;
-  right: -25px;
-  bottom: 0;
-  font-size: 430px;
-  line-height: 400px;
-  font-weight: bolder;
-  white-space: pre;
-  transition: all 0.3s;
-}
-
-.who-am-i {
-  font-size: 70px;
-  font-weight: bolder;
-}
-
-.black-box {
-  background-color: black;
-  height: 350px;
-  border-radius: 5px;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  opacity: 1;
-  pointer-events: all;
-  color:white;
-  transition: all 0.3s;
-  font-size: 22px;
-}
-
-.left-black-box {
-  background-image: url("../../assets/img/image_laptop_and_coffee.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  filter: brightness(75%);
-  transition: all 0.3s;
-
-  &:hover {
-    filter: brightness(100%);
-  }
-}
-
-.right-black-box {
-  background-image: url("../../assets/img/image_books_for_studying.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  filter: brightness(75%);
-  transition: all 0.3s;
-
-  &:hover {
-    filter: brightness(100%);
-  }
-}
-
 @media only screen and (max-width: $SM) {
   .home-intro-title {
     font-size: 42px;
@@ -131,29 +47,5 @@
 
   .read-more-button {
     font-size: 32px;
-  }
-
-  .basic-info-container {
-    height: auto;
-    padding-bottom: 50px;
-  }
-
-  .black-box {
-    height: 220px;
-    font-size: 14px;
-  }
-
-  .who-am-i {
-    font-size: 42px;
-  }
-
-  .background-text-basic {
-    letter-spacing: 100px;
-    font-size: 320px;
-  }
-
-  .background-text-info {
-    letter-spacing: 100px;
-    font-size: 320px;
   }
 }

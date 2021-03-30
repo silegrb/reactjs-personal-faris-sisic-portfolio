@@ -4,12 +4,22 @@ import { Row, Col, Button } from 'reactstrap';
 import { Fade } from 'react-reveal';
 import { Link, scroller, animateScroll } from 'react-scroll';
 import { connect } from 'react-redux';
-import BasicInfo from '../components/BasicInfo';
+import BasicInfo from '../components/HomeComponents/BasicInfo';
 import { LINK_PROPERTIES } from '../constants';
-import { unsetScrolledToBasicInfo, unsetScrolledToTop } from '../redux/actions/homeActions';
+import {
+  unsetScrolledToTop,
+  unsetScrolledToBasicInfo,
+  unsetScrolledToEducation,
+} from '../redux/actions/homeActions';
+import Education from '../components/HomeComponents/Education';
 
 const Home = ({
-  scrolledToBasicInfo, scrolledToTop, unsetScrolledToBasicInfo, unsetScrolledToTop,
+  scrolledToTop,
+  scrolledToBasicInfo,
+  scrolledToEducation,
+  unsetScrolledToBasicInfo,
+  unsetScrolledToTop,
+  unsetScrolledToEducation,
 }) => {
   useEffect(() => {
     if (scrolledToTop) {
@@ -20,8 +30,12 @@ const Home = ({
       scroller.scrollTo('basic-info', { ...LINK_PROPERTIES });
       unsetScrolledToBasicInfo();
     }
+    if (scrolledToEducation) {
+      scroller.scrollTo(('education'), { ...LINK_PROPERTIES });
+      unsetScrolledToEducation();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrolledToBasicInfo, scrolledToTop]);
+  }, [scrolledToTop, scrolledToBasicInfo, scrolledToEducation]);
 
   return (
     <div className="home-container">
@@ -52,6 +66,7 @@ const Home = ({
         </Fade>
       </div>
       <BasicInfo />
+      <Education />
     </div>
   );
 };
@@ -59,13 +74,20 @@ const Home = ({
 Home.propTypes = {
   scrolledToBasicInfo: PropTypes.bool.isRequired,
   scrolledToTop: PropTypes.bool.isRequired,
+  scrolledToEducation: PropTypes.bool.isRequired,
   unsetScrolledToBasicInfo: PropTypes.func.isRequired,
   unsetScrolledToTop: PropTypes.func.isRequired,
+  unsetScrolledToEducation: PropTypes.func.isRequired,
 };
 
 export default connect(({
   home,
 }) => ({
-  scrolledToBasicInfo: home.scrolledToBasicInfo,
   scrolledToTop: home.scrolledToTop,
-}), { unsetScrolledToBasicInfo, unsetScrolledToTop })(Home);
+  scrolledToBasicInfo: home.scrolledToBasicInfo,
+  scrolledToEducation: home.scrolledToEducation,
+}), {
+  unsetScrolledToBasicInfo,
+  unsetScrolledToTop,
+  unsetScrolledToEducation,
+})(Home);

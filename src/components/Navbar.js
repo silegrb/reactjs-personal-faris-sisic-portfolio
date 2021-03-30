@@ -9,7 +9,7 @@ import { animateScroll } from 'react-scroll';
 import { ArrowUp } from 'react-feather';
 import cs from 'classnames';
 import { logo } from '../assets/img';
-import { SCREEN_SIZES } from '../constants';
+import {EVENT_LISTENERS, SCREEN_SIZES} from '../constants';
 import LanguageDropdown from './LanguageDropdown';
 
 const Navbar = ({ sidebarOpen, handleSidebar }) => {
@@ -17,7 +17,7 @@ const Navbar = ({ sidebarOpen, handleSidebar }) => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const screenWidth = useWindowWidth();
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener(EVENT_LISTENERS.SCROLL, () => {
     if (window.pageYOffset > 150) {
       setScrolled(true);
     } else {
@@ -36,9 +36,8 @@ const Navbar = ({ sidebarOpen, handleSidebar }) => {
       className={cs({
         'navbar-container-lg': screenWidth >= SCREEN_SIZES.LG,
         'navbar-container': screenWidth < SCREEN_SIZES.LG,
-        'navbar-container-scrolled pt-3 pb-3': screenWidth >= SCREEN_SIZES.LG && scrolled,
         'pt-lg-5': screenWidth >= SCREEN_SIZES.LG && !scrolled,
-        'navbar-container-scrolled': screenWidth < SCREEN_SIZES.LG && scrolled,
+        'navbar-container-scrolled': scrolled,
         'navbar-container-dropdown-open': screenWidth < SCREEN_SIZES.LG,
         'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
         'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,

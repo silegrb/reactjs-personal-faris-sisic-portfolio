@@ -1,17 +1,17 @@
 import {
-  atlantBhLogo,
   BHEngineeringWeeksSarajevoLogo,
   enLangIcon,
   bhLangIcon,
   deLangIcon,
-  drugaGimnazijaSarajevoLogo,
-  elektrotehnickiFakultetSarajevoLogo,
-  followMeAlteraLinguaLogo,
-  grbavicaDvaLogo,
-  hackathonJustCodeItSarajevoLogo,
-  softhouseLogo,
-  symphonySarajevoLogo,
   udemyLogo,
+  educationItemEfsaImage,
+  educationItemEtfImage,
+  educationItem2GimnazijaImage,
+  educationItemOSGrbavica2Image,
+  educationItemFollowMeImage,
+  educationItemAtlantBHImage,
+  educationItemJustCodeItImage,
+  educationItemSymphony,
 } from './assets/img';
 import Home from './containers/Home';
 
@@ -42,8 +42,160 @@ export const LINK_PROPERTIES = {
   smooth: true,
 };
 
+export const TILT_PROPERTIES = {
+  reverse: true,
+  scale: 1,
+  max: 25,
+};
+
+export const EDUCATION_ITEMS = [
+  {
+    title: 'Primary School Diploma',
+    educationalInstitution: 'Primary School "Grbavica II"',
+    startDate: new Date(2004, 8),
+    endDate: new Date(2013, 5),
+    location: 'Behdžeta Mutevelića bb, Sarajevo',
+    website: 'https://www.osgrbavica2.edu.ba',
+    image: educationItemOSGrbavica2Image,
+    primary: true,
+  },
+  {
+    title: 'High School Diploma',
+    educationalInstitution: 'Second Gymnasium Sarajevo',
+    startDate: new Date(2013, 8),
+    endDate: new Date(2017, 5),
+    location: 'Sutjeska 1, Sarajevo',
+    website: 'https://www.2gimnazija.edu.ba',
+    image: educationItem2GimnazijaImage,
+    primary: true,
+  },
+  {
+    title: "Bachelor's Degree",
+    educationalInstitution: 'Faculty of Electrical Engineering Sarajevo',
+    startDate: new Date(2017, 9, 1),
+    endDate: new Date(2020, 6, 23),
+    location: 'Zmaja od Bosne bb, Sarajevo',
+    website: 'https://www.etf.unsa.ba',
+    image: educationItemEtfImage,
+    primary: true,
+  },
+  {
+    title: "Master's Degree",
+    educationalInstitution: 'Faculty of Economics and Business',
+    startDate: new Date(2020, 11, 1),
+    location: 'Trg Alije Izetbegovića 1',
+    website: 'http://www.efsa.unsa.ba',
+    image: educationItemEfsaImage,
+    primary: true,
+  },
+  {
+    title: 'English Language C1 Certification',
+    educationalInstitution: 'Altera Lingua "Follow Me"',
+    startDate: new Date(2003, 8),
+    endDate: new Date(2017, 4),
+    location: 'Alekse Šantića 8, Sarajevo',
+    website: 'https://www.followme.ba',
+    image: educationItemFollowMeImage,
+    primary: true,
+  },
+  {
+    title: 'German Language A2 Certification',
+    educationalInstitution: 'Altera Lingua "Follow Me"',
+    startDate: new Date(2008, 8),
+    endDate: new Date(2011, 4),
+    location: 'Alekse Šantića 8, Sarajevo',
+    website: 'https://www.followme.ba',
+    image: educationItemFollowMeImage,
+    primary: true,
+  },
+  {
+    title: 'New knowledge',
+    educationalInstitution: 'Symphony MEETUP "Hybernate"',
+    startDate: new Date(2019, 3, 19),
+    endDate: new Date(2019, 3, 19),
+    image: educationItemSymphony,
+    website: 'https://symphony.is',
+  },
+  {
+    title: 'New knowledge',
+    educationalInstitution: 'BH Engineering Weeks 2019',
+    startDate: new Date(2019, 11, 12),
+    endDate: new Date(2019, 11, 12),
+    website: 'https://www.bhing.ba',
+    image: BHEngineeringWeeksSarajevoLogo,
+  },
+  {
+    title: 'Innovation Challenge Winners',
+    educationalInstitution: 'Hackathon "Just Code It" in Sarajevo',
+    startDate: new Date(2019, 11, 21),
+    endDate: new Date(2019, 11, 22),
+    image: educationItemJustCodeItImage,
+    website: 'http://www.eestec-sa.ba/posts/76',
+  },
+  {
+    title: 'Completed Course',
+    educationalInstitution:
+      'React - The Complete Guide (incl Hooks, React Router, Redux)',
+    startDate: new Date(2020, 3, 1),
+    endDate: new Date(2020, 3, 15),
+    website: 'https://www.udemy.com/course/react-the-complete-guide-incl-redux',
+    image: udemyLogo,
+  },
+  {
+    title: 'New knowledge',
+    educationalInstitution: 'Online Meetup "How to become UX/UI Designer"',
+    startDate: new Date(2020, 9, 21),
+    endDate: new Date(2020, 9, 21),
+    website: 'https://www.atlantbh.com',
+    image: educationItemAtlantBHImage,
+  },
+];
+
+export const FOOTER_LINKS = {
+  FACEBOOK: 'https://www.facebook.com/shile.pres',
+  INSTAGRAM: 'https://www.instagram.com/sisicfarris',
+  YOUTUBE: 'https://www.youtube.com/channel/UCLbDLtGSzMfB7__-kwvXTPA',
+  LINKED_IN: 'https://www.linkedin.com/in/faris-%C5%A1i%C5%A1i%C4%87-06453b1a0',
+  GITHUB: 'https://github.com/silegrb',
+};
+
+export const LANGUAGES = [
+  {
+    code: 'en',
+    flag: enLangIcon,
+  },
+  {
+    code: 'bh',
+    flag: bhLangIcon,
+  },
+  {
+    code: 'de',
+    flag: deLangIcon,
+  },
+];
+
+export const MAXIMUM_LANGUAGE_GRADE = 6;
+
+export const LOADING_WAIT_TIME = 1000;
+
+export const EVENT_LISTENERS = {
+  SCROLL: 'scroll',
+};
+
+export const THREE_JS_OPTIONS = {
+  SPACE: {
+    CAMERA: { fov: 100, position: [0, 0, 30] },
+    PARTICLES_AMOUNT: 500,
+    PARTICLES_POINT_LIGHT_PROPS: {
+      distance: 40,
+      intensity: 8,
+      color: 'grey',
+    },
+  },
+};
+
 // Months go from 0 do 11
-export const PORTFOLIO = {
+/* export const PORTFOLIO = {
   BASIC_INFORMATION: {
     title: 'components.basicInformation',
     content: {
@@ -58,8 +210,8 @@ export const PORTFOLIO = {
       facebookLink: 'https://www.facebook.com/shile.pres',
       youtubeLink: 'https://www.youtube.com/channel/UCLbDLtGSzMfB7__-kwvXTPA',
       linkedInLink:
-        'https://www.linkedin.com/in/faris-%C5%A1i%C5%A1i%C4%87-06453b1a0/',
-      instagramLink: 'https://www.instagram.com/sisic.faris_/',
+        'https://www.linkedin.com/in/faris-%C5%A1i%C5%A1i%C4%87-06453b1a0',
+      instagramLink: 'https://www.instagram.com/sisicfarris',
       githubLink: 'https://github.com/silegrb',
     },
   },
@@ -72,115 +224,21 @@ export const PORTFOLIO = {
         startDate: new Date(2020, 3, 1),
         endDate: new Date(2020, 5, 30),
         location: 'Trg Solidarnosti 2, Sarajevo',
-        website: 'www.softhouse.se',
-        avatar: softhouseLogo,
+        website: 'https://www.softhouse.se',
+        image: softhouseLogo,
       },
       {
         position: 'components.softwareDeveloper',
         workplace: 'Softhouse Consulting',
         startDate: new Date(2020, 6, 1),
         location: 'Trg Solidarnosti 2, Sarajevo',
-        website: 'www.softhouse.se',
-        avatar: softhouseLogo,
+        website: 'https://www.softhouse.se',
+        image: softhouseLogo,
       },
     ],
   },
   EDUCATION: {
     title: 'components.education',
-    content: [
-      {
-        title: 'components.primarySchoolDiploma',
-        educationalInstitution: 'components.primarySchoolGrbavicaII',
-        startDate: new Date(2004, 8),
-        startDateFormatter: 'MMM, YYYY',
-        endDate: new Date(2013, 5),
-        endDateFormatter: 'MMM, YYYY',
-        location: 'Behdžeta Mutevelića bb, Sarajevo',
-        website: 'www.osgrbavica2.edu.ba',
-        avatar: grbavicaDvaLogo,
-      },
-      {
-        title: 'components.highSchoolDiploma',
-        educationalInstitution: 'components.secondGymnasiumSarajevo',
-        startDate: new Date(2013, 8),
-        startDateFormatter: 'MMM, YYYY',
-        endDate: new Date(2017, 5),
-        endDateFormatter: 'MMM, YYYY',
-        location: 'Sutjeska 1, Sarajevo',
-        website: 'www.2gimnazija.edu.ba',
-        avatar: drugaGimnazijaSarajevoLogo,
-      },
-      {
-        title: 'components.bachelorOfElectricalEngineering',
-        educationalInstitution:
-          'components.facultyOfElectricalEngineeringSarajevo',
-        startDate: new Date(2017, 9, 1),
-        endDate: new Date(2020, 6, 23),
-        location: 'Zmaja od Bosne bb, Sarajevo',
-        website: 'www.etf.unsa.ba',
-        avatar: elektrotehnickiFakultetSarajevoLogo,
-      },
-      {
-        title: 'components.alteraLinguaFollowMeCertificateC1',
-        educationalInstitution: 'components.englishLanguageCourseFollowMe',
-        startDate: new Date(2003, 8),
-        startDateFormatter: 'MMM, YYYY',
-        endDate: new Date(2017, 4),
-        endDateFormatter: 'MMM, YYYY',
-        location: 'Alekse Šantića 8, Sarajevo',
-        website: 'www.followme.ba',
-        avatar: followMeAlteraLinguaLogo,
-      },
-      {
-        title: 'components.alteraLinguaFollowMeCertificateA2',
-        educationalInstitution: 'components.germanLanguageCourseFollowMe',
-        startDate: new Date(2008, 8),
-        startDateFormatter: 'MMM, YYYY',
-        endDate: new Date(2011, 4),
-        endDateFormatter: 'MMM, YYYY',
-        location: '',
-        website: 'www.followme.ba',
-        avatar: followMeAlteraLinguaLogo,
-      },
-      {
-        title: 'components.newKnowledge',
-        educationalInstitution:
-          'components.symphonyMeetupHybernateMigrationsDeploymentsAndOptimizations',
-        date: new Date(2019, 3, 19),
-        avatar: symphonySarajevoLogo,
-      },
-      {
-        title: 'components.newKnowledge',
-        educationalInstitution: 'components.bhEngineeringWeeks2019',
-        date: new Date(2019, 11, 12),
-        website: 'www.bhing.ba',
-        avatar: BHEngineeringWeeksSarajevoLogo,
-      },
-      {
-        title: 'components.innovationChallengeWinners',
-        educationalInstitution: 'components.hackathonJustCodeItInSarajevo',
-        startDate: new Date(2019, 11, 21),
-        endDate: new Date(2019, 11, 22),
-        avatar: hackathonJustCodeItSarajevoLogo,
-      },
-      {
-        title: 'components.completedCourse',
-        educationalInstitution:
-          'components.reactTheCompleteGuideInclHooksReactRouterRedux',
-        startDate: new Date(2020, 3, 1),
-        endDate: new Date(2020, 3, 15),
-        website: 'www.udemy.com/course/react-the-complete-guide-incl-redux',
-        avatar: udemyLogo,
-      },
-      {
-        title: 'components.newKnowledge',
-        educationalInstitution:
-          'components.onlineMeetupHowToBecomeAUXUIDesigner',
-        date: new Date(2020, 9, 21),
-        website: 'www.atlantbh.com',
-        avatar: atlantBhLogo,
-      },
-    ],
   },
   SKILLS: {
     title: 'Skills',
@@ -382,7 +440,7 @@ export const PORTFOLIO = {
           },
         ],
       },
-      /*
+
       COMMUNICATIONAL_SKILLS: [
         {
           title: 'excellent social and communication skills gained through sports, sports related events, humanitarian events, frequent school projects and presentations and mathematics and programming instructions',
@@ -396,52 +454,11 @@ export const PORTFOLIO = {
           title: 'B',
         },
       ],
-       */
+
     },
-    /*
+
   OTHER_SKILLS: [
-    // TODO Add other skills
   ],
-   */
-  },
-};
 
-export const LINKS = [
-  {
-    title: 'components.basicInformation',
-    id: 'basic-information',
   },
-  {
-    title: 'components.workExperience',
-    id: 'work-experience',
-  },
-  {
-    title: 'components.education',
-    id: 'education',
-  },
-  {
-    title: 'components.skills',
-    id: 'skills',
-  },
-  {
-    title: 'components.projectsAndAwards',
-    id: 'projects-and-awards',
-  },
-];
-
-export const LANGUAGES = [
-  {
-    code: 'en',
-    flag: enLangIcon,
-  },
-  {
-    code: 'bh',
-    flag: bhLangIcon,
-  },
-  {
-    code: 'de',
-    flag: deLangIcon,
-  },
-];
-
-export const MAXIMUM_LANGUAGE_GRADE = 6;
+}; */

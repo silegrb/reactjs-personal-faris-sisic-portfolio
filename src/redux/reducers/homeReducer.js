@@ -5,6 +5,16 @@ export default function reducer(state = initialState.home, action) {
   // eslint-disable-next-line no-unused-vars
   const { type, payload } = action;
   switch (type) {
+    case types.SET_SCROLLED_TO_TOP_SUCCESS:
+      return {
+        ...state,
+        scrolledToTop: true,
+      };
+    case types.UNSET_SCROLLED_TO_TOP_SUCCESS:
+      return {
+        ...state,
+        scrolledToTop: false,
+      };
     case types.SET_SCROLLED_TO_BASIC_INFO_SUCCESS:
       return {
         ...state,
@@ -15,15 +25,15 @@ export default function reducer(state = initialState.home, action) {
         ...state,
         scrolledToBasicInfo: false,
       };
-    case types.SET_SCROLLED_TO_TOP_SUCCESS:
+    case types.SET_SCROLLED_TO_EDUCATION_SUCCESS:
       return {
         ...state,
-        scrolledToTop: true,
+        scrolledToEducation: true,
       };
-    case types.UNSET_SCROLLED_TO_TOP_SUCCESS:
+    case types.UNSET_SCROLLED_TO_EDUCATION_SUCCESS:
       return {
         ...state,
-        scrolledToTop: false,
+        scrolledToEducation: false,
       };
     default:
       return state;
