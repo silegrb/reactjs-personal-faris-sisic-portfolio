@@ -70,9 +70,14 @@
 }
 
 .progress {
-  height: auto;
-  background-color: rgba(192,192,192,0.2);
-  width: 100%;
+  height: auto !important;
+  background-color: rgba(192,192,192,0.2) !important;
+  width: 100% !important;
+}
+
+.progress-bar {
+  background-color: #FFFFFF !important;
+  height: 2px!important;
 }
 
 .space-container  {

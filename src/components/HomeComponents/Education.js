@@ -32,10 +32,7 @@ const Education = () => {
             sm={{ offset: 4, size: 4 }}
             className="d-flex align-items-center justify-content-center"
           >
-            <Progress
-              style={{ height: '2px', backgroundColor: 'white' }}
-              value={completed}
-            />
+            <Progress value={completed} />
           </Col>
         </Row>
         <Row className="w-100 d-flex align-items-center m-0">
