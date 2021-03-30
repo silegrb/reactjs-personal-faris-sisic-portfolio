@@ -1,6 +1,6 @@
 {
   "name": "faris-sisic-eportfolio",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
