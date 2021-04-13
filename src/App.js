@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import cs from 'classnames';
@@ -6,12 +6,7 @@ import ReactPlayer from 'react-player';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Provider } from 'react-redux';
 import Loader from './components/Loader';
-import {
-  EVENT_LISTENERS,
-  LOADING_WAIT_TIME,
-  ROUTES,
-  SCREEN_SIZES,
-} from './constants';
+import { EVENT_LISTENERS, ROUTES, SCREEN_SIZES } from './constants';
 import PageNotFound from './components/PageNotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -29,12 +24,6 @@ const App = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, LOADING_WAIT_TIME);
-  }, []);
-
   window.addEventListener(EVENT_LISTENERS.SCROLL, () => {
     setOpacity(1 - window.pageYOffset / (window.innerHeight * 0.65));
   });
@@ -43,6 +32,23 @@ const App = () => {
     <Provider store={configureStore()}>
       <div className='root-container'>
         <Container className='app-container p-0 m-0 d-flex flex-column flex-grow-1'>
+          <div
+            className={cs('position-fixed', {
+              'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,
+              'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
+            })}
+          >
+            <ReactPlayer
+              onStart={() => setLoading(false)}
+              playsinline
+              playing
+              className='background-video'
+              style={{ opacity }}
+              url='video/snowboarding_no_border.mp4'
+              loop
+              muted
+            />
+          </div>
           {loading ? (
             <Loader />
           ) : (
@@ -78,22 +84,7 @@ const App = () => {
                   </Col>
                 </Row>
               </div>
-              <div
-                className={cs('position-fixed', {
-                  'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,
-                  'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
-                })}
-              >
-                <ReactPlayer
-                  playsinline
-                  playing
-                  className='background-video'
-                  style={{ opacity }}
-                  url='video/snowboarding_no_border.mp4'
-                  loop
-                  muted
-                />
-              </div>
+
               <Navbar sidebarOpen={sidebarOpen} handleSidebar={handleSidebar} />
             </>
           )}
