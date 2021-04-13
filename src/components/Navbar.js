@@ -9,7 +9,7 @@ import { animateScroll } from 'react-scroll';
 import { ArrowUp } from 'react-feather';
 import cs from 'classnames';
 import { logo } from '../assets/img';
-import {EVENT_LISTENERS, SCREEN_SIZES} from '../constants';
+import { EVENT_LISTENERS, SCREEN_SIZES } from '../constants';
 import LanguageDropdown from './LanguageDropdown';
 
 const Navbar = ({ sidebarOpen, handleSidebar }) => {
@@ -24,7 +24,7 @@ const Navbar = ({ sidebarOpen, handleSidebar }) => {
       setScrolled(false);
     }
 
-    if (window.pageYOffset > 500) {
+    if (window.pageYOffset > 300 && window.pageYOffset + window.innerHeight + 50 < document.body.offsetHeight) {
       setShowScrollToTop(true);
     } else {
       setShowScrollToTop(false);
@@ -75,6 +75,7 @@ const Navbar = ({ sidebarOpen, handleSidebar }) => {
           'scroll-to-top-icon-not-displayed': !showScrollToTop,
           'scroll-to-top-icon-padding': sidebarOpen && screenWidth >= SCREEN_SIZES.SM,
           'scroll-to-top-icon-padding-sm': screenWidth < SCREEN_SIZES.SM,
+          'scroll-to-top-display-none': sidebarOpen && screenWidth < SCREEN_SIZES.SM,
         })}
         onClick={() => animateScroll.scrollToTop()}
       />

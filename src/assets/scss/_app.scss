@@ -2,7 +2,6 @@
   background: #000000;
   color: $primary-font-color;
   -ms-overflow-style: none;
-  scrollbar-width: none;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
 }
@@ -31,17 +30,15 @@
   box-shadow: 0 0 5px #434343;
 }
 
-.section {
-  background-color: rgba(255,255,255,0.02);
-  border: 1px solid $light-gray-color;
-  z-index: 1;
-}
-
 .background-video {
   height: 100vh !important;
   position: absolute;
-  z-index: 0;
+  z-index: $layer-minimum;
   width: 100% !important;
+}
+
+.component-container {
+  z-index: $layer-1;
 }
 
 .width-75 {
@@ -62,10 +59,6 @@
 .width-0 {
   width: 0 !important;
   transition: width 0.3s;
-}
-
-.z-index-1 {
-  z-index: 1;
 }
 
 ::-moz-selection {

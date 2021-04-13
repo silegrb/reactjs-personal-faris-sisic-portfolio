@@ -48,26 +48,23 @@ export const TILT_PROPERTIES = {
   max: 25,
 };
 
-export const EDUCATION_ITEMS = [
+export const BRAIN_TRAINING_ITEM_TYPES = {
+  EDUCATION: 'EDUCATION',
+  CERTIFICATE: 'CERTIFICATE',
+  AWARD: 'AWARD',
+  KNOWLEDGE: 'KNOWLEDGE',
+};
+
+export const BRAIN_TRAINING_ITEMS = [
   {
-    title: 'Primary School Diploma',
-    educationalInstitution: 'Primary School "Grbavica II"',
-    startDate: new Date(2004, 8),
-    endDate: new Date(2013, 5),
-    location: 'Behdžeta Mutevelića bb, Sarajevo',
-    website: 'https://www.osgrbavica2.edu.ba',
-    image: educationItemOSGrbavica2Image,
-    primary: true,
-  },
-  {
-    title: 'High School Diploma',
-    educationalInstitution: 'Second Gymnasium Sarajevo',
-    startDate: new Date(2013, 8),
-    endDate: new Date(2017, 5),
-    location: 'Sutjeska 1, Sarajevo',
-    website: 'https://www.2gimnazija.edu.ba',
-    image: educationItem2GimnazijaImage,
-    primary: true,
+    title: "Master's Degree",
+    educationalInstitution: 'Faculty of Economics and Business',
+    startDate: new Date(2020, 11, 1),
+    location: 'Trg Alije Izetbegovića 1',
+    website: 'http://www.efsa.unsa.ba',
+    image: educationItemEfsaImage,
+    type: BRAIN_TRAINING_ITEM_TYPES.EDUCATION,
+    locationCoordinates: [43.858629, 18.424822],
   },
   {
     title: "Bachelor's Degree",
@@ -77,16 +74,30 @@ export const EDUCATION_ITEMS = [
     location: 'Zmaja od Bosne bb, Sarajevo',
     website: 'https://www.etf.unsa.ba',
     image: educationItemEtfImage,
-    primary: true,
+    type: BRAIN_TRAINING_ITEM_TYPES.EDUCATION,
+    locationCoordinates: [43.856665, 18.398376],
   },
   {
-    title: "Master's Degree",
-    educationalInstitution: 'Faculty of Economics and Business',
-    startDate: new Date(2020, 11, 1),
-    location: 'Trg Alije Izetbegovića 1',
-    website: 'http://www.efsa.unsa.ba',
-    image: educationItemEfsaImage,
-    primary: true,
+    title: 'High School Diploma',
+    educationalInstitution: 'Second Gymnasium Sarajevo',
+    startDate: new Date(2013, 8),
+    endDate: new Date(2017, 5),
+    location: 'Sutjeska 1, Sarajevo',
+    website: 'https://www.2gimnazija.edu.ba',
+    image: educationItem2GimnazijaImage,
+    type: BRAIN_TRAINING_ITEM_TYPES.EDUCATION,
+    locationCoordinates: [43.862066, 18.412315],
+  },
+  {
+    title: 'Primary School Diploma',
+    educationalInstitution: 'Primary School "Grbavica II"',
+    startDate: new Date(2004, 8),
+    endDate: new Date(2013, 5),
+    location: 'Behdžeta Mutevelića bb, Sarajevo',
+    website: 'https://www.osgrbavica2.edu.ba',
+    image: educationItemOSGrbavica2Image,
+    type: BRAIN_TRAINING_ITEM_TYPES.EDUCATION,
+    locationCoordinates: [43.849831, 18.389334],
   },
   {
     title: 'English Language C1 Certification',
@@ -96,7 +107,8 @@ export const EDUCATION_ITEMS = [
     location: 'Alekse Šantića 8, Sarajevo',
     website: 'https://www.followme.ba',
     image: educationItemFollowMeImage,
-    primary: true,
+    type: BRAIN_TRAINING_ITEM_TYPES.CERTIFICATE,
+    locationCoordinates: [43.862042, 18.414317],
   },
   {
     title: 'German Language A2 Certification',
@@ -106,23 +118,8 @@ export const EDUCATION_ITEMS = [
     location: 'Alekse Šantića 8, Sarajevo',
     website: 'https://www.followme.ba',
     image: educationItemFollowMeImage,
-    primary: true,
-  },
-  {
-    title: 'New knowledge',
-    educationalInstitution: 'Symphony MEETUP "Hybernate"',
-    startDate: new Date(2019, 3, 19),
-    endDate: new Date(2019, 3, 19),
-    image: educationItemSymphony,
-    website: 'https://symphony.is',
-  },
-  {
-    title: 'New knowledge',
-    educationalInstitution: 'BH Engineering Weeks 2019',
-    startDate: new Date(2019, 11, 12),
-    endDate: new Date(2019, 11, 12),
-    website: 'https://www.bhing.ba',
-    image: BHEngineeringWeeksSarajevoLogo,
+    type: BRAIN_TRAINING_ITEM_TYPES.CERTIFICATE,
+    locationCoordinates: [43.858481, 18.415154],
   },
   {
     title: 'Innovation Challenge Winners',
@@ -131,6 +128,28 @@ export const EDUCATION_ITEMS = [
     endDate: new Date(2019, 11, 22),
     image: educationItemJustCodeItImage,
     website: 'http://www.eestec-sa.ba/posts/76',
+    type: BRAIN_TRAINING_ITEM_TYPES.AWARD,
+    locationCoordinates: [43.856696, 18.398789],
+  },
+  {
+    title: 'New knowledge',
+    educationalInstitution: 'Symphony MEETUP "Hybernate"',
+    startDate: new Date(2019, 3, 19),
+    endDate: new Date(2019, 3, 19),
+    image: educationItemSymphony,
+    website: 'https://symphony.is',
+    type: BRAIN_TRAINING_ITEM_TYPES.KNOWLEDGE,
+    locationCoordinates: [43.853732, 18.388008],
+  },
+  {
+    title: 'New knowledge',
+    educationalInstitution: 'BH Engineering Weeks 2019',
+    startDate: new Date(2019, 11, 12),
+    endDate: new Date(2019, 11, 12),
+    website: 'https://www.bhing.ba',
+    image: BHEngineeringWeeksSarajevoLogo,
+    type: BRAIN_TRAINING_ITEM_TYPES.KNOWLEDGE,
+    locationCoordinates: [43.855336, 18.414434],
   },
   {
     title: 'Completed Course',
@@ -140,6 +159,7 @@ export const EDUCATION_ITEMS = [
     endDate: new Date(2020, 3, 15),
     website: 'https://www.udemy.com/course/react-the-complete-guide-incl-redux',
     image: udemyLogo,
+    type: BRAIN_TRAINING_ITEM_TYPES.KNOWLEDGE,
   },
   {
     title: 'New knowledge',
@@ -148,6 +168,7 @@ export const EDUCATION_ITEMS = [
     endDate: new Date(2020, 9, 21),
     website: 'https://www.atlantbh.com',
     image: educationItemAtlantBHImage,
+    type: BRAIN_TRAINING_ITEM_TYPES.KNOWLEDGE,
   },
 ];
 
@@ -193,6 +214,8 @@ export const THREE_JS_OPTIONS = {
     },
   },
 };
+
+export const EPSILON = 0.00001;
 
 // Months go from 0 do 11
 /* export const PORTFOLIO = {

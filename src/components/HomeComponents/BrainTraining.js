@@ -1,12 +1,18 @@
 import React, { useRef, useState } from 'react';
 import { Row, Col, Progress } from 'reactstrap';
 import cs from 'classnames';
-import EducationItem from './EducationItem';
-import { EDUCATION_ITEMS } from '../../constants';
+import BrainTrainingItem from './BrainTrainingItem';
+import { BRAIN_TRAINING_ITEMS } from '../../constants';
+import Map from './Map';
 
 // TODO Translation
-const Education = () => {
+const BrainTraining = () => {
   const [completed, setCompleted] = useState(0);
+  const [mapCenter, setMapCenter] = useState(null);
+  const [mapTitle, setMapTitle] = useState('');
+  const [mapOpened, setMapOpened] = useState(false);
+  const [activeMarkerIndex, setActiveMarkerIndex] = useState(-1);
+  const [mapPopupImage, setMapPopupImage] = useState(null);
   const ref = useRef(null);
 
   const handleCalculateScrollProgress = () => {
@@ -17,14 +23,27 @@ const Education = () => {
     }
   };
 
+  const handleSetActiveMarkerIndex = (index) => setActiveMarkerIndex(index);
+
   return (
     <div
       className="d-flex justify-content-center w-100"
       id="education"
     >
+      <Map
+        center={mapCenter}
+        isOpen={mapOpened}
+        handleClose={() => setMapOpened(false)}
+        title={mapTitle}
+        activeMarkerIndex={activeMarkerIndex}
+        handleSetActiveMarkerIndex={handleSetActiveMarkerIndex}
+        popupImage={mapPopupImage}
+      />
       <div className="education-container d-flex">
-        <span className="text-center education-timeline-text">
-          <span className="text-center w-100">EDUCATION TIMELINE</span>
+        <span className="text-center education-timeline-text w-100">
+          <span className="text-center w-100">
+            BRAIN TRAINING
+          </span>
         </span>
         <Row className="education-scroll w-100 m-0">
           <Col
@@ -42,16 +61,16 @@ const Education = () => {
               ref={ref}
               onScroll={handleCalculateScrollProgress}
             >
-              {EDUCATION_ITEMS
-                .sort((
-                  { startDate: firstStartDate, primary: firstPrimary },
-                  { startDate: secondStartDate, primary: secondPrimary },
-                ) => {
-                  if (secondPrimary && !firstPrimary) { return 1; }
-                  return secondStartDate.getFullYear() - firstStartDate.getFullYear();
-                })
+              {BRAIN_TRAINING_ITEMS
                 .map(({
-                  image, title, startDate, endDate, educationalInstitution, website,
+                  image,
+                  title,
+                  startDate,
+                  endDate,
+                  educationalInstitution,
+                  website,
+                  type,
+                  locationCoordinates,
                 }, index) => (
                   <div
                     key={index}
@@ -59,13 +78,22 @@ const Education = () => {
                       'mt-5': !index,
                     })}
                   >
-                    <EducationItem
+                    <BrainTrainingItem
                       image={image}
                       title={title}
                       startDate={startDate}
                       endDate={endDate}
                       educationalInstitution={educationalInstitution}
                       website={website}
+                      type={type}
+                      handleMapIconClick={() => {
+                        setMapOpened(true);
+                        setMapCenter(locationCoordinates);
+                        setMapTitle(educationalInstitution);
+                        setActiveMarkerIndex(index);
+                        setMapPopupImage(image);
+                      }}
+                      locationCoordinates={locationCoordinates}
                     />
                   </div>
                 ))}
@@ -77,4 +105,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default BrainTraining;

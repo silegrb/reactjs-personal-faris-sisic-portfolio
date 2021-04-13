@@ -27,6 +27,22 @@ $font-size-150: 150px;
 $font-size-240: 240px;
 $font-size-300: 300px;
 
+//z-index layers
+$layer-minimum: 0;
+$layer-1: 100;
+$layer-2: 200;
+$layer-3: 300;
+$layer-4: 400;
+$layer-5: 500;
+$layer-6: 600;
+$layer-7: 700;
+$layer-8: 800;
+$layer-9: 900;
+$layer-10: 1000;
+$layer-modal: 9000;
+$layer-map: 9900;
+$layer-maximum: 9999;
+
 //Borders
 $light-gray-border-2px: 2px solid $light-gray-color;
 $orange-border-3px: 3px solid $orange-color;
@@ -79,23 +95,42 @@ $white-border-2px: 2px solid white;
   }
 }
 
-@keyframes background-text-basic-hover {
+@keyframes fadeLeft {
   0% {
-    transform: translateX(0);
+    width: 0;
+    z-index: $layer-maximum;
   }
+
+  85% {
+    width: 15%;
+    z-index: $layer-maximum;
+  }
+
   100% {
-    transform: translateX(-25px);
+    width: 100%;
+    z-index: $layer-maximum;
   }
 }
 
-@keyframes bloom {
+@keyframes fadeOut {
   0% {
-    filter: grayscale(.8);
+    width: 100%;
+    left: auto;
+    right: 0;
+    z-index: $layer-maximum;
   }
-  40% {
-    filter: grayscale(.5);
+
+  85% {
+    width: 85%;
+    left: auto;
+    right: 0;
+    z-index: $layer-maximum;
   }
+
   100% {
-    filter: grayscale(0);
+    width: 0;
+    left: auto;
+    right: 0;
+    z-index: $layer-maximum;
   }
 }

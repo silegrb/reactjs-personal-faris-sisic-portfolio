@@ -9,20 +9,28 @@ import { openInNewTab } from '../../utils/openInNewTab';
 import { SCREEN_SIZES } from '../../constants';
 
 // TODO Translation
-const EducationItem = ({
+const BrainTrainingItem = ({
   image,
   title,
   startDate,
   endDate,
   educationalInstitution,
   website,
+  type,
+  locationCoordinates,
+  handleMapIconClick,
 }) => {
   const screenWidth = useWindowWidth();
   return (
-    <div className="d-flex justify-content-center align-items-center text-white">
+    <div className="d-flex justify-content-center align-items-center text-white position-relative">
       <Fade right>
-        <Row className="w-100 h-100 m-0 p-0">
+        <Row className="w-100 h-100 m-0 p-0" style={{ boxShadow: '0 20px 50px rgba(0,0,0,.8)' }}>
           <Col xs={12} className="m-0 p-0">
+            <div className="education-item-type">
+              <div className="d-flex justify-content-center align-items-center w-100 h-100">
+                {type}
+              </div>
+            </div>
             <div
               className="education-item"
               style={{ backgroundImage: `url("${image}")` }}
@@ -37,10 +45,14 @@ const EducationItem = ({
                 : 'Present'}`}
             </span>
             <span>
+              {!!locationCoordinates
+              && (
               <MapPin
                 size={screenWidth >= SCREEN_SIZES.SM ? 18 : 14}
                 className="mr-2 cursor-pointer"
+                onClick={handleMapIconClick}
               />
+              )}
               <ExternalLink
                 size={screenWidth >= SCREEN_SIZES.SM ? 18 : 14}
                 onClick={() => openInNewTab(website)}
@@ -67,13 +79,16 @@ const EducationItem = ({
   );
 };
 
-EducationItem.propTypes = {
+BrainTrainingItem.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   startDate: PropTypes.object.isRequired,
   endDate: PropTypes.object,
   educationalInstitution: PropTypes.string.isRequired,
   website: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  handleMapIconClick: PropTypes.func.isRequired,
+  locationCoordinates: PropTypes.array,
 };
 
-export default EducationItem;
+export default BrainTrainingItem;

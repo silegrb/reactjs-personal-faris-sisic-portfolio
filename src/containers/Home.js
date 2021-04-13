@@ -11,7 +11,7 @@ import {
   unsetScrolledToBasicInfo,
   unsetScrolledToEducation,
 } from '../redux/actions/homeActions';
-import Education from '../components/HomeComponents/Education';
+import BrainTraining from '../components/HomeComponents/BrainTraining';
 
 const Home = ({
   scrolledToTop,
@@ -38,7 +38,7 @@ const Home = ({
   }, [scrolledToTop, scrolledToBasicInfo, scrolledToEducation]);
 
   return (
-    <div className="home-container">
+    <div>
       <div className="home-intro d-flex justify-content-center align-items-center">
         <Fade bottom duration={1000} fraction={0}>
           <Row>
@@ -66,7 +66,7 @@ const Home = ({
         </Fade>
       </div>
       <BasicInfo />
-      <Education />
+      <BrainTraining />
     </div>
   );
 };

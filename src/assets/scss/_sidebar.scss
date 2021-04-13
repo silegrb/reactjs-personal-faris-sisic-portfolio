@@ -3,7 +3,7 @@
   right: 0;
   position: fixed;
   background-color: #111111;
-  z-index: 10000;
+  z-index: $layer-9;
   font-weight: 100;
 }
 
@@ -57,7 +57,7 @@
   .sidebar-container {
     width: 100vw;
     transition: width 0.2s;
-    z-index: 9998;
+    z-index: $layer-9;
     background-color: rgba(17,17,17,0.95);
   }
 }

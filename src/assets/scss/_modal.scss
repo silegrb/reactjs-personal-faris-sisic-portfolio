@@ -1,0 +1,17 @@
+.modal-height {
+  height: 90vh;
+}
+
+.modal-content {
+  border: none !important;
+}
+
+.modal {
+  z-index: $layer-modal!important;
+}
+
+@media only screen and (max-width: $SM) {
+  .modal-height {
+    height: 80vh;
+  }
+}

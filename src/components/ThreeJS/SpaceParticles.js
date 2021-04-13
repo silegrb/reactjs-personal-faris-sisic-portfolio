@@ -47,7 +47,7 @@ const SpaceParticles = () => {
   return (
     <>
       <pointLight ref={light} {...THREE_JS_OPTIONS.SPACE.PARTICLES_POINT_LIGHT_PROPS} />
-      <instancedMesh ref={mesh} args={[null, null, 500]}>
+      <instancedMesh ref={mesh} args={[null, null, 50]}>
         <dodecahedronBufferGeometry args={[0.2, 0]} />
         <meshPhongMaterial color="black" />
       </instancedMesh>

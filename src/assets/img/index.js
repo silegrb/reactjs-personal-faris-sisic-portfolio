@@ -1,4 +1,6 @@
 import logo from './image_logo.png';
+import blackLogo from './image_logo_black.png';
+import logoRounded from './image_logo_rounded.png';
 import bhLangIcon from './icon_bh_lang.png';
 import enLangIcon from './icon_en_lang.png';
 import deLangIcon from './icon_de_lang.png';
@@ -19,6 +21,7 @@ import educationItemFollowMeImage from './image_education_item_follow_me.png';
 import educationItemAtlantBHImage from './image_education_atlantbh.jpg';
 import educationItemJustCodeItImage from './image_education_just_code_it.jpg';
 import educationItemSymphony from './image_education_symphony.jpg';
+import mapMarkerIcon from './image_map_marker.svg';
 
 export {
   logo,
@@ -42,4 +45,7 @@ export {
   educationItemAtlantBHImage,
   educationItemJustCodeItImage,
   educationItemSymphony,
+  mapMarkerIcon,
+  blackLogo,
+  logoRounded,
 };

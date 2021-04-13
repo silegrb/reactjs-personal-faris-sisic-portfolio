@@ -48,7 +48,7 @@ const App = () => {
           ) : (
             <>
               <div
-                className={cs('z-index-1', {
+                className={cs('component-container', {
                   'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,
                   'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
                 })}

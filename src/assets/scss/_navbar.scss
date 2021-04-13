@@ -1,18 +1,18 @@
 .navbar-container-lg {
   font-size: $font-size-14;
   position: fixed;
-  z-index: 9999;
+  z-index: $layer-9;
 }
 
 .navbar-container {
   font-size: $font-size-14;
   position: fixed;
   top: 0;
-  z-index: 9999;
+  z-index: $layer-9;
 }
 
 .navbar-container-scrolled {
-  z-index: 9999;
+  z-index: $layer-9;
 }
 
 .logo-lg {
@@ -61,6 +61,7 @@
   bottom: 15px;
   right: 3rem;
   transition: all 0.3s;
+  z-index: $layer-8;
 }
 
 .scroll-to-top-icon-not-displayed {
@@ -70,16 +71,25 @@
   width: 0;
   height: 0;
   transition: all 0.3s;
+  z-index: $layer-8;
 }
 
 .scroll-to-top-icon-padding {
   right: calc(3rem + 25vw);
+  z-index: $layer-8;
 }
 
 .scroll-to-top-icon-padding-sm {
   right: 30px;
   position: fixed;
   bottom: 15px;
+  z-index: $layer-8;
+}
+
+.scroll-to-top-display-none {
+  width: 0;
+  height: 0;
+  transition: all 0.3s;
 }
 
 .languages-menu {

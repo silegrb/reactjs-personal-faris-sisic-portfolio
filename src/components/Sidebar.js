@@ -86,7 +86,7 @@ const Sidebar = ({
                 });
               }}
             >
-              EDUCATION
+              BRAIN TRAINING
             </Link>
           </Col>
           <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">SKILLS</Col>
