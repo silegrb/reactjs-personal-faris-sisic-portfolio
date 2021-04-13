@@ -24,7 +24,7 @@ const BrainTrainingItem = ({
   return (
     <div className="d-flex justify-content-center align-items-center text-white position-relative">
       <Fade right>
-        <Row className="w-100 h-100 m-0 p-0" style={{ boxShadow: '0 20px 50px rgba(0,0,0,.8)' }}>
+        <Row className="w-100 h-100 m-0 p-0">
           <Col xs={12} className="m-0 p-0">
             <div className="education-item-type">
               <div className="d-flex justify-content-center align-items-center w-100 h-100">
@@ -48,13 +48,13 @@ const BrainTrainingItem = ({
               {!!locationCoordinates
               && (
               <MapPin
-                size={screenWidth >= SCREEN_SIZES.SM ? 18 : 14}
+                size={screenWidth >= SCREEN_SIZES.SM ? 18 : 16}
                 className="mr-2 cursor-pointer"
                 onClick={handleMapIconClick}
               />
               )}
               <ExternalLink
-                size={screenWidth >= SCREEN_SIZES.SM ? 18 : 14}
+                size={screenWidth >= SCREEN_SIZES.SM ? 18 : 16}
                 onClick={() => openInNewTab(website)}
                 className="cursor-pointer"
               />

@@ -1,6 +1,6 @@
 .leaflet-container {
-  height: 100%;
-  width: 100%;
+  height: 90vh;
+  width: 75vw;
   transition: width 0.3s;
   z-index: $layer-map!important;
 }
@@ -97,8 +97,22 @@
   z-index: $layer-map!important;
 }
 
+.popup-image {
+  width: 250px;
+  height: 140px;
+}
+
+.popup-text {
+  font-size: 14px;
+}
+
 @media only screen and (max-width: $SM) {
   .map-cover-title {
     font-size: 22px;
+  }
+
+  .leaflet-container {
+    height: 80vh;
+    width: 95vw;
   }
 }

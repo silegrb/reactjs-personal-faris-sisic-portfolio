@@ -4,6 +4,7 @@
 
 .modal-content {
   border: none !important;
+  width: 75vw!important;
 }
 
 .modal {
@@ -13,5 +14,9 @@
 @media only screen and (max-width: $SM) {
   .modal-height {
     height: 80vh;
+  }
+
+  .modal-content {
+    width: 95vw !important;
   }
 }
