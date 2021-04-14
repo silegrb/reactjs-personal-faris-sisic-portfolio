@@ -20,8 +20,7 @@
 }
 
 .background-text-basic {
-  font-family: 'Jura', sans-serif;
-  letter-spacing: 100px;
+  letter-spacing: 150px;
   color: rgba(192,192,192,0.7);
   position: absolute;
   left: -25px;
@@ -34,8 +33,7 @@
 }
 
 .background-text-info {
-  font-family: 'Jura', sans-serif;
-  letter-spacing: 100px;
+  letter-spacing: 150px;
   color: rgba(192,192,192,0.7s);
   position: absolute;
   right: -25px;
@@ -100,27 +98,17 @@
     font-size: 42px;
   }
 
-  .background-text-basic {
-    letter-spacing: 100px;
-    font-size: 320px;
-  }
-
-  .background-text-info {
-    letter-spacing: 100px;
-    font-size: 320px;
-  }
-
   .background-text-basic-info {
     display: flex;
-    font-family: 'Jura', sans-serif;
     color: rgba(192,192,192,0.7s);
     position: absolute;
     right: 0;
     top:0;
     font-size: 125px;
-    transform: rotateZ(90deg) translateY(-260px) translateX(230px);
+    transform: rotateZ(90deg) translateY(-220px) translateX(230px);
     white-space: nowrap;
     overflow: hidden;
+    letter-spacing: 10px;
   }
 
   .background-text-basic {

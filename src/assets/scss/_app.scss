@@ -1,9 +1,18 @@
+html, body {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
 .app-container {
   background: #000000;
   color: $primary-font-color;
-  -ms-overflow-style: none;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+  overflow: hidden!important;
+  -ms-overflow-style: none!important;
 }
 
 ::-webkit-scrollbar {

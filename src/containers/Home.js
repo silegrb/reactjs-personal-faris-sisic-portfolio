@@ -4,8 +4,9 @@ import { Row, Col, Button } from 'reactstrap';
 import { Fade } from 'react-reveal';
 import { Link, scroller, animateScroll } from 'react-scroll';
 import { connect } from 'react-redux';
+import { useWindowWidth } from '@react-hook/window-size';
 import BasicInfo from '../components/HomeComponents/BasicInfo';
-import { LINK_PROPERTIES } from '../constants';
+import { LINK_PROPERTIES, SCREEN_SIZES } from '../constants';
 import {
   unsetScrolledToTop,
   unsetScrolledToBasicInfo,
@@ -21,6 +22,8 @@ const Home = ({
   unsetScrolledToTop,
   unsetScrolledToEducation,
 }) => {
+  const screenWidth = useWindowWidth();
+
   useEffect(() => {
     if (scrolledToTop) {
       animateScroll.scrollToTop();
@@ -41,20 +44,23 @@ const Home = ({
     <div>
       <div className="home-intro d-flex justify-content-center align-items-center">
         <Fade bottom duration={1000} fraction={0}>
-          <Row>
+          <Row className="w-100 m-0 p-0">
             <Col
               xs={{ size: 10, offset: 1 }}
               sm={{ size: 12, offset: 0 }}
               className="home-intro-title d-flex justify-content-center text-center"
             >
-              LIFE IS NOW. STAY FOCUSED.
+              LIFE IS NOW.
+              {screenWidth <= SCREEN_SIZES.SM && <br />}
+              {' '}
+              STAY FOCUSED.
             </Col>
             <Col
-              xs={{ size: 11, offset: 1 }}
+              xs={{ size: 10, offset: 1 }}
               sm={{ size: 12, offset: 0 }}
-              className="home-intro-subtitle d-flex justify-content-start justify-content-sm-center align-items-center pb-5"
+              className="home-intro-subtitle d-flex justify-content-center align-items-center pb-5"
             >
-              <span className="pr-1 pr-sm-4 d-flex align-items-center home-intro-subtitle-span">ŠIŠIĆ FARIS</span>
+              <span className="pr-1 pr-sm-3 font-weight-bold d-flex align-items-center">ŠIŠIĆ FARIS</span>
               Software Development Engineer
             </Col>
             <Col xs={12} className="d-flex justify-content-center align-items-center">

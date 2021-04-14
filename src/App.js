@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import cs from 'classnames';
@@ -6,7 +6,12 @@ import ReactPlayer from 'react-player';
 import { useWindowWidth } from '@react-hook/window-size';
 import { Provider } from 'react-redux';
 import Loader from './components/Loader';
-import { EVENT_LISTENERS, ROUTES, SCREEN_SIZES } from './constants';
+import {
+  EVENT_LISTENERS,
+  LOADING_WAIT_TIME,
+  ROUTES,
+  SCREEN_SIZES,
+} from './constants';
 import PageNotFound from './components/PageNotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -24,6 +29,12 @@ const App = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, LOADING_WAIT_TIME);
+  }, []);
+
   window.addEventListener(EVENT_LISTENERS.SCROLL, () => {
     setOpacity(1 - window.pageYOffset / (window.innerHeight * 0.65));
   });
@@ -39,7 +50,6 @@ const App = () => {
             })}
           >
             <ReactPlayer
-              onStart={() => setLoading(false)}
               playsinline
               playing
               className='background-video'
