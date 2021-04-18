@@ -134,3 +134,23 @@ $white-border-2px: 2px solid white;
     z-index: $layer-maximum;
   }
 }
+
+@keyframes screw-rotation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(359deg);
+  }
+}
+
+@keyframes screw-rotation-opposite {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(-359deg);
+  }
+}

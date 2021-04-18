@@ -75,7 +75,12 @@ const Map = ({
             <X size={50} />
           </div>
         </div>
-
+        <div className={cs('map-cover-title d-flex justify-content-center align-items-center', {
+          'map-cover-title-animation': isOpen,
+        })}
+        >
+          {title}
+        </div>
         <MapContainer
           tap={false}
           minZoom={3}
@@ -108,7 +113,7 @@ const Map = ({
                     <Col xs={12} className="d-flex justify-content-center p-0 m-0 w-100">
                       <img alt={title} src={image} className="popup-image" />
                     </Col>
-                    <Col xs={12} className="d-flex justify-content-center py-2 text-white popup-text">
+                    <Col xs={12} className="d-flex justify-content-center py-2 text-white popup-text text-center">
                       {educationalInstitution}
                     </Col>
                   </Row>

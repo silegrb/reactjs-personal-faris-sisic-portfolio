@@ -12,6 +12,18 @@ import {
   educationItemAtlantBHImage,
   educationItemJustCodeItImage,
   educationItemSymphony,
+  reactIcon,
+  javascriptIcon,
+  html5Icon,
+  css3Icon,
+  reduxIcon,
+  javaIcon,
+  cIcon,
+  cppIcon,
+  csIcon,
+  sassIcon,
+  mySqlIcon,
+  mernIcon,
 } from './assets/img';
 import Home from './containers/Home';
 
@@ -216,6 +228,87 @@ export const THREE_JS_OPTIONS = {
 };
 
 export const EPSILON = 0.00001;
+
+export const SKILLSET_ITEMS = [
+  {
+    title: 'React',
+    image: reactIcon,
+    description:
+      'Have a little over a year of work experience in React. Currently working as a front end developer using this framework. Some personal projects & this website are developed using React framework.',
+    isTopSkill: true,
+  },
+  {
+    title: 'JavaScript',
+    image: javascriptIcon,
+    description:
+      "Working with JavaScript for two & a half years. Technical interview task that got me job I currently have is developed using Vanilla JavaScript. Understanding Vanilla JavaScript to it's core level helped me achieve full control over my code & learn JavaScript frameworks easily & quickly.",
+    isTopSkill: true,
+  },
+  {
+    title: 'HTML5',
+    image: html5Icon,
+    description:
+      "Learned about HTML5 during my first year of Bachelor's Degree. Understanding & being able to create front end using HTML5 helped me understand JSX easier, boosting my overall React skills.",
+    isTopSkill: true,
+  },
+  {
+    title: 'CSS3',
+    image: css3Icon,
+    description:
+      'Got introduced to CSS3 same time I learned about HTML5. Most of styling & animations on this website are custom made.',
+    isTopSkill: true,
+  },
+  {
+    title: 'SASS',
+    image: sassIcon,
+    description:
+      "Started using SASS during my internship & instantly decided to replace CSS3 with SASS in my work, due to it's powerful capabilities compared to CSS3. Necessary to mention, knowing CSS3 made learning SASS look super easy.",
+    isTopSkill: true,
+  },
+  {
+    title: 'Redux',
+    image: reduxIcon,
+    description:
+      'Was introduced to Redux during my internship & been working with this technology for over a year now. Using Redux facilitated the process of managing application state big time.',
+  },
+  {
+    title: 'MERN Stack',
+    image: mernIcon,
+    description:
+      "Started learning about MERN Stack during my first internship in 2020. Used NodeJS & ExpressJS during my third year of Bachelor's Degree. Used MERN stack for developing some personal projects as well.",
+  },
+
+  {
+    title: 'Java',
+    image: javaIcon,
+    description:
+      "Used Java first time during my second year of Bachelor's Degree. I learned a lot more about Java than the course offered, due to my huge interest for Java. Held instructions in Java for group of about 15 colleague students later.",
+  },
+  {
+    title: 'C',
+    image: cIcon,
+    description:
+      "My first touch with programming was back when I started learning about C & C++ programming language during my third year of High School. I continued learning about C & C++ during my first year of Bachelor's Degree. I held & still am holding instructions & consultations in C for group of about 10 colleague students.",
+  },
+  {
+    title: 'C++',
+    image: cppIcon,
+    description:
+      "Like mentioned before, I learned about C++ programming language during my third year of High School & first year of Bachelor's Degree. I held & am holding instructions in C++ for group of 10+ colleague students.",
+  },
+  {
+    title: 'C#',
+    image: csIcon,
+    description:
+      "Learned about C# programming language during my second year of Bachelor's Degree. I held & am still holding instructions in C# for group of 10+ Mechanical Engineering students.",
+  },
+  {
+    title: 'MySQL',
+    image: mySqlIcon,
+    description:
+      "Got introduced to MySQL during my second year of Bachelor's Degree, but didn't used it for too long. Important to mention, my personal opinion is that knowing MySQL is a great advantage when learning new stuff in this field.",
+  },
+];
 
 // Months go from 0 do 11
 /* export const PORTFOLIO = {

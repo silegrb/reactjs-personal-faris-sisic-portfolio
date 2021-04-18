@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Row, Col, Progress } from 'reactstrap';
 import cs from 'classnames';
+import { Fade } from 'react-reveal';
 import BrainTrainingItem from './BrainTrainingItem';
 import { BRAIN_TRAINING_ITEMS } from '../../constants';
 import Map from './Map';
@@ -42,7 +43,9 @@ const BrainTraining = () => {
       <div className="education-container d-flex">
         <span className="text-center education-timeline-text w-100">
           <span className="text-center w-100">
-            BRAIN TRAINING
+            <Fade bottom>
+              BRAIN TRAINING
+            </Fade>
           </span>
         </span>
         <Row className="education-scroll w-100 m-0">

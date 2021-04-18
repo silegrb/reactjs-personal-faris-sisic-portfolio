@@ -43,22 +43,6 @@ const App = () => {
     <Provider store={configureStore()}>
       <div className='root-container'>
         <Container className='app-container p-0 m-0 d-flex flex-column flex-grow-1'>
-          <div
-            className={cs('position-fixed', {
-              'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,
-              'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
-            })}
-          >
-            <ReactPlayer
-              playsinline
-              playing
-              className='background-video'
-              style={{ opacity }}
-              url='video/snowboarding_no_border.mp4'
-              loop
-              muted
-            />
-          </div>
           {loading ? (
             <Loader />
           ) : (
@@ -94,7 +78,22 @@ const App = () => {
                   </Col>
                 </Row>
               </div>
-
+              <div
+                className={cs('position-fixed', {
+                  'width-100': screenWidth < SCREEN_SIZES.SM || !sidebarOpen,
+                  'width-75': screenWidth >= SCREEN_SIZES.SM && sidebarOpen,
+                })}
+              >
+                <ReactPlayer
+                  playsinline
+                  playing
+                  className='background-video'
+                  style={{ opacity }}
+                  url='video/snowboarding_no_border.mp4'
+                  loop
+                  muted
+                />
+              </div>
               <Navbar sidebarOpen={sidebarOpen} handleSidebar={handleSidebar} />
             </>
           )}

@@ -3,6 +3,7 @@ const initialState = {
     scrolledToTop: false,
     scrolledToBasicInfo: false,
     scrolledToEducation: false,
+    scrolledToSkillSet: false,
   },
 };
 

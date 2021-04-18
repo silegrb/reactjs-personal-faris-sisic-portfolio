@@ -11,16 +11,20 @@ import {
   unsetScrolledToTop,
   unsetScrolledToBasicInfo,
   unsetScrolledToEducation,
+  unsetScrolledToSkillSet,
 } from '../redux/actions/homeActions';
 import BrainTraining from '../components/HomeComponents/BrainTraining';
+import SkillSet from '../components/HomeComponents/SkillSet';
 
 const Home = ({
   scrolledToTop,
   scrolledToBasicInfo,
   scrolledToEducation,
+  scrolledToSkillSet,
   unsetScrolledToBasicInfo,
   unsetScrolledToTop,
   unsetScrolledToEducation,
+  unsetScrolledToSkillSet,
 }) => {
   const screenWidth = useWindowWidth();
 
@@ -34,8 +38,12 @@ const Home = ({
       unsetScrolledToBasicInfo();
     }
     if (scrolledToEducation) {
-      scroller.scrollTo(('education'), { ...LINK_PROPERTIES });
+      scroller.scrollTo('education', { ...LINK_PROPERTIES });
       unsetScrolledToEducation();
+    }
+    if (scrolledToSkillSet) {
+      scroller.scrollTo('skill-set', { ...LINK_PROPERTIES });
+      unsetScrolledToSkillSet();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrolledToTop, scrolledToBasicInfo, scrolledToEducation]);
@@ -73,6 +81,7 @@ const Home = ({
       </div>
       <BasicInfo />
       <BrainTraining />
+      <SkillSet />
     </div>
   );
 };
@@ -81,9 +90,11 @@ Home.propTypes = {
   scrolledToBasicInfo: PropTypes.bool.isRequired,
   scrolledToTop: PropTypes.bool.isRequired,
   scrolledToEducation: PropTypes.bool.isRequired,
+  scrolledToSkillSet: PropTypes.bool.isRequired,
   unsetScrolledToBasicInfo: PropTypes.func.isRequired,
   unsetScrolledToTop: PropTypes.func.isRequired,
   unsetScrolledToEducation: PropTypes.func.isRequired,
+  unsetScrolledToSkillSet: PropTypes.func.isRequired,
 };
 
 export default connect(({
@@ -92,8 +103,10 @@ export default connect(({
   scrolledToTop: home.scrolledToTop,
   scrolledToBasicInfo: home.scrolledToBasicInfo,
   scrolledToEducation: home.scrolledToEducation,
+  scrolledToSkillSet: home.scrolledToSkillSet,
 }), {
   unsetScrolledToBasicInfo,
   unsetScrolledToTop,
   unsetScrolledToEducation,
+  unsetScrolledToSkillSet,
 })(Home);

@@ -12,10 +12,18 @@ import { useWindowWidth } from '@react-hook/window-size';
 import { Link } from 'react-scroll';
 import { connect } from 'react-redux';
 import { LINK_PROPERTIES, SCREEN_SIZES } from '../constants';
-import { setScrolledToBasicInfo, setScrolledToEducation } from '../redux/actions/homeActions';
+import {
+  setScrolledToBasicInfo,
+  setScrolledToEducation,
+  setScrolledToSkillSet,
+} from '../redux/actions/homeActions';
 
 const Sidebar = ({
-  isOpen, handleSidebar, setScrolledToBasicInfo, setScrolledToEducation,
+  isOpen,
+  handleSidebar,
+  setScrolledToBasicInfo,
+  setScrolledToEducation,
+  setScrolledToSkillSet,
 }) => {
   const [homeDropdownOpen, setHomeDropdownOpen] = useState(false);
   const [instructionsDropdownOpen, setInstructionsDropdownOpen] = useState(false);
@@ -89,7 +97,25 @@ const Sidebar = ({
               BRAIN TRAINING
             </Link>
           </Col>
-          <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">SKILLS</Col>
+          <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">
+            <Link
+              {...LINK_PROPERTIES}
+              to="skill-set"
+              spy
+              smooth
+              className="w-100"
+              onClick={() => {
+                if (location.pathname !== '/') { history.push('/'); }
+                setScrolledToSkillSet();
+                // Timeout used to execute it last
+                setTimeout(() => {
+                  if (screenWidth < SCREEN_SIZES.SM) { handleSidebar(); }
+                });
+              }}
+            >
+              SKILL SET
+            </Link>
+          </Col>
           <Col xs={12} className="sidebar-sub-item d-flex align-items-center pl-lg-5 pr-lg-5">WORK EXPERIENCE</Col>
         </Collapse>
         <Col
@@ -119,6 +145,11 @@ Sidebar.propTypes = {
   handleSidebar: PropTypes.func.isRequired,
   setScrolledToBasicInfo: PropTypes.func.isRequired,
   setScrolledToEducation: PropTypes.func.isRequired,
+  setScrolledToSkillSet: PropTypes.func.isRequired,
 };
 
-export default connect(null, { setScrolledToBasicInfo, setScrolledToEducation })(Sidebar);
+export default connect(null, {
+  setScrolledToBasicInfo,
+  setScrolledToEducation,
+  setScrolledToSkillSet,
+})(Sidebar);

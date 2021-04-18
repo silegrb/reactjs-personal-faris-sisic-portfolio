@@ -24,6 +24,14 @@ const unsetScrolledToEducationSuccess = () => ({
   type: types.UNSET_SCROLLED_TO_EDUCATION_SUCCESS,
 });
 
+const setScrolledToSkillSetSuccess = () => ({
+  type: types.SET_SCROLLED_TO_SKILL_SET_SUCCESS,
+});
+
+const unsetScrolledToSkillSetSuccess = () => ({
+  type: types.UNSET_SCROLLED_TO_SKILL_SET_SUCCESS,
+});
+
 export const setScrolledToTop = () => (dispatch) => {
   dispatch(setScrolledToTopSuccess());
 };
@@ -46,4 +54,12 @@ export const setScrolledToEducation = () => (dispatch) => {
 
 export const unsetScrolledToEducation = () => (dispatch) => {
   dispatch(unsetScrolledToEducationSuccess());
+};
+
+export const setScrolledToSkillSet = () => (dispatch) => {
+  dispatch(setScrolledToSkillSetSuccess());
+};
+
+export const unsetScrolledToSkillSet = () => (dispatch) => {
+  dispatch(unsetScrolledToSkillSetSuccess());
 };

@@ -44,11 +44,27 @@ const BasicInfo = () => {
     <div className="d-flex justify-content-center w-100 position-relative" id="basic-info">
       <div className="basic-info-container d-flex flex-column">
         <SpaceParticles />
-        <span className="background-text-basic-info">BASIC INFO</span>
-        <span className="background-text-basic">BASIC</span>
-        <span className="background-text-info">INFO</span>
+        <span className="background-text-basic-info">
+          <Fade right>
+            BASIC INFO
+          </Fade>
+        </span>
+        <span className="background-text-basic">
+          <Fade left>
+            BASIC
+          </Fade>
+        </span>
+        <span className="background-text-info">
+          <Fade right>
+            INFO
+          </Fade>
+        </span>
         <Row>
-          <Col xs={12} className="d-flex justify-content-center who-am-i pt-5 pb-3 pb-sm-0">WHO AM I?</Col>
+          <Col xs={12} className="d-flex justify-content-center who-am-i pt-5 pb-3 pb-sm-0">
+            <Fade bottom>
+              WHO AM I?
+            </Fade>
+          </Col>
         </Row>
         <Row className="flex-grow-1 d-flex align-items-center pb-0 pb-sm-5">
           <Col xs={2} sm={1} />

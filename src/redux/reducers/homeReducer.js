@@ -3,7 +3,7 @@ import * as types from '../constants';
 
 export default function reducer(state = initialState.home, action) {
   // eslint-disable-next-line no-unused-vars
-  const { type, payload } = action;
+  const { type } = action;
   switch (type) {
     case types.SET_SCROLLED_TO_TOP_SUCCESS:
       return {
@@ -34,6 +34,16 @@ export default function reducer(state = initialState.home, action) {
       return {
         ...state,
         scrolledToEducation: false,
+      };
+    case types.SET_SCROLLED_TO_SKILL_SET_SUCCESS:
+      return {
+        ...state,
+        scrolledToSkillSet: true,
+      };
+    case types.UNSET_SCROLLED_TO_SKILL_SET_SUCCESS:
+      return {
+        ...state,
+        scrolledToSkillSet: false,
       };
     default:
       return state;

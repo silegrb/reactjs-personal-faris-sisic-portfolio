@@ -8,13 +8,10 @@
 }
 
 .education-timeline-text {
-  display: flex;
   color: rgba(192,192,192,0.7s);
   position: absolute;
-  left: 15px;
   top:15px;
   font-size: 100px;
-  overflow: hidden;
   line-height: 90px;
   letter-spacing: 20px;
 }
@@ -101,7 +98,6 @@
     line-height: 50px;
     width: 100%;
     margin: auto;
-    left: 0;
     letter-spacing: 10px;
   }
 
